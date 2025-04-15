@@ -710,12 +710,12 @@ domain_tax_different_faith_mult_even_if_baron_neg = {
 }
 vassal_tax_mult = {
     icon = economy_positive
-    vassal_tax_mult = 0.5
+    vassal_tax_mult = 0.2
     stacking = yes
 }
 vassal_tax_mult_neg = {
     icon = economy_negative
-    vassal_tax_mult = -0.5
+    vassal_tax_mult = -0.2
     stacking = yes
 }
 men_at_arms_maintenance = {
@@ -1520,62 +1520,62 @@ revolting_siege_morale_loss_mult_neg = {
 }
 vassal_tax_contribution = {
     icon = economy_positive
-    vassal_tax_contribution_add = 1
+    vassal_tax_contribution_add = 0.2
     stacking = yes
 }
 vassal_tax_contribution_neg = {
     icon = economy_negative
-    vassal_tax_contribution_add = -1
+    vassal_tax_contribution_add = -0.2
     stacking = yes
 }
 vassal_tax_contribution_mult = {
     icon = economy_positive
-    vassal_tax_contribution_mult = 0.5
+    vassal_tax_contribution_mult = 0.2
     stacking = yes
 }
 vassal_tax_contribution_mult_neg = {
     icon = economy_negative
-    vassal_tax_contribution_mult = -0.5
+    vassal_tax_contribution_mult = -0.2
     stacking = yes
 }
 intimidated_vassal_tax_contribution = {
     icon = economy_positive
-    intimidated_vassal_tax_contribution_add = 1
+    intimidated_vassal_tax_contribution_add = 0.2
     stacking = yes
 }
 intimidated_vassal_tax_contribution_neg = {
     icon = economy_negative
-    intimidated_vassal_tax_contribution_add = -1
+    intimidated_vassal_tax_contribution_add = -0.2
     stacking = yes
 }
 intimidated_vassal_tax_contribution_mult = {
     icon = economy_positive
-    intimidated_vassal_tax_contribution_mult = 0.5
+    intimidated_vassal_tax_contribution_mult = 0.2
     stacking = yes
 }
 intimidated_vassal_tax_contribution_mult_neg = {
     icon = economy_negative
-    intimidated_vassal_tax_contribution_mult = -0.5
+    intimidated_vassal_tax_contribution_mult = -0.2
     stacking = yes
 }
 cowed_vassal_tax_contribution = {
     icon = economy_positive
-    cowed_vassal_tax_contribution_add = 1
+    cowed_vassal_tax_contribution_add = 0.2
     stacking = yes
 }
 cowed_vassal_tax_contribution_neg = {
     icon = economy_negative
-    cowed_vassal_tax_contribution_add = -1
+    cowed_vassal_tax_contribution_add = -0.2
     stacking = yes
 }
 cowed_vassal_tax_contribution_mult = {
     icon = economy_positive
-    cowed_vassal_tax_contribution_mult = 0.5
+    cowed_vassal_tax_contribution_mult = 0.2
     stacking = yes
 }
 cowed_vassal_tax_contribution_mult_neg = {
     icon = economy_negative
-    cowed_vassal_tax_contribution_mult = -0.5
+    cowed_vassal_tax_contribution_mult = -0.2
     stacking = yes
 }
 vassal_levy_contribution = {
@@ -1640,22 +1640,22 @@ cowed_vassal_levy_contribution_mult_neg = {
 }
 happy_powerful_vassal_tax_contribution = {
     icon = prowess_positive
-    happy_powerful_vassal_tax_contribution_add = 1
+    happy_powerful_vassal_tax_contribution_add = 0.2
     stacking = yes
 }
 happy_powerful_vassal_tax_contribution_neg = {
     icon = prowess_negative
-    happy_powerful_vassal_tax_contribution_add = -1
+    happy_powerful_vassal_tax_contribution_add = -0.2
     stacking = yes
 }
 happy_powerful_vassal_tax_contribution_mult = {
     icon = prowess_positive
-    happy_powerful_vassal_tax_contribution_mult = 0.5
+    happy_powerful_vassal_tax_contribution_mult = 0.2
     stacking = yes
 }
 happy_powerful_vassal_tax_contribution_mult_neg = {
     icon = prowess_negative
-    happy_powerful_vassal_tax_contribution_mult = -0.5
+    happy_powerful_vassal_tax_contribution_mult = -0.2
     stacking = yes
 }
 happy_powerful_vassal_levy_contribution = {
@@ -4161,4 +4161,86 @@ no_legitimacy_change = {
     icon = social_positive
     legitimacy_gain_mult = -10
     legitimacy_loss_mult = -10
+}
+
+republic_government_tax_contribution_mult = {
+    icon = economy_positive
+    republic_government_tax_contribution_mult = 0.2
+    stacking = yes
+}
+republic_government_tax_contribution_mult_neg = {
+    icon = economy_negative
+    republic_government_tax_contribution_mult = -0.2
+    stacking = yes
+}
+republic_government_tax_contribution_add = {
+    icon = economy_positive
+    republic_government_tax_contribution_add = 0.2
+    stacking = yes
+}
+republic_government_tax_contribution_add_neg = {
+    icon = economy_negative
+    republic_government_tax_contribution_add = -0.2
+    stacking = yes
+}
+republic_government_levy_contribution_add = {
+    icon = prowess_positive
+    republic_government_levy_contribution_add = 0.2
+    stacking = yes
+}
+republic_government_levy_contribution_add_neg = {
+    icon = prowess_negative
+    republic_government_levy_contribution_add = -0.2
+    stacking = yes
+}
+republic_government_levy_contribution_mult = {
+    icon = prowess_positive
+    republic_government_levy_contribution_mult = 0.2
+    stacking = yes
+}
+republic_government_levy_contribution_mult_neg = {
+    icon = prowess_negative
+    republic_government_levy_contribution_mult = -0.2
+    stacking = yes
+}
+
+theocracy_government_tax_contribution_mult = {
+    icon = economy_positive
+    theocracy_government_tax_contribution_mult = 0.2
+    stacking = yes
+}
+theocracy_government_tax_contribution_mult_neg = {
+    icon = economy_negative
+    theocracy_government_tax_contribution_mult = -0.2
+    stacking = yes
+}
+theocracy_government_tax_contribution_add = {
+    icon = economy_positive
+    theocracy_government_tax_contribution_add = 0.2
+    stacking = yes
+}
+theocracy_government_tax_contribution_add_neg = {
+    icon = economy_negative
+    theocracy_government_tax_contribution_add = -0.2
+    stacking = yes
+}
+theocracy_government_levy_contribution_add = {
+    icon = prowess_positive
+    theocracy_government_levy_contribution_add = 0.2
+    stacking = yes
+}
+theocracy_government_levy_contribution_add_neg = {
+    icon = prowess_negative
+    theocracy_government_levy_contribution_add = -0.2
+    stacking = yes
+}
+theocracy_government_levy_contribution_mult = {
+    icon = prowess_positive
+    theocracy_government_levy_contribution_mult = 0.2
+    stacking = yes
+}
+theocracy_government_levy_contribution_mult_neg = {
+    icon = prowess_negative
+    theocracy_government_levy_contribution_mult = -0.2
+    stacking = yes
 }
