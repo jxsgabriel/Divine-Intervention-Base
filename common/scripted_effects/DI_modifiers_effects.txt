@@ -4410,3 +4410,7 @@
 		remove_all_character_modifier_instances = DI_money_printer
 	}
 }
+
+apply_modifier_effect = {
+	
+}

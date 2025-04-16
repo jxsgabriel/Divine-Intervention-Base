@@ -966,6 +966,56 @@ DI_char_spawner_no_traits_sgui = {
     }
 }
 
+DI_char_spawner_dynasty_sgui = {
+    scope = character
+
+    effect = {
+        random_owned_story = {
+            limit = {
+                story_type = DI_misc_variables_story
+            }
+            save_scope_as = DI_story
+        }
+
+        scope:DI_story = {
+            if = {
+                limit = {
+                    has_variable = DI_modify_dynasty_var
+                }
+                remove_variable = DI_modify_dynasty_var
+            }
+            else = {
+                set_variable = DI_modify_dynasty_var
+            }
+        }
+    }
+}
+
+DI_char_spawner_house_sgui = {
+    scope = character
+
+    effect = {
+        random_owned_story = {
+            limit = {
+                story_type = DI_misc_variables_story
+            }
+            save_scope_as = DI_story
+        }
+
+        scope:DI_story = {
+            if = {
+                limit = {
+                    has_variable = DI_modify_house_var
+                }
+                remove_variable = DI_modify_house_var
+            }
+            else = {
+                set_variable = DI_modify_house_var
+            }
+        }
+    }
+}
+
 DI_vbox_character_list = {
     scope = character
 
