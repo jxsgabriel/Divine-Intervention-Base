@@ -986,6 +986,14 @@ DI_char_spawner_dynasty_sgui = {
             }
             else = {
                 set_variable = DI_modify_dynasty_var
+
+                ## Remove the house modify check mark
+                if = {
+                    limit = {
+                        has_variable = DI_modify_house_var
+                    }
+                    remove_variable = DI_modify_house_var
+                }
             }
         }
     }
@@ -1011,6 +1019,13 @@ DI_char_spawner_house_sgui = {
             }
             else = {
                 set_variable = DI_modify_house_var
+                ## Remove the dynasty modify check mark
+                if = {
+                    limit = {
+                        has_variable = DI_modify_dynasty_var
+                    }
+                    remove_variable = DI_modify_dynasty_var
+                }
             }
         }
     }
