@@ -4416,7 +4416,31 @@ apply_modifier_effect = {
 		limit = { story_type = DI_misc_variables_story }
 		save_scope_as = DI_story
 	}
+	if = {
+		limit = { scope:DI_story = { has_variable = DI_modify_dynasty_var } }
+		apply_dynasty_or_house_modifier_effect = {
+			MODIFIER_ACTION = $MODIFIER_ACTION$
+			MODIFIER_NAME = $MODIFIER_NAME$
+			MODIFIER_TYPE = dynasty 
+		}
+	}
+	else_if = {
+		limit = { scope:DI_story = { has_variable = DI_modify_house_var } }
+		apply_dynasty_or_house_modifier_effect = {
+			MODIFIER_ACTION = $MODIFIER_ACTION$
+			MODIFIER_NAME = $MODIFIER_NAME$
+			MODIFIER_TYPE = house 
+		}
+	}
+	else = {
+		apply_character_modifier_effect = {
+			MODIFIER_ACTION = $MODIFIER_ACTION$
+			MODIFIER_NAME = $MODIFIER_NAME$
+		}
+	}
+}
 
+apply_character_modifier_effect = {
 	if = {
 		limit = { scope:DI_story = { has_variable = DI_pinned_char_var } }
 		every_living_character = {
@@ -4431,4 +4455,46 @@ apply_modifier_effect = {
 		$MODIFIER_ACTION$_character_modifier = $MODIFIER_NAME$
 		}
 	}
+}
+
+apply_dynasty_or_house_modifier_effect = {
+	## Create list of dynasties to modify
+	debug_log = "modifying dynasty"
+	if = {
+		limit = { scope:DI_story = { has_variable = DI_pinned_char_var } }
+		every_living_character = {
+			limit = { 
+				has_character_flag = pinned_for_edit 
+				has_dynasty = yes
+			}
+
+			$MODIFIER_TYPE$ = {
+				## unique dynasty list
+				trigger = {NOT = { is_in_list = pinned_character_dynasty_list }} 
+				add_to_variable_list = { name = pinned_character_dynasty_list target = this }
+			}
+		}
+
+		if = {
+			limit = { has_variable_list = pinned_character_dynasty_list }
+
+			every_in_list = {
+				list = pinned_character_dynasty_list
+				$MODIFIER_ACTION$_$MODIFIER_TYPE$_modifier = $MODIFIER_NAME$
+			}
+
+			clear_variable_list = pinned_character_dynasty_list
+		}
+	}
+	else = {
+		debug_log = "modifying dynasty for player"
+		while = { count = scope:DI_story.var:DI_modifier_increment_value
+			$MODIFIER_TYPE$  = {
+				$MODIFIER_ACTION$_$MODIFIER_TYPE$_modifier = $MODIFIER_NAME$
+			}
+		}
+	}
+
+	
+	
 }
