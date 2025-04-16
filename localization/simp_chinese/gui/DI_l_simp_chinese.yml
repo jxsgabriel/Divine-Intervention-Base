@@ -749,6 +749,7 @@
  DI_pin_vassal_titles: "钉选所有封臣头衔"
  DI_pin_sub_realm_titles: "钉选所有次级领地头衔"
  DI_pin_realm_titles: "钉选所有领地头衔"
+ DI_pin_knights: "钉选所有[GetPlayer.Custom( 'KnightCulturePlural' )]"
  DI_change_character_interaction: "切换角色"
  DI_change_character_desc: "切换为扮演此角色"
  DI_change_character_name_interaction: "改名"

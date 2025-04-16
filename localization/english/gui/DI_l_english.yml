@@ -756,6 +756,7 @@
  DI_pin_vassal_titles: "Pin All Vassal Titles"
  DI_pin_sub_realm_titles: "Pin All Sub-Realm Titles"
  DI_pin_realm_titles: "Pin All Realm Titles"
+ DI_pin_knights: "Pin All [GetPlayer.Custom( 'KnightCulturePlural' )]"
  DI_change_character_interaction: "#color_yellow #bold (DI)#!#! Switch Character"
  DI_change_character_desc: "Switch to playing this character."
  DI_change_character_name_interaction: "#color_yellow #bold (DI)#!#! Change Name"

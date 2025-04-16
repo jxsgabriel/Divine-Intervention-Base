@@ -106,6 +106,10 @@ DI_pin_character_interaction = {
         flag = lovers
         localization = DI_pin_lovers
     }
+    send_option = {
+        flag = knights
+        localization = DI_pin_knights
+    }
 
     on_accept = {
         scope:recipient = {
@@ -190,6 +194,18 @@ DI_pin_character_interaction = {
 
                 every_relation = {
                     type = soulmate
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+            }
+
+            if = {
+                limit = {scope:knights = yes}
+
+                every_courtier = {
+                    limit = { is_knight = yes }
                     add_character_flag = pinned_for_edit
                     scope:actor = {
                         add_to_variable_list = { name = pinned_characters target = prev }

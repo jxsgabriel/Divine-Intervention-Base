@@ -756,6 +756,7 @@
  DI_pin_vassal_titles: "Épingler Tous les Titres des Vassaux"
  DI_pin_sub_realm_titles: "Épingler Tous les Titres du Sous-Royaume"
  DI_pin_realm_titles: "Épingler Tous les Titres du Royaume"
+ DI_pin_knights: "Épingler Tous les [GetPlayer.Custom( 'KnightCulturePlural' )]"
  DI_change_character_interaction: "Changer de Personnage"
  DI_change_character_desc: "Passer à ce personnage pour jouer."
  DI_change_character_name_interaction: "Changer de Nom"
