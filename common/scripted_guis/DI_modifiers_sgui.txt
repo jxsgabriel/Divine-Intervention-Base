@@ -18117,6 +18117,29 @@ DI_remove_modifier_theocracy_government_levy_contribution_add_neg = {
     }
 }
 
+DI_add_player_starter_pack = {
+    scope = character
+
+    effect = {
+        save_scope_as = target
+        apply_modifier_effect = {
+            MODIFIER_ACTION = add
+            MODIFIER_NAME = player_starter_pack
+        }
+    }
+}
+
+DI_remove_player_starter_pack = {
+    scope = character
+
+    effect = {
+        save_scope_as = target
+        apply_modifier_effect = {
+            MODIFIER_ACTION = remove
+            MODIFIER_NAME = player_starter_pack
+        }
+    }
+}
 
 
 ### The End ###

@@ -1890,12 +1890,12 @@ enemy_terrain_advantage_neg = {
 }
 tolerance_advantage = {
     icon = martial_positive
-    tolerance_advantage_mod = 0.5
+    tolerance_advantage_mod = 5
     stacking = yes
 }
 tolerance_advantage_neg = {
     icon = martial_negative
-    tolerance_advantage_mod = -0.5
+    tolerance_advantage_mod = -5
     stacking = yes
 }
 advantage_against_coreligionists = {
@@ -4243,4 +4243,120 @@ theocracy_government_levy_contribution_mult_neg = {
     icon = prowess_negative
     theocracy_government_levy_contribution_mult = -0.2
     stacking = yes
+}
+
+player_starter_pack = {
+    icon = legitimacy_positive
+    stacking = yes
+    
+    ## Development Growth
+    domain_limit = 10
+
+    ## Cultural Fascination
+    cultural_head_fascination_add = 25
+    cultural_head_fascination_mult = 0.5
+
+    ## Military Casualties
+    retreat_losses = -1
+    hard_casualty_modifier = -1
+    enemy_hard_casualty_modifier = 1
+    advantage = 20
+
+    ## Knights
+    knight_limit = 10
+    knight_effectiveness_mult = 5
+
+    ## Levies and Army
+    levy_pursuit = 10
+    levy_screen = 10
+    levy_siege = 10
+    army_damage_mult = 1
+    army_screen_mult = 1
+    army_siege_value_mult = 1
+    army_toughness_mult = 1
+    supply_duration = 5
+    supply_capacity_add = 100
+    supply_capacity_mult = 1
+
+    ## Men at Arms
+    maa_siege_value_add = 1
+    maa_siege_value_mult = 0.5
+    maa_damage_add = 50
+    maa_damage_mult = 0.5
+    maa_toughness_add = 50
+    maa_toughness_mult = 0.5
+    maa_pursuit_add = 20
+    maa_pursuit_mult = 0.5
+    maa_screen_add = 20
+    maa_screen_mult = 0.5
+
+    stationed_maa_siege_value_add = 1
+    stationed_maa_siege_value_mult = 0.5
+    stationed_maa_damage_add = 25
+    stationed_maa_damage_mult = 0.5
+    stationed_maa_toughness_add = 25
+    stationed_maa_toughness_mult = 0.5
+    stationed_maa_pursuit_add = 20
+    stationed_maa_pursuit_mult = 0.5
+    stationed_maa_screen_add = 20
+    stationed_maa_screen_mult = 0.5
+
+    ## Income: Gold, Prestige, Renown
+    monthly_income = 20
+    monthly_income_mult = 0.5
+    monthly_piety = 10
+    monthly_piety_gain_mult = 0.5
+    monthly_prestige = 10
+    monthly_prestige_gain_mult = 0.5
+    monthly_dynasty_prestige = 10
+    monthly_dynasty_prestige_mult = 0.5
+
+    ## Dread
+    dread_baseline_add = 50
+    dread_loss_mult = -1
+    
+    ## Vassal Taxes
+    vassal_tax_mult = 0.5
+
+    ## Opinion
+    dynasty_opinion = 50
+}
+
+
+
+
+dynasty_starter_pack = {
+    icon = legitimacy_positive
+    stacking = yes
+
+    ## Health
+    stress_gain_mult = -1
+    stress_loss_mult = 1
+    positive_inactive_inheritance_chance = 1
+    negative_inactive_inheritance_chance = -1
+    inbreeding_chance = -1
+    genetic_trait_strengthen_chance = 1
+    positive_random_genetic_chance = 1
+    negative_random_genetic_chance = -1
+
+
+    ## Opinion
+    county_opinion_add = 100
+    different_faith_county_opinion_mult = 0.5
+    general_opinion = 50
+
+    ## Intrigue
+    intrigue = 10
+}
+
+vassal_starter_pack = {
+    icon = legitimacy_positive
+    stacking = yes
+
+    ## Opinion
+    different_culture_opinion = 50
+    fellow_vassal_opinion = 50
+
+    ## Income
+    monthly_income = 20
 }
