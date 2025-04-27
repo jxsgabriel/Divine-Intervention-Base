@@ -4249,8 +4249,10 @@ player_starter_pack = {
     icon = legitimacy_positive
     stacking = yes
     
-    ## Development Growth
+    ## Domain and Development Growth
     domain_limit = 10
+    development_growth = 10
+    development_growth_factor = 0.3
 
     ## Cultural Fascination
     cultural_head_fascination_add = 25
@@ -4267,18 +4269,23 @@ player_starter_pack = {
     knight_effectiveness_mult = 5
 
     ## Levies and Army
+    levy_size = 1
     levy_pursuit = 10
     levy_screen = 10
-    levy_siege = 10
+    levy_siege = 1
     army_damage_mult = 1
     army_screen_mult = 1
     army_siege_value_mult = 1
     army_toughness_mult = 1
     supply_duration = 5
-    supply_capacity_add = 100
+    supply_capacity_add = 500
     supply_capacity_mult = 1
+    min_combat_roll = 2
+    max_combat_roll = 2
 
     ## Men at Arms
+    men_at_arms_limit = 10
+    men_at_arms_cap = 10
     maa_siege_value_add = 1
     maa_siege_value_mult = 0.5
     maa_damage_add = 50
@@ -4314,16 +4321,21 @@ player_starter_pack = {
     ## Dread
     dread_baseline_add = 50
     dread_loss_mult = -1
-    
-    ## Vassal Taxes
+
+    ## Taxes
     vassal_tax_mult = 0.5
+    tax_mult = 0.5
+    domain_tax_mult = 0.5
+    feudal_government_levy_contribution_mult = 1
+    feudal_government_tax_contribution_mult = 3
+    theocracy_government_levy_contribution_mult = 1
+    theocracy_government_tax_contribution_mult = 1
+    republic_government_levy_contribution_mult = 1
+    republic_government_tax_contribution_mult = 1
 
     ## Opinion
     dynasty_opinion = 50
 }
-
-
-
 
 dynasty_starter_pack = {
     icon = legitimacy_positive
@@ -4339,10 +4351,10 @@ dynasty_starter_pack = {
     positive_random_genetic_chance = 1
     negative_random_genetic_chance = -1
 
-
     ## Opinion
     county_opinion_add = 100
-    different_faith_county_opinion_mult = 0.5
+    different_faith_county_opinion_mult = -1
+
     general_opinion = 50
 
     ## Intrigue
@@ -4350,7 +4362,7 @@ dynasty_starter_pack = {
 }
 
 vassal_starter_pack = {
-    icon = legitimacy_positive
+    icon = letter_positive
     stacking = yes
 
     ## Opinion
@@ -4358,5 +4370,12 @@ vassal_starter_pack = {
     fellow_vassal_opinion = 50
 
     ## Income
-    monthly_income = 20
+    monthly_income = 10
+
+    ## Taxes
+    tax_mult = .5
+    domain_tax_mult = .5
+
+    development_growth = 5
+    development_growth_factor = 0.2
 }

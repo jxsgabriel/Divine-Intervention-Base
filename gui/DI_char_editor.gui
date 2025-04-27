@@ -217,7 +217,7 @@ window = {
 					visible = "[GetVariableSystem.HasValue('char_editor_tab', 'modifiers')]"
 					button_checkbox_label = {						
 						layoutpolicy_horizontal = expanding
-						onclick = "[GetScriptedGui('DI_char_spawner_dynasty_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						onclick = "[GetScriptedGui('DI_char_editor_dynasty_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 						
 						blockoverride "checkbox" 
 						{
@@ -235,7 +235,7 @@ window = {
 					visible = "[GetVariableSystem.HasValue('char_editor_tab', 'modifiers')]"
 					button_checkbox_label = {						
 						layoutpolicy_horizontal = expanding
-						onclick = "[GetScriptedGui('DI_char_spawner_house_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						onclick = "[GetScriptedGui('DI_char_editor_house_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 						
 						blockoverride "checkbox" 
 						{

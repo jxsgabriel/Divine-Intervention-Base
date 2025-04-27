@@ -966,3 +966,6 @@
  houseName: "Set House Name"
  DI_get_house_name: "[recipient.GetDynastyHouseNameNoTooltip]"
  CHEAT_ACTIONS: "Divine Intervention actions"
+ player_starter_pack: "Supreme Ruler"
+ dynasty_starter_pack: "Dynastia Ultima"
+ vassal_starter_pack: "Vassallus Iuratus"

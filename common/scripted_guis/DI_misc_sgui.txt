@@ -966,7 +966,7 @@ DI_char_spawner_no_traits_sgui = {
     }
 }
 
-DI_char_spawner_dynasty_sgui = {
+DI_char_editor_dynasty_sgui = {
     scope = character
 
     effect = {
@@ -999,7 +999,7 @@ DI_char_spawner_dynasty_sgui = {
     }
 }
 
-DI_char_spawner_house_sgui = {
+DI_char_editor_house_sgui = {
     scope = character
 
     effect = {

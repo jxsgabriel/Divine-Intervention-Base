@@ -17833,11 +17833,7 @@ DI_clear_modifiers = {
     scope = character
 
     effect = {
-        save_scope_as = target
-        apply_modifier_effect = {
-            MODIFIER_ACTION = add
-            MODIFIER_NAME = republic_government_tax_contribution_mult_neg
-        }
+        DI_remove_all_character_modifiers_effect = yes
     }
 }
 
@@ -18137,6 +18133,54 @@ DI_remove_player_starter_pack = {
         apply_modifier_effect = {
             MODIFIER_ACTION = remove
             MODIFIER_NAME = player_starter_pack
+        }
+    }
+}
+
+DI_add_dynasty_starter_pack = {
+    scope = character
+
+    effect = {
+        save_scope_as = target
+        apply_modifier_effect = {
+            MODIFIER_ACTION = add
+            MODIFIER_NAME = dynasty_starter_pack
+        }
+    }
+}
+
+DI_remove_dynasty_starter_pack = {
+    scope = character
+
+    effect = {
+        save_scope_as = target
+        apply_modifier_effect = {
+            MODIFIER_ACTION = remove
+            MODIFIER_NAME = dynasty_starter_pack
+        }
+    }
+}
+
+DI_add_vassal_starter_pack = {
+    scope = character
+
+    effect = {
+        save_scope_as = target
+        apply_modifier_effect = {
+            MODIFIER_ACTION = add
+            MODIFIER_NAME = vassal_starter_pack
+        }
+    }
+}
+
+DI_remove_vassal_starter_pack = {
+    scope = character
+
+    effect = {
+        save_scope_as = target
+        apply_modifier_effect = {
+            MODIFIER_ACTION = remove
+            MODIFIER_NAME = vassal_starter_pack
         }
     }
 }
