@@ -1464,11 +1464,10 @@ DI_poach_knight_character_effect = {
 		}
 	}
 
-	add_gold = 15
-
 	## Get a random non-landed 
 	random_living_character = {
 		limit = {
+			is_married = no
 			has_father = yes
 			father = { is_landed = no }
 			is_landed = no
