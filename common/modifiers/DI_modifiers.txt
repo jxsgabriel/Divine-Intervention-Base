@@ -4251,8 +4251,8 @@ player_starter_pack = {
     
     ## Domain and Development Growth
     domain_limit = 10
-    development_growth = 1
-    development_growth_factor = 0.3
+    development_growth = 5
+    development_growth_factor = 0.1
     epidemic_resistance = 100
 
     ## Cultural Fascination
@@ -4343,8 +4343,8 @@ dynasty_starter_pack = {
     stacking = no
 
     ## Health
-    stress_gain_mult = -1
-    stress_loss_mult = 1
+    stress_gain_mult = -1.5
+    stress_loss_mult = 1.5
     positive_inactive_inheritance_chance = 1
     negative_inactive_inheritance_chance = -1
     inbreeding_chance = -1
@@ -4380,8 +4380,8 @@ vassal_starter_pack = {
     tax_mult = .5
     domain_tax_mult = .5
 
-    development_growth = 5
-    development_growth_factor = 0.2
+    development_growth = 1
+    development_growth_factor = 0.05
 
     ## Epidemics
     epidemic_resistance = 100

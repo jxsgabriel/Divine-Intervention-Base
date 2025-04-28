@@ -1922,6 +1922,14 @@ DI_add_secrets_interaction = {
         flag = homosexual
         localization = secret_homosexual
     }
+    send_option = {
+        is_valid = {
+            NOT = { scope:recipient = { any_secret = { secret_type = secret_witch } } }
+        }
+
+        flag = witch
+        localization = secret_witch
+    }
 
     on_accept = {
         scope:actor = {
@@ -1943,6 +1951,7 @@ DI_add_secrets_interaction = {
                         give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_cannibal }
                         give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_non_believer }
                         give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_homosexual }
+                        give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_witch }
                     }
                 }
                 scope:incest = {
@@ -1968,6 +1977,11 @@ DI_add_secrets_interaction = {
                 scope:homosexual = {
                     scope:recipient = {
                         give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_homosexual }
+                    }
+                }
+                scope:witch = {
+                    scope:recipient = {
+                        give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_witch }
                     }
                 }
 
