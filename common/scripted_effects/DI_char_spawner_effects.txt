@@ -1452,6 +1452,139 @@ DI_spawn_court_character_effect = {
 	}
 }
 
+DI_poach_knight_character_effect = {
+	scope:DI_story = {
+		save_scope_value_as = {
+			name = DI_char_spawner_age_increment_value
+			value = var:DI_char_spawner_age_increment_value
+		}
+		save_scope_value_as = {
+			name = DI_female_chance
+			value = var:DI_female_chance
+		}
+	}
+
+	add_gold = 15
+
+	## Get a random non-landed 
+	random_living_character = {
+		limit = {
+			has_father = yes
+			father = { is_landed = no }
+			is_landed = no
+			DI_char_spawner_gender_check = yes
+			age >= scope:DI_story.var:DI_char_spawner_age_increment_value
+		}
+		save_scope_as = new_courtier
+		set_age = scope:DI_story.var:DI_char_spawner_age_increment_value
+		scope:target = {
+            add_courtier = scope:new_courtier
+        }
+
+		set_character_faith = scope:target.faith
+
+		## Set up skills
+		add_diplomacy_skill = -100
+		add_martial_skill = -100
+		add_stewardship_skill = -100
+		add_intrigue_skill = -100
+		add_learning_skill = -100
+		add_prowess_skill = -100
+
+		add_diplomacy_skill = 10
+		add_martial_skill = 50
+		add_stewardship_skill = 10
+		add_intrigue_skill = 15
+		add_learning_skill = 10
+		add_prowess_skill = 20
+
+
+		## Set up traits
+		clear_traits = yes
+		add_knight_traits_effect = yes
+		if = {
+			limit = {
+				scope:DI_story = { has_variable = DI_char_spawner_good_traits }
+			}
+			add_trait = loyal
+			add_trait = beauty_good_3
+			add_trait = intellect_good_3
+			add_trait = physique_good_3
+		}
+	}
+
+
+	}
+
+	## Find ranom character that matches gender
+
+	# create_character = {
+	# 	age = scope:DI_story.var:DI_char_spawner_age_increment_value
+	# 	gender_female_chance = scope:DI_story.var:DI_female_chance
+	# 	health = 6
+	# 	fertility = 6
+	# 	employer = scope:target
+	# 	faith = scope:target.faith
+	# 	culture = scope:target.culture
+	# 	dynasty = generate
+	# 	martial = scope:root_target.var:DI_cs_martial
+	# 	prowess = scope:root_target.var:DI_cs_prowess
+	# 	diplomacy = scope:root_target.var:DI_cs_diplomacy
+	# 	stewardship = scope:root_target.var:DI_cs_stewardship
+	# 	intrigue = scope:root_target.var:DI_cs_intrigue
+	# 	learning = scope:root_target.var:DI_cs_learning
+	# 	random_traits = scope:root_target.var:DI_cs_random_traits
+	# 	save_scope_as = new_courtier
+	# }
+	# scope:DI_story = {
+	# 	if = {
+	# 		limit = {
+	# 			has_variable = DI_char_spawner_immortal 
+	# 		}
+	# 		scope:new_courtier = {
+	# 			add_trait = DI_immortal
+	# 		}
+	# 	}
+	# 	if = {
+	# 		limit = {
+	# 			has_variable = DI_char_spawner_100_stat_man
+	# 		}
+	# 		scope:new_courtier = {
+	# 			add_trait = 100_stat_man
+	# 		}
+	# 	}
+	# 	if = {
+	# 		limit = {
+	# 			has_variable = DI_char_spawner_good_traits 
+	# 		}
+	# 		scope:new_courtier = {
+	# 			add_trait = loyal
+	# 			add_trait = beauty_good_3
+	# 			add_trait = intellect_good_3
+	# 			add_trait = physique_good_3
+	# 		}
+	# 	}
+	# }
+	# scope:root_target = {
+	# 	if = {
+	# 		limit = {
+	# 			has_variable_list = DI_cs_trait_list
+	# 		}
+			
+	# 		scope:new_courtier = {
+	# 			remove_any_education_traits_effect = yes
+	# 		}
+
+	# 		every_in_list = {
+	# 			variable = DI_cs_trait_list
+	# 			scope:new_courtier = {
+	# 				add_trait = prev
+	# 			}
+	# 		}
+	# 	}
+	# }
+}
+
 DI_spawn_low_court_character_effect = {
 	scope:DI_story = {
 		save_scope_value_as = {

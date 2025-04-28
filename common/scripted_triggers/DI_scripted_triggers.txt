@@ -15,3 +15,16 @@
         scope:track = flag:Marauder
     }
 }
+
+DI_char_spawner_gender_check = {
+    OR = {
+        AND = {
+            is_female = yes
+            scope:DI_story = { has_variable = DI_char_spawner_female }
+        }
+        AND = {
+            is_female = no
+            NOT = {scope:DI_story = { has_variable = DI_char_spawner_female }}
+        }
+    }
+}

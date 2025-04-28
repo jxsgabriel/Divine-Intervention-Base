@@ -520,6 +520,8 @@
  DI_commander_tt: ""
  DI_knight: "Knight" # button label
  DI_knight_tt: ""
+ DI_knight_poached: "Knight (Poached)" # button label
+ DI_knight_poached_tt: ""
  DI_normal_courtier: "Courtier" # button label
  DI_normal_courtier_tt: "A courtier, with a generated house."
  DI_low_normal_courtier: "Low Courtier" # button label
