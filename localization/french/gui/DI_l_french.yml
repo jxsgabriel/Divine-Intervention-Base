@@ -125,6 +125,10 @@
  DI_ce_special_traits_button_tt: "#Bold Clic gauche#! pour ajouter tous les traits spéciaux ajoutés par ce mod.\n#Bold Clic droit#! pour retirer tous les traits spéciaux ajoutés par ce mod."
  DI_ce_commander_traits_button: "Traits de Commandant" # étiquette du bouton
  DI_ce_commander_traits_button_tt: "#Bold Clic gauche#! pour ajouter tous les traits de commandant.\n#Bold Clic droit#! pour retirer tous les traits de commandant."
+ DI_ce_knight_traits_button: "Knight Traits" # button label
+ DI_ce_knight_traits_button_tt: "#Bold Left-Click#! to add all knight traits.\n#Bold Right-Click#! to remove all knight traits."
+ DI_ce_vassal_traits_button: "Vassal Traits" # button label
+ DI_ce_vassal_traits_button_tt: "#Bold Left-Click#! to add all vassal traits.\n#Bold Right-Click#! to remove all vassal traits."
  DI_ce_aggressive_traits_button: "Personnalité Agressive" # étiquette du bouton
  DI_ce_aggressive_traits_button_tt: "#Bold Clic gauche#! pour donner des traits de personnalité agressifs.\n#Bold Clic droit#! pour retirer les traits de personnalité agressifs."
  DI_ce_timid_traits_button: "Personnalité Timide" # étiquette du bouton
@@ -757,6 +761,7 @@
  DI_pin_sub_realm_titles: "Épingler Tous les Titres du Sous-Royaume"
  DI_pin_realm_titles: "Épingler Tous les Titres du Royaume"
  DI_pin_knights: "Épingler Tous les [GetPlayer.Custom( 'KnightCulturePlural' )]"
+ DI_pin_sub_realm_vassals: "Épingler Tous les [GetPlayer.Custom('GetRealmOrDomicile')|U] [GetPlayer.Custom( 'GetFollowerOrVassalPlural' )|U]"
  DI_change_character_interaction: "Changer de Personnage"
  DI_change_character_desc: "Passer à ce personnage pour jouer."
  DI_change_character_name_interaction: "Changer de Nom"
@@ -909,6 +914,7 @@
  DI_abdicate: "Abdiquer"
  DI_reset_story_variables: "Réinitialiser les Variables d'Histoire"
  DI_reset_story_variables_desc: "Réinitialise toutes les différentes variables de menu,\n utilisez ceci si vous avez des problèmes avec des options de menu qui ne fonctionnent pas,\n mais envoyez-moi aussi votre sauvegarde, et une image de ce qui ne va pas."
+ DI_murder_old_knights_interaction: "Murder Old Knights"
  DI_permanent_health: "Santé Permanente"
  DI_permanent_health_desc: "Applique un drapeau au personnage qui supprime tous les drapeaux / modificateurs / traits de mauvaise santé une fois par an. C'est le même effet que l'option présente dans l'éditeur de personnage, Éliminer les Problèmes de Santé, mais il est automatiquement appliqué une fois par an."
  no_lifestyle_diplomacy:0 "Diplomatie (arrête les notifications)"

@@ -4247,12 +4247,13 @@ theocracy_government_levy_contribution_mult_neg = {
 
 player_starter_pack = {
     icon = legitimacy_positive
-    stacking = yes
+    stacking = no
     
     ## Domain and Development Growth
     domain_limit = 10
-    development_growth = 10
+    development_growth = 1
     development_growth_factor = 0.3
+    epidemic_resistance = 100
 
     ## Cultural Fascination
     cultural_head_fascination_add = 25
@@ -4339,7 +4340,7 @@ player_starter_pack = {
 
 dynasty_starter_pack = {
     icon = legitimacy_positive
-    stacking = yes
+    stacking = no
 
     ## Health
     stress_gain_mult = -1
@@ -4358,12 +4359,15 @@ dynasty_starter_pack = {
     general_opinion = 50
 
     ## Intrigue
-    intrigue = 10
+    intrigue = 5
+
+    ## Epidemics
+    epidemic_resistance = 100
 }
 
 vassal_starter_pack = {
     icon = letter_positive
-    stacking = yes
+    stacking = no
 
     ## Opinion
     different_culture_opinion = 50
@@ -4378,4 +4382,7 @@ vassal_starter_pack = {
 
     development_growth = 5
     development_growth_factor = 0.2
+
+    ## Epidemics
+    epidemic_resistance = 100
 }

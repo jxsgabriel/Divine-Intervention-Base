@@ -87,6 +87,10 @@ DI_pin_character_interaction = {
         localization = DI_pin_vassals
     }
     send_option = {
+        flag = sub_realm_vassals
+        localization = DI_pin_sub_realm_vassals
+    }
+    send_option = {
         flag = courtiers
         localization = DI_pin_courtiers
     }
@@ -126,6 +130,17 @@ DI_pin_character_interaction = {
                 limit = {scope:vassals = yes}
 
                 every_vassal = {
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+            }
+
+            if = {
+                limit = {scope:sub_realm_vassals = yes}
+
+                every_vassal_or_below = {
                     add_character_flag = pinned_for_edit
                     scope:actor = {
                         add_to_variable_list = { name = pinned_characters target = prev }
@@ -5154,3 +5169,35 @@ DI_toggle_menu_button_interaction = {
     }
 }
 
+### Murder Old Knights ###
+DI_murder_old_knights_interaction = {
+    category = interaction_category_cheat_menu
+    use_diplomatic_range = no
+    ignores_pending_interaction_block = yes
+    common_interaction = no
+    icon = icon_dead
+
+    is_shown = {
+        scope:actor = {
+            is_ai = no
+            any_owned_story = {
+                story_type = DI_misc_variables_story
+                has_variable = DI_cheat_menu
+            }
+        }
+    }
+
+    on_accept = {
+        scope:recipient = {
+            every_courtier = {
+                limit = { 
+                    is_knight = yes
+                    is_acclaimed = no
+                    age > 50
+                }
+                death = { death_reason = death_natural_causes }
+            }
+        }
+    }
+    auto_accept = yes
+}

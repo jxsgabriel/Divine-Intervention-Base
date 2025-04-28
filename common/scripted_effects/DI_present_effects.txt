@@ -1,30 +1,18 @@
 ﻿personality_trait_randomizer_effect = {
     random_list = {
-        10 = { add_trait = lustful }
-        10 = { add_trait = chaste }
-        10 = { add_trait = gluttonous }
         10 = { add_trait = temperate }
-        10 = { add_trait = greedy }
         10 = { add_trait = generous }
-        10 = { add_trait = lazy }
         10 = { add_trait = diligent }
-        10 = { add_trait = wrathful }
         10 = { add_trait = calm }
         10 = { add_trait = patient }
-        10 = { add_trait = impatient }
     }
     random_list = {
-        10 = { add_trait = arrogant }
         10 = { add_trait = humble }
-        10 = { add_trait = deceitful }
         10 = { add_trait = honest }
         10 = { add_trait = craven }
         10 = { add_trait = brave }
-        10 = { add_trait = shy }
         10 = { add_trait = gregarious }
-        10 = { add_trait = ambitious }
         10 = { add_trait = content }
-        10 = { add_trait = arbitrary }
     }
     random_list = {
         10 = { add_trait = just }
@@ -33,13 +21,23 @@
         10 = { add_trait = paranoid }
         10 = { add_trait = trusting }
         10 = { add_trait = compassionate }
-        10 = { add_trait = callous }
-        10 = { add_trait = sadistic }
         10 = { add_trait = stubborn }
         10 = { add_trait = fickle }
-        10 = { add_trait = vengeful }
         10 = { add_trait = forgiving }
     }
+    if = {
+        limit = {
+            NOT = {any_character_trait = { has_trait_category = education }}
+        }
+        random_list = {
+            10 = { add_trait = education_diplomacy_3 }
+            10 = { add_trait = education_martial_3 }
+            10 = { add_trait = education_stewardship_3 }
+            10 = { add_trait = education_intrigue_3 }
+            10 = { add_trait = education_learning_3 }
+        }
+    }
+    
 }
 
 clear_personality_traits_effect = {
@@ -78,6 +76,15 @@ clear_personality_traits_effect = {
     if = { limit = { has_trait = fickle } remove_trait = fickle }
     if = { limit = { has_trait = vengeful } remove_trait = vengeful }
     if = { limit = { has_trait = forgiving } remove_trait = forgiving }
+
+}
+
+clear_education_traits = {
+    if = { limit = { has_trait = education_diplomacy_3 } remove_trait = education_diplomacy_3 }
+    if = { limit = { has_trait = education_martial_3 } remove_trait = education_martial_3 }
+    if = { limit = { has_trait = education_stewardship_3 } remove_trait = education_stewardship_3 }
+    if = { limit = { has_trait = education_intrigue_3 } remove_trait = education_intrigue_3 }
+    if = { limit = { has_trait = education_learning_3 } remove_trait = education_learning_3 }
 }
 
 set_weight_0 = {
@@ -121,6 +128,37 @@ remove_commander_traits_effect = {
     if = { limit = { has_trait = forest_fighter } remove_trait = forest_fighter }
     if = { limit = { has_trait = cautious_leader } remove_trait = cautious_leader }
     if = { limit = { has_trait = organizer } remove_trait = organizer }
+}
+
+add_knight_traits_effect = {
+    add_trait = brave
+    add_trait = honest
+    add_trait = chaste
+    
+    ## Physical
+
+    ## Education
+    add_trait = education_martial_4
+
+    ## Lifestyle
+    add_trait = gallant
+    add_trait = loyal
+    add_trait = lifestyle_blademaster
+    add_trait_xp = { trait = lifestyle_blademaster value = 100 }
+
+    add_commander_traits_effect = yes
+}
+
+remove_knight_traits_effect = {
+    if = { limit = { has_trait = brave } remove_trait = brave }
+    if = { limit = { has_trait = honest } remove_trait = honest }
+    if = { limit = { has_trait = chaste } remove_trait = chaste }
+    if = { limit = { has_trait = education_martial_4 } remove_trait = education_martial_4 }
+    if = { limit = { has_trait = gallant } remove_trait = gallant }
+    if = { limit = { has_trait = loyal } remove_trait = loyal }
+    if = { limit = { has_trait = lifestyle_blademaster } remove_trait = lifestyle_blademaster }
+
+    remove_commander_traits_effect = yes
 }
 
 lifestyle_martial_present_effect = {
