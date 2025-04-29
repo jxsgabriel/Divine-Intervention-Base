@@ -28,3 +28,20 @@ DI_char_spawner_gender_check = {
         }
     }
 }
+
+DI_char_has_parent_ruler = {
+    OR = {
+        trigger_if = { ## Has father
+            limit = {
+                has_father = yes
+            }
+            father = { is_ruler = yes }
+        }
+        trigger_if = { ## Has mother
+            limit = {
+                has_mother = yes
+            }
+            mother = { is_ruler = yes }
+        }
+    }
+}

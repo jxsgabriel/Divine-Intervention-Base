@@ -80,7 +80,7 @@ DI_random_traits_effect = {
 DI_martial_traits_effect = {
 	set_variable = {
 		name = DI_cs_martial
-		value = {12 20}
+		value = {80 85}
 	}
 	set_variable = {
 		name = DI_cs_prowess
@@ -108,6 +108,14 @@ DI_martial_traits_effect = {
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
+		target = trait:brave
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:honest
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
 		target = trait:content
 	}
 	add_to_variable_list = {
@@ -119,11 +127,11 @@ DI_martial_traits_effect = {
 DI_diplomacy_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = {14 20}
+		value = {75 80}
 	}
 	set_variable = {
 		name = DI_cs_stewardship
-		value = {14 20}
+		value = {15 25}
 	}
 	if = {
 		limit = {
@@ -139,20 +147,28 @@ DI_diplomacy_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:content
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:honest
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:forgiving
+	}
 }
 
 DI_stewardship_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = {10 18}
+		value = {15 25}
 	}
 	set_variable = {
 		name = DI_cs_stewardship
-		value = {14 20}
+		value = {75 80}
 	}
 	set_variable = {
 		name = DI_cs_learning
-		value = {10 18}
+		value = {15 25}
 	}
 	if = {
 		limit = {
@@ -168,20 +184,28 @@ DI_stewardship_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:content
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:stubborn
+	}
 }
 
 DI_intrigue_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = {10 18}
+		value = {15 25}
 	}
 	set_variable = {
 		name = DI_cs_stewardship
-		value = {10 18}
+		value = {15 25}
 	}
 	set_variable = {
 		name = DI_cs_intrigue
-		value = {14 20}
+		value = {20 25}
 	}
 	if = {
 		limit = {
@@ -195,7 +219,15 @@ DI_intrigue_traits_effect = {
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
-		target = trait:content
+		target = trait:craven
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:paranoid
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:cynical
 	}
 }
 
@@ -268,7 +300,7 @@ DI_knight_traits_effect = {
 DI_physician_traits_effect = {
 	set_variable = {
 		name = DI_cs_learning
-		value = 16
+		value = 66
 	}
 	if = {
 		limit = {
@@ -328,7 +360,19 @@ DI_antiquarian_traits_effect = {
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
+		target = trait:overseer
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
 		target = trait:shy
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:diligent
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:calm
 	}
 }
 
@@ -350,6 +394,22 @@ DI_travel_leader_traits_effect = {
 	add_to_variable_list = {
 		name = DI_cs_trait_list
 		target = trait:education_stewardship_4
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:brave
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:diligent
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:calm
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:loyal
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -421,7 +481,7 @@ DI_wet_nurse_traits_effect = {
 DI_court_tutor_traits_effect = {
 	set_variable = {
 		name = DI_cs_learning
-		value = 16
+		value = 50
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -433,30 +493,46 @@ DI_court_tutor_traits_effect = {
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
 		target = trait:intellect_good_3
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
 		target = trait:shrewd
 	}
-	add_to_variable_list = {
-		name = DI_cs_trait_list
-		target = trait:gregarious
-	}
 }
 
 DI_master_of_hunt_traits_effect = {
 	set_variable = {
 		name = DI_cs_prowess
-		value = 16
+		value = 50
 	}
 	set_variable = {
 		name = DI_cs_learning
-		value = 16
+		value = 50
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
 		target = trait:education_learning_4
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -471,11 +547,23 @@ DI_master_of_hunt_traits_effect = {
 DI_seneschal_traits_effect = {
 	set_variable = {
 		name = DI_cs_stewardship
-		value = 16
+		value = 40
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
 		target = trait:education_stewardship_4
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -490,7 +578,7 @@ DI_seneschal_traits_effect = {
 DI_court_jester_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = 16
+		value = 40
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -503,6 +591,10 @@ DI_court_jester_traits_effect = {
 	add_to_variable_list = {
 		name = DI_cs_trait_list
 		target = trait:stubborn
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -521,11 +613,11 @@ DI_court_jester_traits_effect = {
 DI_bodyguard_traits_effect = {
 	set_variable = {
 		name = DI_cs_martial
-		value = 16
+		value = 40
 	}
 	set_variable = {
 		name = DI_cs_prowess
-		value = 16
+		value = 40
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -552,16 +644,20 @@ DI_bodyguard_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:paranoid
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
 }
 
 DI_champion_traits_effect = {
 	set_variable = {
 		name = DI_cs_martial
-		value = 16
+		value = 50
 	}
 	set_variable = {
 		name = DI_cs_prowess
-		value = 16
+		value = 50
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -579,12 +675,16 @@ DI_champion_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:brave
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
 }
 
 DI_food_taster_traits_effect = {
 	set_variable = {
 		name = DI_cs_intrigue
-		value = 16
+		value = 20
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -602,16 +702,24 @@ DI_food_taster_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:lifestyle_herbalist
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
 }
 
 DI_master_of_horse_traits_effect = {
 	set_variable = {
 		name = DI_cs_martial
-		value = 16
+		value = 50
 	}
 	set_variable = {
 		name = DI_cs_prowess
-		value = 16
+		value = 50
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -621,12 +729,24 @@ DI_master_of_horse_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:overseer
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
+	}
 }
 
 DI_royal_architect_traits_effect = {
 	set_variable = {
 		name = DI_cs_stewardship
-		value = 16
+		value = 50
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -636,12 +756,24 @@ DI_royal_architect_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:architect
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
+	}
 }
 
 DI_high_almoner_traits_effect = {
 	set_variable = {
 		name = DI_cs_learning
-		value = 16
+		value = 50
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -655,12 +787,16 @@ DI_high_almoner_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:compassionate
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
 }
 
 DI_cupbearer_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = 16
+		value = 50
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -674,16 +810,20 @@ DI_cupbearer_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:trusting
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
 }
 
 DI_court_poet_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = 16
+		value = 50
 	}
 	set_variable = {
 		name = DI_cs_learning
-		value = 16
+		value = 50
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -696,13 +836,21 @@ DI_court_poet_traits_effect = {
 	add_to_variable_list = {
 		name = DI_cs_trait_list
 		target = trait:poet
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
 	}
 }
 
 DI_court_musician_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = 16
+		value = 50
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -716,35 +864,56 @@ DI_court_musician_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:poet
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
+	}
 }
 
 DI_court_artificer_traits_effect = {
 	set_variable = {
 		name = DI_cs_intrigue
-		value = 8
+		value = 30
 	}
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = {12 18}
+		value = {30 40}
 	}
 	set_variable = {
 		name = DI_cs_stewardship
-		value = {12 18}
+		value = {30 40}
 	}
 	set_variable = {
 		name = DI_cs_learning
-		value = {12 18}
+		value = {30 40}
 	}
 	set_variable = {
 		name = DI_cs_martial
-		value = {12 18}
+		value = {30 40}
+	}
+	
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:patient
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:diligent
 	}
 }
 
 DI_lady_in_waiting_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = 16
+		value = 40
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -758,16 +927,20 @@ DI_lady_in_waiting_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:honest
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
 }
 
 DI_chief_eunuch_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = 16
+		value = 50
 	}
 	set_variable = {
 		name = DI_cs_intrigue
-		value = {10 16}
+		value = {25 35}
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -785,16 +958,20 @@ DI_chief_eunuch_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:eunuch_1
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:diligent
+	}
 }
 
 DI_executioner_traits_effect = {
 	set_variable = {
 		name = DI_cs_intrigue
-		value = 16
+		value = 35
 	}
 	set_variable = {
 		name = DI_cs_prowess
-		value = 16
+		value = 40
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -806,14 +983,26 @@ DI_executioner_traits_effect = {
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
+		target = trait:murderer
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
 		target = trait:sadistic
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:diligent
 	}
 }
 
 DI_cultural_emissary_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = 16
+		value = 50
 	}
 	if = {
 		limit = {
@@ -837,12 +1026,16 @@ DI_cultural_emissary_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:diplomat
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
+	}
 }
 
 DI_keeper_of_swans_traits_effect = {
 	set_variable = {
 		name = DI_cs_stewardship
-		value = 16
+		value = 50
 	}
 	if = {
 		limit = {
@@ -858,12 +1051,24 @@ DI_keeper_of_swans_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:lifestyle_hunter
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
+	}
 }
 
 DI_chief_qadi_traits_effect = {
 	set_variable = {
 		name = DI_cs_learning
-		value = 16
+		value = 50
 	}
 	if = {
 		limit = {
@@ -896,11 +1101,11 @@ DI_chief_qadi_traits_effect = {
 DI_garuda_traits_effect = {
 	set_variable = {
 		name = DI_cs_martial
-		value = 16
+		value = 50
 	}
 	set_variable = {
 		name = DI_cs_prowess
-		value = 16
+		value = 50
 	}
 	if = {
 		limit = {
@@ -916,12 +1121,24 @@ DI_garuda_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:lifestyle_blademaster
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
+	}
 }
 
 DI_court_gardener_traits_effect = {
 	set_variable = {
 		name = DI_cs_stewardship
-		value = 16
+		value = 50
 	}
 	if = {
 		limit = {
@@ -949,12 +1166,20 @@ DI_court_gardener_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:architect
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
 }
 
 DI_cave_hermit_traits_effect = {
 	set_variable = {
 		name = DI_cs_learning
-		value = 16
+		value = 50
 	}
 	if = {
 		limit = {
@@ -978,16 +1203,28 @@ DI_cave_hermit_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:lifestyle_gardener
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:calm
+	}
 }
 
 DI_master_assassin_traits_effect = {
 	set_variable = {
 		name = DI_cs_intrigue
-		value = 16
+		value = 25
 	}
 	set_variable = {
 		name = DI_cs_prowess
-		value = 16
+		value = 40
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -1005,6 +1242,14 @@ DI_master_assassin_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:murderer
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:brave
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:zealous
+	}
 	random_list = {
 		20 = {
 			add_to_variable_list = {
@@ -1019,28 +1264,19 @@ DI_master_assassin_traits_effect = {
 			}
 		}
 	}
+
 }
 
 DI_court_scholar_traits_effect = {
 	set_variable = {
 		name = DI_cs_learning
-		value = 16
-	}
-	random_list = {
-		20 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:education_learning_4
-			}
-		}
-		10 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:education_learning_3
-			}
-		}
+		value = 50
 	}
 	
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:education_learning_4
+	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
 		target = trait:lifestyle_physician
@@ -1049,50 +1285,38 @@ DI_court_scholar_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:theologian
 	}
-	random_list = {
-		20 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:intellect_good_3
-			}
-		}
-		10 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:intellect_good_2
-			}
-		}
-		5 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:intellect_good_1
-			}
-		}
+
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:intellect_good_3
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
 		target = trait:shrewd
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:calm
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:patient
 	}
 }
 
 DI_chronicler_traits_effect = {
 	set_variable = {
 		name = DI_cs_diplomacy
-		value = 16
+		value = 50
 	}
-	random_list = {
-		20 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:education_diplomacy_4
-			}
-		}
-		10 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:education_diplomacy_3
-			}
-		}
+	
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:education_diplomacy_4
 	}
 	add_to_variable_list = {
 		name = DI_cs_trait_list
@@ -1106,30 +1330,29 @@ DI_chronicler_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:diplomat
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
 }
 
 DI_charioteer_traits_effect = {
 	set_variable = {
 		name = DI_cs_martial
-		value = 16
+		value = 50
 	}
 	set_variable = {
 		name = DI_cs_prowess
-		value = 16
+		value = 50
 	}
-	random_list = {
-		20 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:education_martial_4
-			}
-		}
-		10 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:education_martial_3
-			}
-		}
+	
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:education_martial_4
 	}
 	random_list = {
 		20 = {
@@ -1157,49 +1380,42 @@ DI_charioteer_traits_effect = {
 			}
 		}
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:calm
+	}
 }
 
 DI_bookmaker_traits_effect = {
-	random_list = {
-		10 = {
-			set_variable = {
-				name = DI_cs_stewardship
-				value = 25
-			}
-		}
-		20 = {
-			set_variable = {
-				name = DI_cs_stewardship
-				value = 20
-			}
-		}
-		10 = {
-			set_variable = {
-				name = DI_cs_stewardship
-				value = 16
-			}
-		}
+	set_variable = {
+		name = DI_cs_stewardship
+		value = 50
 	}
 
-	random_list = {
-		20 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:education_stewardship_5
-			}
-		}
-		10 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:education_stewardship_4
-			}
-		}
-		5 = {
-			add_to_variable_list = {
-				name = DI_cs_trait_list
-				target = trait:education_stewardship_3
-			}
-		}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:education_stewardship_4
+	}
+
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
 	}
 }
 
@@ -1407,13 +1623,14 @@ DI_poach_court_charcter_effect = {
 			is_ruler = no
 			is_claimant = no
 			DI_char_spawner_gender_check = yes
+			DI_char_has_parent_ruler = no
 			age >= scope:DI_story.var:DI_char_spawner_age_increment_value
 		}
 		save_scope_as = new_courtier
 		set_age = scope:DI_story.var:DI_char_spawner_age_increment_value
 		set_character_faith = scope:target.faith
+		eliminated_health_problem_effect = yes
 
-		## Set up skills
 		## Set up skills
 		add_diplomacy_skill = -100
 		add_martial_skill = -100
@@ -1428,7 +1645,6 @@ DI_poach_court_charcter_effect = {
 		add_intrigue_skill = scope:root_target.var:DI_cs_intrigue
 		add_learning_skill = scope:root_target.var:DI_cs_learning
 		add_prowess_skill = scope:root_target.var:DI_cs_prowess
-
 
 		scope:target = {
             add_courtier = scope:new_courtier
@@ -1456,7 +1672,7 @@ DI_poach_court_charcter_effect = {
 			
 			scope:new_courtier = {
 				remove_any_education_traits_effect = yes
-				clear_traits = $CLEAR_TRAITS$
+				clear_personality_traits_effect = yes
 			}
 
 			every_in_list = {
@@ -1569,6 +1785,7 @@ DI_poach_knight_character_effect = {
 			is_ruler = no
 			is_claimant = no
 			DI_char_spawner_gender_check = yes
+			DI_char_has_parent_ruler = no
 			age >= scope:DI_story.var:DI_char_spawner_age_increment_value
 		}
 		save_scope_as = new_courtier
