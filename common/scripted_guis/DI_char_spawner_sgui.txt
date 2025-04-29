@@ -1079,7 +1079,8 @@ DI_court_physician = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    ##DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes CLEAR_TRAITS = yes }
 
                     scope:new_courtier = {
                         add_trait_xp = { trait = lifestyle_physician value = 100 }
