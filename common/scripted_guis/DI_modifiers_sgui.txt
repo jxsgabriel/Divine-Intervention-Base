@@ -17736,24 +17736,22 @@ DI_add_modifier_space_marines = {
 	scope = character
 
 	effect = {
-        save_scope_as = target
 		apply_modifier_effect = {
-            MODIFIER_ACTION = add
-            MODIFIER_NAME = DI_space_marines
-        }
-    }
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_space_marines
+		}
+	}
 }
 
 DI_remove_modifier_space_marines = {
 	scope = character
 
 	effect = {
-        save_scope_as = target
 		apply_modifier_effect = {
-            MODIFIER_ACTION = remove
-            MODIFIER_NAME = DI_space_marines
-        }
-    }
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_space_marines
+		}
+	}
 }
 
 # DI_immune_to_schemes
@@ -17761,23 +17759,22 @@ DI_add_modifier_immune_to_schemes = {
 	scope = character
 
 	effect = {
-        save_scope_as = target
 		apply_modifier_effect = {
-            MODIFIER_ACTION = add
-            MODIFIER_NAME = DI_immune_to_schemes
-        }
-    }
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_immune_to_schemes
+		}
+	}
 }
 
 DI_remove_modifier_immune_to_schemes = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_immune_to_schemes
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_immune_to_schemes
+		}
+	}
 }
 
 # DI_contraceptive
@@ -17785,22 +17782,22 @@ DI_add_modifier_contraceptive = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_contraceptive
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_contraceptive
+		}
+	}
 }
 
 DI_remove_modifier_contraceptive = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_contraceptive
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_contraceptive
+		}
+	}
 }
 
 # DI_ultra_build
@@ -17808,22 +17805,22 @@ DI_add_modifier_ultra_build = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_ultra_build
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_ultra_build
+		}
+	}
 }
 
 DI_remove_modifier_ultra_build = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_ultra_build
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_ultra_build
+		}
+	}
 }
 
 # DI_building_slots
@@ -17831,22 +17828,22 @@ DI_add_modifier_building_slots = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_building_slots
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_building_slots
+		}
+	}
 }
 
 DI_remove_modifier_building_slots = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_building_slots
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_building_slots
+		}
+	}
 }
 
 # DI_one_building_slot
@@ -17854,20 +17851,22 @@ DI_add_modifier_one_building_slot = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_one_building_slot
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_one_building_slot
+		}
+	}
 }
 
 DI_remove_modifier_one_building_slot = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_one_building_slot
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_one_building_slot
+		}
+	}
 }
 
 # DI_domain_limit 
@@ -17875,22 +17874,22 @@ DI_add_modifier_DI_domain_limit = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_domain_limit
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_domain_limit
+		}
+	}
 }
 
 DI_remove_modifier_DI_domain_limit = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_domain_limit
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_domain_limit
+		}
+	}
 }
 
 # DI_money_printer
@@ -17898,20 +17897,22 @@ DI_add_modifier_money_printer = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_money_printer
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_money_printer
+		}
+	}
 }
 
 DI_remove_modifier_money_printer = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_money_printer
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_money_printer
+		}
+	}
 }
 
 ### Legacy of Piracy ###
@@ -17919,33 +17920,10 @@ DI_add_modifier_legacy_of_piracy = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		random_owned_story = {
-			limit = {
-				story_type = DI_misc_variables_story
-			}
-			save_scope_as = DI_story
-		}
-
-		if = {
-			limit = {
-				scope:DI_story = { has_variable = DI_pinned_char_var }
-			}
-
-			every_living_character = {
-				limit = { 
-					has_character_flag = pinned_for_edit
-				}
-
-				dynasty = {
-					add_dynasty_modifier = fp1_legacy_of_piracy_modifier
-				}
-			}
-		}
-		else = {
-			dynasty = {
-				add_dynasty_modifier = fp1_legacy_of_piracy_modifier
-			}
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = fp1_legacy_of_piracy_modifier
+			MODIFIER_SCOPE = dynasty
 		}
 	}
 }
@@ -17954,32 +17932,10 @@ DI_remove_modifier_legacy_of_piracy = {
 	scope = character
 
 	effect = {
-		random_owned_story = {
-			limit = {
-				story_type = DI_misc_variables_story
-			}
-			save_scope_as = DI_story
-		}
-		
-		if = {
-			limit = {
-				scope:DI_story = { has_variable = DI_pinned_char_var }
-			}
-
-			every_living_character = {
-				limit = { 
-					has_character_flag = pinned_for_edit
-				}
-
-				dynasty = {
-					remove_dynasty_modifier = fp1_legacy_of_piracy_modifier
-				}
-			}
-		}
-		else = {
-			dynasty = {
-				remove_dynasty_modifier = fp1_legacy_of_piracy_modifier
-			}
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = fp1_legacy_of_piracy_modifier
+			MODIFIER_SCOPE = dynasty
 		}
 	}
 }
@@ -17989,21 +17945,22 @@ DI_add_modifier_DI_trait_xp_boost = {
 	scope = character
 
 	effect = {
-		save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_trait_xp_boost
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_trait_xp_boost
+		}
+	}
 }
 
 DI_remove_modifier_DI_trait_xp_boost = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_trait_xp_boost
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_trait_xp_boost
+		}
+	}
 }
 
 ### DI_godlike_inheritance
@@ -18011,21 +17968,22 @@ DI_add_modifier_DI_godlike_inheritance = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_godlike_inheritance
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_godlike_inheritance
+		}
+	}
 }
 
 DI_remove_modifier_DI_godlike_inheritance = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_godlike_inheritance
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_godlike_inheritance
+		}
+	}
 }
 
 # DI_true_rulers
@@ -18033,21 +17991,22 @@ DI_add_modifier_DI_true_rulers = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_true_rulers
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_true_rulers
+		}
+	}
 }
 
 DI_remove_modifier_DI_true_rulers = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_true_rulers
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_true_rulers
+		}
+	}
 }
 
 # DI_plague_doctor
@@ -18055,21 +18014,22 @@ DI_add_modifier_DI_plague_doctor = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_plague_doctor
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_plague_doctor
+		}
+	}
 }
 
 DI_remove_modifier_DI_plague_doctor = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_plague_doctor
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_plague_doctor
+		}
+	}
 }
 
 ### DI_imperial_march
@@ -18077,21 +18037,22 @@ DI_add_modifier_DI_imperial_march = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_imperial_march
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_imperial_march
+		}
+	}
 }
 
 DI_remove_modifier_DI_imperial_march = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_imperial_march
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_imperial_march
+		}
+	}
 }
 
 ### DI_dread_lord
@@ -18099,32 +18060,11 @@ DI_add_modifier_DI_dread_lord = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		random_owned_story = {
-			limit = {
-				story_type = DI_misc_variables_story
-			}
-			save_scope_as = DI_story
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_dread_lord
 		}
-		
-		if = {
-			limit = {
-				scope:DI_story = { has_variable = DI_pinned_char_var }
-			}
-
-			every_living_character = {
-				limit = { 
-					has_character_flag = pinned_for_edit
-				}
-
-				add_character_modifier = DI_dread_lord
-				add_dread = 100
-			}
-		}
-		else = {
-			add_character_modifier = DI_dread_lord
-			add_dread = 100
-		}
+		add_dread = 100
 	}
 }
 
@@ -18132,31 +18072,11 @@ DI_remove_modifier_DI_dread_lord = {
 	scope = character
 
 	effect = {
-		random_owned_story = {
-			limit = {
-				story_type = DI_misc_variables_story
-			}
-			save_scope_as = DI_story
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_dread_lord
 		}
-		
-		if = {
-			limit = {
-				scope:DI_story = { has_variable = DI_pinned_char_var }
-			}
-
-			every_living_character = {
-				limit = { 
-					has_character_flag = pinned_for_edit
-				}
-
-				remove_character_modifier = DI_dread_lord
-				add_dread = -100
-			}
-		}
-		else = {
-			remove_character_modifier = DI_dread_lord
-			add_dread = -100
-		}
+		add_dread = -100
 	}
 }
 
@@ -18165,21 +18085,22 @@ DI_add_modifier_DI_lifestyle_mastery = {
 	scope = character
 
 	effect = {
-		save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_lifestyle_mastery
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_lifestyle_mastery
+		}
+	}
 }
 
 DI_remove_modifier_DI_lifestyle_mastery = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_lifestyle_mastery
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_lifestyle_mastery
+		}
+	}
 }
 
 ### DI_travel_speed
@@ -18187,21 +18108,22 @@ DI_add_modifier_DI_travel_speed = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_travel_speed
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_travel_speed
+		}
+	}
 }
 
 DI_remove_modifier_DI_travel_speed = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_travel_speed
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_travel_speed
+		}
+	}
 }
 
 ### DI_travel_safety
@@ -18209,21 +18131,22 @@ DI_add_modifier_DI_travel_safety = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_travel_safety
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_travel_safety
+		}
+	}
 }
 
 DI_remove_modifier_DI_travel_safety = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_travel_safety
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_travel_safety
+		}
+	}
 }
 
 ### DI_legend_spread
@@ -18231,21 +18154,22 @@ DI_add_modifier_DI_legend_spread = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_legend_spread
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_legend_spread
+		}
+	}
 }
 
 DI_remove_modifier_DI_legend_spread = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_legend_spread
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_legend_spread
+		}
+	}
 }
 
 ### DI Prestige Printer ###
@@ -18253,21 +18177,22 @@ DI_add_modifier_DI_prestige_printer = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_prestige_printer
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_prestige_printer
+		}
+	}
 }
 
 DI_remove_modifier_DI_prestige_printer = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_prestige_printer
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_prestige_printer
+		}
+	}
 }
 
 ### DI Piety Printer ###
@@ -18275,21 +18200,22 @@ DI_add_modifier_DI_piety_printer = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_piety_printer
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_piety_printer
+		}
+	}
 }
 
 DI_remove_modifier_DI_piety_printer = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_piety_printer
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_piety_printer
+		}
+	}
 }
 
 ### DI everybody loves me
@@ -18297,21 +18223,22 @@ DI_add_modifier_DI_everybody_loves_me = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = DI_everybody_loves_me
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = DI_everybody_loves_me
+		}
+	}
 }
 
 DI_remove_modifier_DI_everybody_loves_me = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = DI_everybody_loves_me
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = DI_everybody_loves_me
+		}
+	}
 }
 
 ### No Legitimacy Change ###
@@ -18319,21 +18246,22 @@ DI_add_modifier_no_legitimacy_change = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = no_legitimacy_change
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = no_legitimacy_change
+		}
+	}
 }
 
 DI_remove_modifier_no_legitimacy_change = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = no_legitimacy_change
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = no_legitimacy_change
+		}
+	}
 }
 
 ### No Stress Change ###
@@ -18341,21 +18269,22 @@ DI_add_modifier_no_stress_change = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = no_stress_change
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = no_stress_change
+		}
+	}
 }
 
 DI_remove_modifier_no_stress_change = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = no_stress_change
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = no_stress_change
+		}
+	}
 }
 
 ### No Tyranny Change ###
@@ -18363,21 +18292,22 @@ DI_add_modifier_no_tyranny_change = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = no_tyranny_change
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = no_tyranny_change
+		}
+	}
 }
 
 DI_remove_modifier_no_tyranny_change = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = no_tyranny_change
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = no_tyranny_change
+		}
+	}
 }
 
 ### No Dread Change ###
@@ -18385,22 +18315,24 @@ DI_add_modifier_no_dread_change = {
 	scope = character
 
 	effect = {
-save_scope_as = target
-		    apply_modifier_effect = {
-        MODIFIER_ACTION = add
-        MODIFIER_NAME = no_dread_change
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = no_dread_change
+		}
+	}
 }
 
 DI_remove_modifier_no_dread_change = {
 	scope = character
 
 	effect = {
-    apply_modifier_effect = {
-        MODIFIER_ACTION = remove
-        MODIFIER_NAME = no_dread_change
-    }
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = no_dread_change
+		}
+	}
 }
+
 
 ### Government Type Tax and Levy ###
 
