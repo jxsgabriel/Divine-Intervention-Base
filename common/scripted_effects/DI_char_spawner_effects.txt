@@ -476,6 +476,18 @@ DI_wet_nurse_traits_effect = {
 		name = DI_cs_trait_list
 		target = trait:loyal
 	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:chaste
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:content
+	}
 }
 
 DI_court_tutor_traits_effect = {
