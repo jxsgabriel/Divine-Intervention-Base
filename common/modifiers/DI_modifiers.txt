@@ -4298,16 +4298,16 @@ player_starter_pack = {
     maa_screen_add = 20
     maa_screen_mult = 0.5
 
-    stationed_maa_siege_value_add = 1
-    stationed_maa_siege_value_mult = 0.5
-    stationed_maa_damage_add = 25
-    stationed_maa_damage_mult = 0.5
-    stationed_maa_toughness_add = 25
-    stationed_maa_toughness_mult = 0.5
-    stationed_maa_pursuit_add = 20
-    stationed_maa_pursuit_mult = 0.5
-    stationed_maa_screen_add = 20
-    stationed_maa_screen_mult = 0.5
+    # stationed_maa_siege_value_add = 1
+    # stationed_maa_siege_value_mult = 0.5
+    # stationed_maa_damage_add = 25
+    # stationed_maa_damage_mult = 0.5
+    # stationed_maa_toughness_add = 25
+    # stationed_maa_toughness_mult = 0.5
+    # stationed_maa_pursuit_add = 20
+    # stationed_maa_pursuit_mult = 0.5
+    # stationed_maa_screen_add = 20
+    # stationed_maa_screen_mult = 0.5
 
     ## Income: Gold, Prestige, Renown
     monthly_income = 20
@@ -4377,8 +4377,8 @@ vassal_starter_pack = {
     monthly_income = 10
 
     ## Taxes
-    tax_mult = .5
-    domain_tax_mult = .5
+    tax_mult = 0.5
+    domain_tax_mult = 0.5
 
     development_growth = 1
     development_growth_factor = 0.05
