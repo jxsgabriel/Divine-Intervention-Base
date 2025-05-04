@@ -87,8 +87,8 @@ DI_pin_character_interaction = {
         localization = DI_pin_vassals
     }
     send_option = {
-        flag = sub_realm_vassals
-        localization = DI_pin_sub_realm_vassals
+        flag = barony_holders
+        localization = DI_pin_barony_holders
     }
     send_option = {
         flag = courtiers
@@ -114,6 +114,10 @@ DI_pin_character_interaction = {
         flag = knights
         localization = DI_pin_knights
     }
+    send_option = {
+        flag = commanders
+        localization = DI_pin_commanders
+    }
 
     on_accept = {
         scope:recipient = {
@@ -138,12 +142,23 @@ DI_pin_character_interaction = {
             }
 
             if = {
-                limit = {scope:sub_realm_vassals = yes}
+                limit = {scope:barony_holders = yes}
 
-                every_vassal_or_below = {
-                    add_character_flag = pinned_for_edit
-                    scope:actor = {
-                        add_to_variable_list = { name = pinned_characters target = prev }
+                every_sub_realm_barony = {
+                    holder = {
+                        add_character_flag = pinned_for_edit
+                        scope:actor = {
+                            add_to_variable_list = { name = pinned_characters target = prev }
+                        }
+                    }
+	                if = {
+	                    limit = { exists = lessee }
+                        lessee = {
+                            add_character_flag = pinned_for_edit
+                            scope:actor = {
+                                add_to_variable_list = { name = pinned_characters target = prev }
+                            }
+                        }
                     }
                 }
             }
@@ -218,9 +233,37 @@ DI_pin_character_interaction = {
 
             if = {
                 limit = {scope:knights = yes}
-
+                
                 every_courtier = {
                     limit = { is_knight = yes }
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+
+                every_vassal = {
+                    limit = { is_knight = yes }
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+            }
+
+            if = {
+                limit = {scope:commanders = yes}
+
+                every_courtier = {
+                    limit = { is_commanding_army = yes }
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+
+                every_vassal = {
+                    limit = { is_commanding_army = yes }
                     add_character_flag = pinned_for_edit
                     scope:actor = {
                         add_to_variable_list = { name = pinned_characters target = prev }

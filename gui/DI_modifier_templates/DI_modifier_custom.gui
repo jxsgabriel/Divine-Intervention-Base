@@ -690,6 +690,28 @@ template DI_CE_Modifiers_Custom
 				}
 			}
 
+            dockable_button = {
+				name = "DI_modifier_commander_booster_pack"
+				onclick = "[GetScriptedGui('DI_add_commander_booster_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				onrightclick = "[GetScriptedGui('DI_remove_commander_booster_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				button_ignore = none
+				using = tooltip_ne
+
+				icon = {
+					datacontext = "[GetPlayer]"
+					datacontext = "[GetModifier('commander_booster_pack')]"
+					datacontext = "[GetPlayer.GetFaith]"
+					parentanchor = center
+					position = { 0 1 }
+					size = {30 30 }
+					tintcolor = { 0 1 1 1 }
+					texture = "[StaticModifier.GetIcon]"
+					tooltipwidget = {
+						using = modifier_DI_tooltip
+					}
+				}
+			}
+
         }
     }
 }

@@ -270,12 +270,28 @@ DI_learning_traits_effect = {
 
 DI_knight_traits_effect = {
 	set_variable = {
+		name = DI_cs_diplomacy
+		value = {15 20}
+	}
+	set_variable = {
 		name = DI_cs_martial
-		value = {14 20}
+		value = {50 55}
+	}
+	set_variable = {
+		name = DI_cs_stewardship
+		value = {15 20}
+	}
+	set_variable = {
+		name = DI_cs_intrigue
+		value = {15 20}
+	}
+	set_variable = {
+		name = DI_cs_learning
+		value = {15 20}
 	}
 	set_variable = {
 		name = DI_cs_prowess
-		value = {14 20}
+		value = {20 25}
 	}
 	if = {
 		limit = {

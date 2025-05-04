@@ -4298,17 +4298,6 @@ player_starter_pack = {
     maa_screen_add = 20
     maa_screen_mult = 0.5
 
-    # stationed_maa_siege_value_add = 1
-    # stationed_maa_siege_value_mult = 0.5
-    # stationed_maa_damage_add = 25
-    # stationed_maa_damage_mult = 0.5
-    # stationed_maa_toughness_add = 25
-    # stationed_maa_toughness_mult = 0.5
-    # stationed_maa_pursuit_add = 20
-    # stationed_maa_pursuit_mult = 0.5
-    # stationed_maa_screen_add = 20
-    # stationed_maa_screen_mult = 0.5
-
     ## Income: Gold, Prestige, Renown
     monthly_income = 20
     monthly_income_mult = 0.5
@@ -4385,4 +4374,21 @@ vassal_starter_pack = {
 
     ## Epidemics
     epidemic_resistance = 100
+}
+
+commander_booster_pack = {
+    icon = prowess_positive
+    stacking = no
+
+    ## Combat Modifiers
+    supply_duration = 5
+    supply_capacity_add = 1000
+    supply_capacity_mult = 1
+
+    ## Casualties
+    retreat_losses = -1
+    hard_casualty_modifier = -1
+    enemy_hard_casualty_modifier = 1
+    hostile_county_attrition = -1
+    advantage = 20
 }

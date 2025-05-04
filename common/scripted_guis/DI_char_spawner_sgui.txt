@@ -452,11 +452,10 @@ DI_knight = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_court_character_effect =  yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {
-                        add_trait_xp = { trait = lifestyle_blademaster value = 100 }
-                        add_perk = stalwart_leader_perk
+                        add_knight_traits_effect = yes
                     }
                 }
             }
@@ -466,11 +465,10 @@ DI_knight = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_court_character_effect =  yes
-
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
+                
                 scope:new_courtier = {
-                    add_trait_xp = { trait = lifestyle_blademaster value = 100 }
-                    add_perk = stalwart_leader_perk
+                    add_knight_traits_effect = yes
                 }
             }
         }

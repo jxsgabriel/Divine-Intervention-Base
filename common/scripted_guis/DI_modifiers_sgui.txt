@@ -18792,6 +18792,30 @@ DI_remove_vassal_starter_pack = {
     }
 }
 
+DI_add_commander_booster_pack = {
+    scope = character
+
+    effect = {
+        save_scope_as = target
+        apply_modifier_effect = {
+            MODIFIER_ACTION = add
+            MODIFIER_NAME = commander_booster_pack
+        }
+    }
+}
+
+DI_remove_commander_booster_pack = {
+    scope = character
+
+    effect = {
+        save_scope_as = target
+        apply_modifier_effect = {
+            MODIFIER_ACTION = remove
+            MODIFIER_NAME = commander_booster_pack
+        }
+    }
+}
+
 ### Clear all Modifiers ###
 DI_clear_modifiers = {
     scope = character

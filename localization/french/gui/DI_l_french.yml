@@ -11,7 +11,7 @@
  DI_artifact_creator_tt:0 "Ouvre un menu où vous pouvez voir une liste des artefacts des personnages épinglés, créer des artefacts, et appliquer divers effets sur les artefacts listés."
  DI_cultural_editor_window:0 "Éditeur Culturel" # button label
  DI_cultural_editor_window_tt:0 "Ouvre un menu où vous pouvez modifier la culture des personnages épinglés."
- DI_faith_editor_window:0 "Éditeur de Foi" # button label
+ DI_faith_editor_window:0 "Éditeur de Foi" # button commanderslabel
  DI_faith_editor_window_tt:0 "Ouvre un menu où vous pouvez modifier la religion des personnages épinglés."
  DI_debug_mode: "Mode Debug"
  DI_debug_mode_tt: "Activer/Désactiver le mode Debug. Désactivera les succès."
@@ -761,7 +761,8 @@
  DI_pin_sub_realm_titles: "Épingler Tous les Titres du Sous-Royaume"
  DI_pin_realm_titles: "Épingler Tous les Titres du Royaume"
  DI_pin_knights: "Épingler Tous les [GetPlayer.Custom( 'KnightCulturePlural' )]"
- DI_pin_sub_realm_vassals: "Épingler Tous les [GetPlayer.Custom('GetRealmOrDomicile')|U] [GetPlayer.Custom( 'GetFollowerOrVassalPlural' )|U]"
+ DI_pin_commanders: "Épingler Tous les [commanders|E]"
+ DI_pin_barony_holders: "Épingler Tous les [barony|U] [holders|U]"
  DI_change_character_interaction: "Changer de Personnage"
  DI_change_character_desc: "Passer à ce personnage pour jouer."
  DI_change_character_name_interaction: "Changer de Nom"
@@ -972,3 +973,13 @@
  houseName: "Définir le Nom de la Maison"
  DI_get_house_name: "[recipient.GetDynastyHouseNameNoTooltip]"
  CHEAT_ACTIONS: "Actions d'Intervention Divine"
+ player_starter_pack: "Supreme Ruler"
+ dynasty_starter_pack: "Dynastia Ultima"
+ vassal_starter_pack: "Vassallus Iuratus"
+ commander_booster_pack: "Magister Militum"
+ republic_government_levy_contribution_add:1 "[republican|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ republic_government_levy_contribution_mult:1 "[republican|E] [vassal|E] [levy|E] [modifier_contribution|E]"
+ theocracy_government_levy_contribution_add:1 "[theocracy|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ theocracy_government_levy_contribution_mult:1 "[theocracy|E] [vassal|E] [levy|E] [modifier_contribution|E]"
+ feudal_government_levy_contribution_add:0 "[feudal|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ feudal_government_levy_contribution_mult:0 "[feudal|E] [vassal|E] [levy|E] [modifier_contribution|E]"

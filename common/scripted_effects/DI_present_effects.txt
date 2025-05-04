@@ -619,6 +619,7 @@ eliminated_health_problem_effect = {
     remove_trait = wheezing
     remove_trait = bleeder
     remove_trait = infertile
+    remove_trait = ergotism
 
     hidden_effect = {
         if = {
