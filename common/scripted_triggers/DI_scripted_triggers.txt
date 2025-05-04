@@ -45,3 +45,29 @@ DI_char_has_parent_ruler = {
         }
     }
 }
+
+DI_char_spawner_poachable = {
+    NOT = { is_courtier_of = scope:target }
+    is_married = no
+    is_ruler = no
+    is_claimant = no
+    DI_char_spawner_gender_check = yes
+    DI_char_has_parent_ruler = no
+    age >= scope:DI_story.var:DI_char_spawner_age_increment_value
+    age < 30
+    is_travelling = no
+    is_foreign_court_or_pool_guest = no
+    is_imprisoned = no
+}
+
+## Get a random non-landed:
+## non-landed, non-claimant, non-ruler, unmarried
+DI_char_spawner_poach_check = {
+    DI_char_spawner_poachable = yes
+    is_lowborn = $IS_LOWBORN$   
+}
+
+DI_char_spawner_poach_high_noble = {
+    DI_char_spawner_poach_check = { IS_LOWBORN = no }
+    dynasty.dynasty_prestige_level >= 2
+}

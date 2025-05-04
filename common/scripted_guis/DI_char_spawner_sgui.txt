@@ -976,6 +976,8 @@ DI_normal_courtier = {
             }
         }
 
+        DI_good_courtier_traits_effect = yes
+
         if = {
             limit = {
                 scope:DI_story = { has_variable = DI_pinned_char_var }
@@ -984,10 +986,11 @@ DI_normal_courtier = {
                 variable = pinned_characters
 
                 save_scope_as = target
-
+                
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_court_character_effect  = yes
+                    DI_poach_high_noble_court_charcter_effect = yes
+                    # DI_spawn_court_character_effect  = yes
                 }
             }
         }
@@ -997,7 +1000,8 @@ DI_normal_courtier = {
             while = 
             {
                 count = scope:DI_char_spawner_count_increment_value    
-                DI_spawn_court_character_effect  = yes
+                DI_poach_high_noble_court_charcter_effect = yes
+                # DI_spawn_court_character_effect  = yes
             }
         }
     }

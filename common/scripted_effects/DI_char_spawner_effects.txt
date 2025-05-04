@@ -1431,6 +1431,49 @@ DI_bookmaker_traits_effect = {
 	}
 }
 
+DI_good_courtier_traits_effect = {
+
+	random_list = {
+		20 = {
+			add_to_variable_list = {
+				name = DI_cs_trait_list
+				target = trait:education_diplomacy_4
+			}
+		}
+		20 = {
+			add_to_variable_list = {
+				name = DI_cs_trait_list
+				target = trait:education_martial_4
+			}
+		}
+		20 = {
+			add_to_variable_list = {
+				name = DI_cs_trait_list
+				target = trait:education_stewardship_4
+			}
+		}
+		20 = {
+			add_to_variable_list = {
+				name = DI_cs_trait_list
+				target = trait:education_learning_4
+			}
+		}
+	}
+
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:calm
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:compassionate
+	}
+	add_to_variable_list = {
+		name = DI_cs_trait_list
+		target = trait:temperate
+	}
+}
+
 # Set the parents for spawning children #
 DI_set_parents_of_child_effect = {
 	if = {
@@ -1614,53 +1657,38 @@ DI_spawn_family_character_effect = {
 	}
 }
 
-DI_poach_court_charcter_effect = {
-	scope:DI_story = {
-		save_scope_value_as = {
-			name = DI_char_spawner_age_increment_value
-			value = var:DI_char_spawner_age_increment_value
-		}
-		save_scope_value_as = {
-			name = DI_female_chance
-			value = var:DI_female_chance
-		}
-	}
+DI_set_poached_character_props = {
+	set_age = scope:DI_story.var:DI_char_spawner_age_increment_value
+	set_character_faith = scope:root_target.faith
+	eliminated_health_problem_effect = yes
 
-	## Get a random non-landed 
-	random_living_character = {
+	## Set up skills
+	add_diplomacy_skill = -100
+	add_martial_skill = -100
+	add_stewardship_skill = -100
+	add_intrigue_skill = -100
+	add_learning_skill = -100
+	add_prowess_skill = -100
+
+	add_diplomacy_skill = scope:root_target.var:DI_cs_diplomacy
+	add_martial_skill = scope:root_target.var:DI_cs_martial
+	add_stewardship_skill = scope:root_target.var:DI_cs_stewardship
+	add_intrigue_skill = scope:root_target.var:DI_cs_intrigue
+	add_learning_skill = scope:root_target.var:DI_cs_learning
+	add_prowess_skill = scope:root_target.var:DI_cs_prowess
+
+	if = {
 		limit = {
-			NOT = { is_courtier_of = scope:target }
-			is_lowborn = $IS_LOWBORN$
-			is_married = no
-			is_ruler = no
-			is_claimant = no
-			DI_char_spawner_gender_check = yes
-			DI_char_has_parent_ruler = no
-			age >= scope:DI_story.var:DI_char_spawner_age_increment_value
+			NOT = { knows_language_of_culture = scope:root_target.culture }
 		}
-		save_scope_as = new_courtier
-		set_age = scope:DI_story.var:DI_char_spawner_age_increment_value
-		set_character_faith = scope:target.faith
-		eliminated_health_problem_effect = yes
+		learn_language_of_culture = scope:root_target.culture
+	}
+	
 
-		## Set up skills
-		add_diplomacy_skill = -100
-		add_martial_skill = -100
-		add_stewardship_skill = -100
-		add_intrigue_skill = -100
-		add_learning_skill = -100
-		add_prowess_skill = -100
-
-		add_diplomacy_skill = scope:root_target.var:DI_cs_diplomacy
-		add_martial_skill = scope:root_target.var:DI_cs_martial
-		add_stewardship_skill = scope:root_target.var:DI_cs_stewardship
-		add_intrigue_skill = scope:root_target.var:DI_cs_intrigue
-		add_learning_skill = scope:root_target.var:DI_cs_learning
-		add_prowess_skill = scope:root_target.var:DI_cs_prowess
-
-		scope:target = {
-            add_courtier = scope:new_courtier
-        }
+	scope:target = {
+		add_courtier = scope:new_courtier
+		remove_courtier_or_guest = scope:new_courtier
+		add_courtier = scope:new_courtier
 	}
 
 	scope:DI_story = {
@@ -1695,6 +1723,65 @@ DI_poach_court_charcter_effect = {
 			}
 		}
 	}
+}
+
+DI_poach_court_charcter_effect = {
+	scope:DI_story = {
+		save_scope_value_as = {
+			name = DI_char_spawner_age_increment_value
+			value = var:DI_char_spawner_age_increment_value
+		}
+		save_scope_value_as = {
+			name = DI_female_chance
+			value = var:DI_female_chance
+		}
+	}
+
+	## Get a random non-landed 
+	random_living_character = {
+		limit = {
+			DI_char_spawner_poach_check = { IS_LOWBORN = $IS_LOWBORN$ }
+		}
+		save_scope_as = new_courtier
+		
+	}
+	scope:new_courtier = { DI_set_poached_character_props = yes }
+}
+
+DI_poach_high_noble_court_charcter_effect = {
+	scope:DI_story = {
+		save_scope_value_as = {
+			name = DI_char_spawner_age_increment_value
+			value = var:DI_char_spawner_age_increment_value
+		}
+		save_scope_value_as = {
+			name = DI_female_chance
+			value = var:DI_female_chance
+		}
+	}
+
+	if = {
+		limit = {
+			any_living_character = {
+				DI_char_spawner_poach_high_noble = yes
+			}
+		}
+		random_living_character = {
+			limit = {
+				DI_char_spawner_poach_high_noble = yes
+			}
+			save_scope_as = new_courtier
+		}
+	}
+	else = {
+		random_living_character = {
+			limit = {
+				DI_char_spawner_poach_check = { IS_LOWBORN = no }
+			}
+			save_scope_as = new_courtier
+		}
+	}
+	scope:new_courtier = { DI_set_poached_character_props = yes }
 }
 
 DI_spawn_court_character_effect = {
@@ -1788,22 +1875,17 @@ DI_poach_knight_character_effect = {
 		}
 	}
 
-	## Get a random non-landed 
+	
 	random_living_character = {
 		limit = {
-			NOT = { is_courtier_of = scope:target }
-			is_lowborn = no
-			is_married = no
-			is_ruler = no
-			is_claimant = no
-			DI_char_spawner_gender_check = yes
-			DI_char_has_parent_ruler = no
-			age >= scope:DI_story.var:DI_char_spawner_age_increment_value
+			DI_char_spawner_poachable = yes
 		}
 		save_scope_as = new_courtier
 		set_age = scope:DI_story.var:DI_char_spawner_age_increment_value
 		scope:target = {
             add_courtier = scope:new_courtier
+			remove_courtier_or_guest = scope:new_courtier
+			add_courtier = scope:new_courtier
         }
 
 		set_character_faith = scope:target.faith

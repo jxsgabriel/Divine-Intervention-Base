@@ -669,28 +669,6 @@ template DI_CE_Modifiers_Custom
 			}
 
             dockable_button = {
-				name = "DI_modifier_dynasty_starter_pack_button"
-				onclick = "[GetScriptedGui('DI_add_dynasty_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				onrightclick = "[GetScriptedGui('DI_remove_dynasty_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				button_ignore = none
-				using = tooltip_ne
-
-				icon = {
-					datacontext = "[GetPlayer]"
-					datacontext = "[GetModifier('dynasty_starter_pack')]"
-					datacontext = "[GetPlayer.GetFaith]"
-					parentanchor = center
-					position = { 0 1 }
-					size = {30 30 }
-					tintcolor = { 0 1 1 1 }
-					texture = "[StaticModifier.GetIcon]"
-					tooltipwidget = {
-						using = modifier_DI_tooltip
-					}
-				}
-			}
-
-            dockable_button = {
 				name = "DI_modifier_vassal_starter_pack"
 				onclick = "[GetScriptedGui('DI_add_vassal_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 				onrightclick = "[GetScriptedGui('DI_remove_vassal_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
