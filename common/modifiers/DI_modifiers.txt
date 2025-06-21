@@ -4093,8 +4093,8 @@ DI_travel_safety = {
 # For hjk234
 DI_legend_spread = {
     icon = letter_positive
-    owned_legend_spread_add = 10
-    stacking = yes
+    owned_legend_spread_add = 1
+    stacking = no
 }
 # For Fibre
 DI_prestige_printer = {
@@ -4251,8 +4251,9 @@ player_starter_pack = {
     
     ## Domain and Development Growth
     domain_limit = 10
-    development_growth = 5
-    development_growth_factor = 0.1
+    character_capital_county_monthly_development_growth_add = 5
+    development_growth = 1
+    development_growth_factor = 0.05
     epidemic_resistance = 100
 
     ## Cultural Fascination
@@ -4312,6 +4313,10 @@ player_starter_pack = {
     dread_baseline_add = 50
     dread_loss_mult = -1
 
+    ## Schemes
+    max_hostile_schemes_add = 10
+    max_personal_schemes_add = 10
+
     ## Taxes
     vassal_tax_mult = 0.5
     tax_mult = 0.5
@@ -4332,14 +4337,12 @@ dynasty_starter_pack = {
     stacking = no
 
     ## Health
-    stress_gain_mult = -1.5
-    stress_loss_mult = 1.5
-    positive_inactive_inheritance_chance = 1
-    negative_inactive_inheritance_chance = -1
-    inbreeding_chance = -1
-    genetic_trait_strengthen_chance = 1
-    positive_random_genetic_chance = 1
-    negative_random_genetic_chance = -1
+    positive_inactive_inheritance_chance = 1.5
+    negative_inactive_inheritance_chance = -1.5
+    inbreeding_chance = -1.5
+    genetic_trait_strengthen_chance = 1.5
+    positive_random_genetic_chance = 1.5
+    negative_random_genetic_chance = -1.5
 
     ## Opinion
     county_opinion_add = 100
