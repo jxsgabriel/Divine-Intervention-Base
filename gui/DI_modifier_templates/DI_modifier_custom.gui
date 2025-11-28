@@ -260,94 +260,37 @@ template DI_CE_Modifiers_Custom
                 onrightclick = "[GetScriptedGui('DI_remove_modifier_no_legitimacy_change').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
             }
 
-                        dockable_button = {
-				name = "DI_modifier_player_starter_pack_button"
-				onclick = "[GetScriptedGui('DI_add_player_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            # Player starter pack (Row 2)(Collumn 8)
+			DI_Modifier_Button = {
+                datacontext = "[GetModifier('player_starter_pack')]"
+
+                onclick = "[GetScriptedGui('DI_add_player_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 				onrightclick = "[GetScriptedGui('DI_remove_player_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				button_ignore = none
-				using = tooltip_ne
+            }
 
-				icon = {
-					datacontext = "[GetPlayer]"
-					datacontext = "[GetModifier('player_starter_pack')]"
-					datacontext = "[GetPlayer.GetFaith]"
-					parentanchor = center
-					position = { 0 1 }
-					size = {30 30 }
-					tintcolor = { 0 1 1 1 }
-					texture = "[StaticModifier.GetIcon]"
-					tooltipwidget = {
-						using = modifier_DI_tooltip
-					}
-				}
-			}
+            # Dynasyty starter pack (Row 2)(Collumn 9)
+            DI_Modifier_Button = {
+                datacontext = "[GetModifier('dynasty_starter_pack')]"
 
-            dockable_button = {
-				name = "DI_modifier_dynasty_starter_pack_button"
-				onclick = "[GetScriptedGui('DI_add_dynasty_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				onrightclick = "[GetScriptedGui('DI_remove_dynasty_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				button_ignore = none
-				using = tooltip_ne
+                onclick = "[GetScriptedGui('DI_add_dynasty_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                onrightclick = "[GetScriptedGui('DI_remove_dynasty_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            }
 
-				icon = {
-					datacontext = "[GetPlayer]"
-					datacontext = "[GetModifier('dynasty_starter_pack')]"
-					datacontext = "[GetPlayer.GetFaith]"
-					parentanchor = center
-					position = { 0 1 }
-					size = {30 30 }
-					tintcolor = { 0 1 1 1 }
-					texture = "[StaticModifier.GetIcon]"
-					tooltipwidget = {
-						using = modifier_DI_tooltip
-					}
-				}
-			}
+            # Vassal starter pack (Row 2)(Collumn 10)
+            DI_Modifier_Button = {
+                datacontext = "[GetModifier('vassal_starter_pack')]"
 
-            dockable_button = {
-				name = "DI_modifier_vassal_starter_pack"
-				onclick = "[GetScriptedGui('DI_add_vassal_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				onrightclick = "[GetScriptedGui('DI_remove_vassal_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				button_ignore = none
-				using = tooltip_ne
+                onclick = "[GetScriptedGui('DI_add_vassal_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                onrightclick = "[GetScriptedGui('DI_remove_vassal_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            }
 
-				icon = {
-					datacontext = "[GetPlayer]"
-					datacontext = "[GetModifier('vassal_starter_pack')]"
-					datacontext = "[GetPlayer.GetFaith]"
-					parentanchor = center
-					position = { 0 1 }
-					size = {30 30 }
-					tintcolor = { 0 1 1 1 }
-					texture = "[StaticModifier.GetIcon]"
-					tooltipwidget = {
-						using = modifier_DI_tooltip
-					}
-				}
-			}
+            # Commander booster pack (Row 2)(Collumn 11)
+            DI_Modifier_Button = {
+                datacontext = "[GetModifier('commander_booster_pack')]"
 
-            dockable_button = {
-				name = "DI_modifier_commander_booster_pack"
-				onclick = "[GetScriptedGui('DI_add_commander_booster_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				onrightclick = "[GetScriptedGui('DI_remove_commander_booster_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				button_ignore = none
-				using = tooltip_ne
-
-				icon = {
-					datacontext = "[GetPlayer]"
-					datacontext = "[GetModifier('commander_booster_pack')]"
-					datacontext = "[GetPlayer.GetFaith]"
-					parentanchor = center
-					position = { 0 1 }
-					size = {30 30 }
-					tintcolor = { 0 1 1 1 }
-					texture = "[StaticModifier.GetIcon]"
-					tooltipwidget = {
-						using = modifier_DI_tooltip
-					}
-				}
-			}
-
+                onclick = "[GetScriptedGui('DI_add_commander_booster_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                onrightclick = "[GetScriptedGui('DI_remove_commander_booster_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            }
         }
 
         vbox = {
