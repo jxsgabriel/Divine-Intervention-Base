@@ -475,12 +475,13 @@
                                     margin_right = 10
                                     spacing = 10
 
-                                    icon = {
-                                        size = { 50 50 }
-                                        texture = "gfx/interface/icons/DI_spouse.dds"
-                                    }
+                                    # icon = {
+                                    #     size = { 50 50 }
+                                    #     texture = "gfx/interface/icons/DI_spouse.dds"
+                                    # }
 
                                     text_single = {
+                                        margin_left = 60
                                         layoutpolicy_horizontal = expanding
                                         text = DI_spouse
                                         default_format = "#bold"
@@ -992,7 +993,7 @@
                             # court artificer button standard clean
                             DI_character_spawner_button = {
                                 datacontext = "[GetCourtPositionType('court_artificer_court_position')]"
-                                onclick = "[GetScriptedGui('DI_artificer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                onclick = "[GetScriptedGui('DI_court_artificer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                                 visible = "[GetScriptedGui('DI_ep1_court_check').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                             }
 
