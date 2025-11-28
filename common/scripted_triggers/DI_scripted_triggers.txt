@@ -49,6 +49,7 @@ DI_char_has_parent_ruler = {
 DI_char_spawner_poachable = {
     NOT = { is_courtier_of = scope:target }
     is_married = no
+    is_betrothed = no
     is_ruler = no
     is_claimant = no
     DI_char_spawner_gender_check = yes

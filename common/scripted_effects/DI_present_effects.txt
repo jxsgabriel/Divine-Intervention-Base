@@ -1,28 +1,25 @@
 ﻿personality_trait_randomizer_effect = {
     random_list = {
         10 = { add_trait = temperate }
-        10 = { add_trait = generous }
         10 = { add_trait = diligent }
-        10 = { add_trait = calm }
-        10 = { add_trait = patient }
+        10 = { add_trait = just }
+        10 = { add_trait = stubborn }
     }
     random_list = {
-        10 = { add_trait = humble }
-        10 = { add_trait = honest }
-        10 = { add_trait = craven }
+        10 = { add_trait = calm }
+        10 = { add_trait = patient }
+        10 = { add_trait = cynical }
+        10 = { add_trait = paranoid }
         10 = { add_trait = brave }
         10 = { add_trait = gregarious }
         10 = { add_trait = content }
     }
     random_list = {
-        10 = { add_trait = just }
-        10 = { add_trait = cynical }
-        10 = { add_trait = zealous }
-        10 = { add_trait = paranoid }
+        10 = { add_trait = generous }
+        10 = { add_trait = humble }
+        10 = { add_trait = honest }
         10 = { add_trait = trusting }
         10 = { add_trait = compassionate }
-        10 = { add_trait = stubborn }
-        10 = { add_trait = fickle }
         10 = { add_trait = forgiving }
     }
     if = {
