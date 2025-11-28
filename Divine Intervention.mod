@@ -2,7 +2,6 @@ version="0.1.2"
 tags={
 	"Utilities"
 }
-name="Divine Intervention Cheat Menu"
-supported_version="1.15.0"
-path="C:/Users/litha/OneDrive/Documents/Paradox Interactive/Crusader Kings III/replace this with local path"
-remote_file_id="2986538297"
+name="Divine Intervention Cheat Menu - Testing"
+supported_version="1.16.*"
+path="C:/Users/xavys/Documents/Paradox Interactive/Crusader Kings III/mod/Divine-Intervention-Base"
