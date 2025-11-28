@@ -71,6 +71,7 @@ DI_pin_character_interaction = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
     common_interaction = yes
+    # send_options_exclusive = no # Conentious UX decision indeed, might disable
 
     is_shown = {
         scope:actor = {
@@ -79,10 +80,12 @@ DI_pin_character_interaction = {
     }
 
     send_option = {
+        is_default = yes
         flag = character
         localization = DI_pin_character
     }
     send_option = {
+        is_shown = { scope:recipient = { any_vassal = { count > 0 }}}
         flag = vassals
         localization = DI_pin_vassals
     }
@@ -91,24 +94,61 @@ DI_pin_character_interaction = {
         localization = DI_pin_barony_holders
     }
     send_option = {
+        is_shown = { scope:recipient = { any_courtier = { count > 0 }}}
         flag = courtiers
         localization = DI_pin_courtiers
     }
     send_option = {
+        is_shown = { scope:recipient = { any_councillor = { count > 0 }}}
         flag = councillors
         localization = DI_pin_councillors
     }
     send_option = {
+        is_shown = {
+            scope:recipient.house ?= { exists = yes } #Only Show if character has House#
+            # Dont know about the UX for this, on one hand the list ist very long now, on the other hand players may get confused if they dont have the same list for everyone#
+        }
         flag = house
         localization = DI_pin_house
     }
     send_option = {
+        is_shown = {
+            scope:recipient.dynasty ?= { exists = yes } #Only Show if character has Dynasty#
+            # Dont know about the UX for this, on one hand the list ist very long now, on the other hand players may get confused if they dont have the same list for everyone#
+        }
         flag = dynasty
         localization = DI_pin_dynasty
     }
     send_option = {
+        is_shown = { scope:recipient = { any_relation = { type = lover }}}
         flag = lovers
         localization = DI_pin_lovers
+    }
+    send_option = {
+        is_shown = {
+            scope:recipient.house.house_confederation ?= { exists = yes } #Only Show if House is in Bloc#
+            # Dont know about the UX for this, on one hand the list ist very long now, on the other hand players may get confused if they dont have the same list for everyone#
+        }
+        flag = house_confederation #House Bloc feature in New DLC / Japan#
+        localization = DI_pin_bloc
+    }
+    send_option = {
+        is_shown = { scope:recipient = { any_close_family_member = { count > 0 }}}
+        flag = every_close_family_member #New option For better pinning of important relatives with new DLC#
+        localization = DI_pin_close_family
+    }
+    send_option = {
+        is_shown = { scope:recipient = { any_extended_family_member = { count > 0 }}}
+        flag = every_extended_family_member #New option For better pinning of important relatives with new DLC#
+        localization = DI_pin_extended_family
+    }
+    send_option = {
+        flag = every_faith_member
+        localization = DI_pin_faith_members
+    }
+    send_option = {
+        flag = every_culture_member
+        localization = DI_pin_culture_members
     }
     send_option = {
         flag = knights
@@ -232,6 +272,72 @@ DI_pin_character_interaction = {
             }
 
             if = {
+                limit = { scope:house_confederation = yes }
+
+                scope:recipient.house.house_head.house.house_confederation = {  #Stupid fucking shit why does it only work through the house head i sped 2 hours on this shit.
+                    every_confederation_member_house = {
+                        every_house_member = {
+                            add_character_flag = pinned_for_edit
+                            scope:actor = {
+                                add_to_variable_list = { name = pinned_characters target = prev }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if = {
+                limit = {scope:every_close_family_member = yes}
+
+                every_close_family_member = {
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+            }
+
+            if = {
+                limit = {scope:every_extended_family_member = yes}
+
+                every_extended_family_member = {
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+            }
+
+            if = {
+                limit = {scope:every_faith_member = yes}
+
+                every_living_character = {
+                    limit = {
+                        faith = scope:recipient.faith
+                    }
+
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+            }
+
+            if = {
+                limit = {scope:every_culture_member = yes}
+
+                every_living_character = {
+                    limit = {
+                        culture = scope:recipient.culture
+                    }
+
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+            }
+            if = {
                 limit = {scope:knights = yes}
                 
                 every_courtier = {
@@ -322,6 +428,8 @@ DI_pin_title_interaction = {
                         add_to_variable_list = { name = DI_selected_titles target = prev }
                     }
                 }
+
+                DI_recount_title_counters = yes
             }
 
             # vassal titles
@@ -339,6 +447,8 @@ DI_pin_title_interaction = {
                         }
                     }
                 }
+
+                DI_recount_title_counters = yes
             }
 
             # sub realm titles
@@ -354,6 +464,8 @@ DI_pin_title_interaction = {
                         add_to_variable_list = { name = DI_selected_titles target = prev }
                     }
                 }
+
+                DI_recount_title_counters = yes
             }
 
             if = {
@@ -379,6 +491,8 @@ DI_pin_title_interaction = {
                         }
                     }
                 }
+
+                DI_recount_title_counters = yes
             }
         }
     }
@@ -669,14 +783,14 @@ DI_remove_character_flags_interaction = {
     on_accept = {
         scope:recipient = {
             if = { limit = { always = scope:used_lifetime_invasion }
-                remove_character_flag = used_lifetime_invasion
-            }
-            else_if = { limit = { always = scope:declared_major_religious_war_flag }
-                remove_character_flag = declared_major_religious_war_flag
-            }
-
+            remove_character_flag = used_lifetime_invasion
         }
+        else_if = { limit = { always = scope:declared_major_religious_war_flag }
+        remove_character_flag = declared_major_religious_war_flag
     }
+
+}
+}
 }
 
 DI_permanent_health = {
@@ -1760,6 +1874,7 @@ DI_cadetBranch_interaction = { #My Dynasty + Dynastyhead
     category = interaction_category_cheat_menu
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
+    icon = icon_dynasty
 
     is_shown = {
         scope:actor = {
@@ -1788,8 +1903,39 @@ DI_cadetBranch_interaction = { #My Dynasty + Dynastyhead
         show_as_tooltip = {
             scope:recipient = {
                 custom_tooltip = DI_cadetBranch_event_tooltip.1
-                create_cadet_branch = yes
+                create_cadet_branch = {
+                    name = cadet_name_style_primary_title
+                }
             }
+        }
+    }
+}
+
+DI_make_house_head_interaction = {
+    category = interaction_category_cheat_menu
+    icon = icon_dynasty
+
+    auto_accept = yes
+    use_diplomatic_range = no
+    ignores_pending_interaction_block = yes
+
+    is_shown = {
+        scope:actor = {
+            is_ai = no
+            any_owned_story = {
+                story_type = DI_misc_variables_story
+                has_variable = DI_cheat_menu
+            }
+        }
+        scope:recipient = {
+            exists = scope:recipient.house
+            NOT = { scope:recipient.house.house_head = scope:recipient }
+        }
+    }
+
+    on_accept = {
+        scope:recipient.house = {
+            set_house_head = scope:recipient
         }
     }
 }
@@ -2461,6 +2607,39 @@ DI_take_all_titles_interaction = {
                     }
                 }
             }
+        }
+    }
+}
+
+### Make Tributary ###
+DI_make_tributary_interaction = {
+    category = interaction_category_cheat_menu
+    icon = demand_tributary_interaction
+    common_interaction = yes
+
+    auto_accept = yes
+    use_diplomatic_range = no
+    ignores_pending_interaction_block = yes
+
+    is_shown = {
+        NOT = { scope:actor = scope:recipient }
+        scope:actor = {
+            is_ai = no
+            any_owned_story = {
+                story_type = DI_misc_variables_story
+                has_variable = DI_cheat_menu
+            }
+        }
+        scope:recipient = {
+            is_landed = yes
+            NOT = { is_tributary_of = scope:actor }
+        }
+    }
+
+    on_accept = {
+        start_tributary_interaction_effect = {
+            TRIBUTARY = scope:recipient
+            SUZERAIN = scope:actor
         }
     }
 }
@@ -3806,6 +3985,36 @@ DI_add_hook_interaction = {
     }
 }
 
+DI_remove_hook_interaction = {
+    category = interaction_category_cheat_menu
+    icon = hook_icon
+    common_interaction = no
+
+    auto_accept = yes
+    use_diplomatic_range = no
+    ignores_pending_interaction_block = yes
+
+    is_shown = {
+        scope:actor = {
+            is_ai = no
+            any_owned_story = {
+                story_type = DI_misc_variables_story
+                has_variable = DI_cheat_menu
+            }
+        }
+        NOT = { scope:recipient = scope:actor }
+        scope:recipient = {
+            has_hook = scope:actor
+        }
+    }
+
+    on_accept = {
+        scope:recipient = {
+            remove_hook = { target = scope:actor }
+        }
+    }
+}
+
 ### Add Excommunitcated to Character ###
 DI_excommunicate_interaction = {
     category = interaction_category_cheat_menu
@@ -3907,6 +4116,218 @@ DI_commit_suicide_interaction = {
     ai_will_do = { base = 0 }
 }
 
+DI_change_government_extended = {
+    category = interaction_category_cheat_menu
+    icon = icon_holding_city
+    desc = DI_change_government_desc
+    common_interaction = no
+
+    auto_accept = yes
+    use_diplomatic_range = no
+    ignores_pending_interaction_block = yes
+
+    is_shown = {
+        scope:actor = {
+            is_ai = no
+            any_owned_story = {
+                story_type = DI_misc_variables_story
+                has_variable = DI_cheat_menu
+            }
+        }
+    }
+
+    send_option = {
+        flag = nomad
+        localization = DI_change_government_nomad
+    }
+    send_option = {
+        flag = landless_adventurer
+        localization = DI_change_government_landless_adventurer
+    }
+    send_option = {
+        flag = herder
+        localization = DI_change_government_herder
+    }
+    send_option = {
+        flag = celestial
+        localization = DI_change_government_celestial
+        is_valid = {
+            has_tgp_dlc_trigger = yes
+        }
+    }
+    send_option = {
+        flag = japan_administrative
+        localization = DI_change_government_japan_administrative
+        is_valid = {
+            has_tgp_dlc_trigger = yes
+        }
+    }
+    send_option = {
+        flag = japan_feudal
+        localization = DI_change_government_japan_feudal
+        is_valid = {
+            has_tgp_dlc_trigger = yes
+        }
+    }
+    send_option = {
+        flag = wanua
+        localization = DI_change_government_wanua
+        is_valid = {
+            has_tgp_dlc_trigger = yes
+        }
+    }
+    send_option = {
+        flag = mandala
+        localization = DI_change_government_mandala
+        is_valid = {
+            has_tgp_dlc_trigger = yes
+        }
+    }
+    send_option = {
+        flag = steppe_admin
+        localization = DI_change_government_steppe_admin
+        is_valid = {
+            has_tgp_dlc_trigger = yes
+        }
+    }
+    send_option = {
+        flag = meritocratic
+        localization = DI_change_government_meritocratic
+        is_valid = {
+            has_tgp_dlc_trigger = yes
+        }
+    }
+
+    on_accept = {
+        scope:actor = {
+            switch = {
+                trigger = yes
+
+                scope:japan_administrative = {
+                    scope:recipient = {
+                        change_government = japan_administrative_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = japan_administrative_government
+                        }
+                    }
+                }
+                scope:japan_feudal = {
+                    scope:recipient = {
+                        change_government = japan_feudal_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = japan_feudal_government
+                        }
+                    }
+                }
+                scope:nomad = {
+                    scope:recipient = {
+                        change_government = nomad_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = nomad_government
+                        }
+                    }
+                }
+                scope:landless_adventurer = {
+                    scope:recipient = {
+                        change_government = landless_adventurer_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = landless_adventurer_government
+                        }
+                    }
+                }
+                scope:herder = {
+                    scope:recipient = {
+                        change_government = herder_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = herder_government
+                        }
+                    }
+                }
+                scope:celestial = {
+                    scope:recipient = {
+                        change_government = celestial_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = celestial_government
+                        }
+                    }
+                }
+                scope:wanua = {
+                    scope:recipient = {
+                        change_government = wanua_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = wanua_government
+                        }
+                    }
+                }
+                scope:mandala = {
+                    scope:recipient = {
+                        change_government = mandala_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = mandala_government
+                        }
+                    }
+                }
+                scope:steppe_admin = {
+                    scope:recipient = {
+                        change_government = steppe_admin_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = steppe_admin_government
+                        }
+                    }
+                }
+                scope:meritocratic = {
+                    scope:recipient = {
+                        change_government = meritocratic_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = meritocratic_government
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 DI_change_government = {
     category = interaction_category_cheat_menu
     icon = icon_holding_city
@@ -3945,6 +4366,14 @@ DI_change_government = {
         is_valid = {
             has_dlc_feature = admin_gov
         }
+    }
+    send_option = {
+        flag = republic
+        localization = DI_change_government_republic
+    }
+    send_option = {
+        flag = theocracy
+        localization = DI_change_government_theocracy
     }
     send_option = {
         flag = feudal_full
@@ -4023,6 +4452,30 @@ DI_change_government = {
                         change_to_administrative_effect = yes
                         every_vassal_or_below = {
                             change_to_administrative_effect = yes
+                        }
+                    }
+                }
+                scope:republic = {
+                    scope:recipient = {
+                        change_government = republic_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = republic_government
+                        }
+                    }
+                }
+                scope:theocracy = {
+                    scope:recipient = {
+                        change_government = theocracy_government
+
+                        every_vassal_or_below = {
+                            limit = {
+                                highest_held_title_tier > tier_barony
+                            }
+                            change_government = theocracy_government
                         }
                     }
                 }
@@ -4307,13 +4760,13 @@ DI_start_diarchy_interaction = {
 
                 scope:regency_player = {
                     scope:recipient = {
-                        start_diarchy = regency
+                        try_start_diarchy = regency
                         set_diarch = scope:actor
                     }
                 }
                 scope:regency_npc = {
                     scope:recipient = {
-                        start_diarchy = regency
+                        try_start_diarchy = regency
                     }
                 }
             }
@@ -4413,6 +4866,78 @@ DI_abdicate = {
         scope:actor = {
             depose = yes
         }
+    }
+}
+
+DI_take_artifact_interaction = {
+    category = interaction_category_cheat_menu
+    icon = icon_scheme_steal_back_artifact
+    common_interaction = no
+
+    auto_accept = yes
+    use_diplomatic_range = no
+    ignores_pending_interaction_block = yes
+    target_type = artifact
+    target_filter = recipient_artifacts
+
+    is_shown = {
+        scope:actor = {
+            is_ai = no
+            any_owned_story = {
+                story_type = DI_misc_variables_story
+                has_variable = DI_cheat_menu
+            }
+        }
+        scope:recipient = {
+            any_character_artifact = { exists = this }
+        }
+    }
+
+    send_option = {
+        is_valid = {
+            NOT = { scope:recipient = scope:actor }
+        }
+        flag = player
+        localization = take_artifact_player
+    }
+    send_option = {
+        is_valid = {
+            scope:recipient = {
+                any_neighboring_top_liege_realm_owner = {
+                    NOR = {
+                        this = scope:recipient
+                        this = scope:actor
+                    }
+                }
+            }
+        }
+        flag = random_neighbor
+        localization = give_away_random_artifact_interaction
+    }
+
+    is_highlighted = { always = yes }
+
+    on_accept = {
+        scope:recipient = {
+            switch = {
+                trigger = yes
+                scope:random_neighbor = {
+                    random_neighboring_top_liege_realm_owner = {
+                        limit = {
+                            NOR = {
+                                this = scope:recipient
+                                this = scope:actor
+                            }
+                        }
+                        save_scope_as = new_owner
+                    }
+                }
+                scope:player = {
+                    scope:actor = { save_scope_as = new_owner }
+                }
+            }
+        }
+        scope:target = { set_owner = scope:new_owner }
     }
 }
 

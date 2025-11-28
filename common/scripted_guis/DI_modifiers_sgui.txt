@@ -17915,31 +17915,6 @@ DI_remove_modifier_money_printer = {
 	}
 }
 
-### Legacy of Piracy ###
-DI_add_modifier_legacy_of_piracy = {
-	scope = character
-
-	effect = {
-		apply_modifier_effect = {
-			MODIFIER_ACTION = add
-			MODIFIER_NAME = fp1_legacy_of_piracy_modifier
-			MODIFIER_SCOPE = dynasty
-		}
-	}
-}
-
-DI_remove_modifier_legacy_of_piracy = {
-	scope = character
-
-	effect = {
-		apply_modifier_effect = {
-			MODIFIER_ACTION = remove
-			MODIFIER_NAME = fp1_legacy_of_piracy_modifier
-			MODIFIER_SCOPE = dynasty
-		}
-	}
-}
-
 ### DI_trait_xp_boost ###
 DI_add_modifier_DI_trait_xp_boost = {
 	scope = character
@@ -18814,6 +18789,39 @@ DI_remove_commander_booster_pack = {
             MODIFIER_NAME = commander_booster_pack
         }
     }
+}
+ 
+
+
+## Dynasty Modifiers ##
+
+# Moved Here To Keep Things Organized / better track and findabilty for future edits
+# Japan has a lot of interafctions where you can have inter dynasty conflics and a lot more houses in a dynasty so i want to move this to a new menu for dynasty modifiers
+# also want to add additional house and dynasty modifiers since they play such a big part in japan.
+
+### Legacy of Piracy ###
+DI_add_modifier_legacy_of_piracy = {
+	scope = character
+
+	effect = {
+		apply_modifier_effect = {
+			MODIFIER_ACTION = add
+			MODIFIER_NAME = fp1_legacy_of_piracy_modifier
+			MODIFIER_SCOPE = dynasty
+		}
+	}
+}
+
+DI_remove_modifier_legacy_of_piracy = {
+	scope = character
+
+	effect = {
+		apply_modifier_effect = {
+			MODIFIER_ACTION = remove
+			MODIFIER_NAME = fp1_legacy_of_piracy_modifier
+			MODIFIER_SCOPE = dynasty
+		}
+	}
 }
 
 ### Clear all Modifiers ###
