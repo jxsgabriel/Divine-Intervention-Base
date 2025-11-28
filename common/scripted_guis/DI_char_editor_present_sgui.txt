@@ -842,10 +842,12 @@ DI_ce_clear_personality = {
 					has_character_flag = pinned_for_edit
 				}
 				clear_personality_traits_effect = yes
+				clear_education_traits = yes
 			}
 		}
 		else = {
 			clear_personality_traits_effect = yes
+			clear_education_traits = yes
 		}
 	}
 
@@ -989,6 +991,133 @@ DI_ce_remove_commander_traits = {
 	}
 }
 
+### Add All Knight Traits
+DI_ce_add_knight_traits = {
+	scope = character
+
+	effect = {
+		random_owned_story = {
+			limit = {
+				story_type = DI_misc_variables_story
+			}
+			save_scope_as = DI_story
+		}
+		
+		if = {
+			limit = {
+				scope:DI_story = { has_variable = DI_pinned_char_var }
+			}
+			every_living_character = {
+				limit = {
+					has_character_flag = pinned_for_edit
+				}
+				add_knight_traits_effect = yes
+			}
+		}
+		else = {
+			add_knight_traits_effect = yes
+		}
+	}
+}
+
+### Remove All Knight Traits
+DI_ce_remove_knight_traits = {
+	scope = character
+
+	effect = {
+		random_owned_story = {
+			limit = {
+				story_type = DI_misc_variables_story
+			}
+			save_scope_as = DI_story
+		}
+		
+		if = {
+			limit = {
+				scope:DI_story = { has_variable = DI_pinned_char_var }
+			}
+			every_living_character = {
+				limit = {
+					has_character_flag = pinned_for_edit
+				}
+				remove_knight_traits_effect = yes
+			}
+		}
+		else = {
+			remove_knight_traits_effect = yes
+		}
+	}
+}
+
+### Add All Knight Traits
+DI_ce_add_vassal_traits = {
+	scope = character
+
+	effect = {
+		random_owned_story = {
+			limit = {
+				story_type = DI_misc_variables_story
+			}
+			save_scope_as = DI_story
+		}
+		
+		if = {
+			limit = {
+				scope:DI_story = { has_variable = DI_pinned_char_var }
+			}
+			every_living_character = {
+				limit = {
+					has_character_flag = pinned_for_edit
+				}
+				clear_personality_traits_effect = yes
+				add_trait = honest
+				add_trait = craven
+				add_trait = forgiving
+			}
+		}
+		else = {
+			clear_personality_traits_effect = yes
+			add_trait = honest
+			add_trait = craven
+			add_trait = forgiving
+		}
+	}
+}
+
+### Remove All Knight Traits
+DI_ce_remove_vassal_traits = {
+	scope = character
+
+	effect = {
+		random_owned_story = {
+			limit = {
+				story_type = DI_misc_variables_story
+			}
+			save_scope_as = DI_story
+		}
+		
+		if = {
+			limit = {
+				scope:DI_story = { has_variable = DI_pinned_char_var }
+			}
+			every_living_character = {
+				limit = {
+					has_character_flag = pinned_for_edit
+				}
+				remove_trait = honest
+				remove_trait = craven
+				remove_trait = forgiving
+			}
+		}
+		else = {
+			remove_trait = honest
+			remove_trait = craven
+			remove_trait = forgiving
+		}
+	}
+}
+
+
 ### Aggressive Traits
 DI_ce_add_aggressive_traits = {
 	scope = character
@@ -1078,14 +1207,14 @@ DI_ce_add_timid_traits = {
 					has_character_flag = pinned_for_edit
 				}
 				clear_personality_traits_effect = yes
-				add_trait = shy
+				add_trait = compassionate
 				add_trait = craven
 				add_trait = forgiving
 			}
 		}
 		else = {
 			clear_personality_traits_effect = yes
-			add_trait = shy
+			add_trait = compassionate
 			add_trait = craven
 			add_trait = forgiving
 		}
@@ -1111,13 +1240,13 @@ DI_ce_remove_timid_traits = {
 				limit = {
 					has_character_flag = pinned_for_edit
 				}
-				remove_trait = shy
+				remove_trait = compassionate
 				remove_trait = craven
 				remove_trait = forgiving
 			}
 		}
 		else = {
-			remove_trait = shy
+			remove_trait = compassionate
 			remove_trait = craven
 			remove_trait = forgiving
 		}

@@ -710,12 +710,12 @@ domain_tax_different_faith_mult_even_if_baron_neg = {
 }
 vassal_tax_mult = {
     icon = economy_positive
-    vassal_tax_mult = 0.5
+    vassal_tax_mult = 0.2
     stacking = yes
 }
 vassal_tax_mult_neg = {
     icon = economy_negative
-    vassal_tax_mult = -0.5
+    vassal_tax_mult = -0.2
     stacking = yes
 }
 men_at_arms_maintenance = {
@@ -1430,12 +1430,12 @@ max_combat_roll_neg = {
 }
 men_at_arms_limit = {
     icon = prowess_positive
-    men_at_arms_limit = 2
+    men_at_arms_limit = 5
     stacking = yes
 }
 men_at_arms_limit_neg = {
     icon = prowess_negative
-    men_at_arms_limit = -2
+    men_at_arms_limit = -5
     stacking = yes
 }
 men_at_arms_cap = {
@@ -1520,62 +1520,62 @@ revolting_siege_morale_loss_mult_neg = {
 }
 vassal_tax_contribution = {
     icon = economy_positive
-    vassal_tax_contribution_add = 1
+    vassal_tax_contribution_add = 0.2
     stacking = yes
 }
 vassal_tax_contribution_neg = {
     icon = economy_negative
-    vassal_tax_contribution_add = -1
+    vassal_tax_contribution_add = -0.2
     stacking = yes
 }
 vassal_tax_contribution_mult = {
     icon = economy_positive
-    vassal_tax_contribution_mult = 0.5
+    vassal_tax_contribution_mult = 0.2
     stacking = yes
 }
 vassal_tax_contribution_mult_neg = {
     icon = economy_negative
-    vassal_tax_contribution_mult = -0.5
+    vassal_tax_contribution_mult = -0.2
     stacking = yes
 }
 intimidated_vassal_tax_contribution = {
     icon = economy_positive
-    intimidated_vassal_tax_contribution_add = 1
+    intimidated_vassal_tax_contribution_add = 0.2
     stacking = yes
 }
 intimidated_vassal_tax_contribution_neg = {
     icon = economy_negative
-    intimidated_vassal_tax_contribution_add = -1
+    intimidated_vassal_tax_contribution_add = -0.2
     stacking = yes
 }
 intimidated_vassal_tax_contribution_mult = {
     icon = economy_positive
-    intimidated_vassal_tax_contribution_mult = 0.5
+    intimidated_vassal_tax_contribution_mult = 0.2
     stacking = yes
 }
 intimidated_vassal_tax_contribution_mult_neg = {
     icon = economy_negative
-    intimidated_vassal_tax_contribution_mult = -0.5
+    intimidated_vassal_tax_contribution_mult = -0.2
     stacking = yes
 }
 cowed_vassal_tax_contribution = {
     icon = economy_positive
-    cowed_vassal_tax_contribution_add = 1
+    cowed_vassal_tax_contribution_add = 0.2
     stacking = yes
 }
 cowed_vassal_tax_contribution_neg = {
     icon = economy_negative
-    cowed_vassal_tax_contribution_add = -1
+    cowed_vassal_tax_contribution_add = -0.2
     stacking = yes
 }
 cowed_vassal_tax_contribution_mult = {
     icon = economy_positive
-    cowed_vassal_tax_contribution_mult = 0.5
+    cowed_vassal_tax_contribution_mult = 0.2
     stacking = yes
 }
 cowed_vassal_tax_contribution_mult_neg = {
     icon = economy_negative
-    cowed_vassal_tax_contribution_mult = -0.5
+    cowed_vassal_tax_contribution_mult = -0.2
     stacking = yes
 }
 vassal_levy_contribution = {
@@ -1640,22 +1640,22 @@ cowed_vassal_levy_contribution_mult_neg = {
 }
 happy_powerful_vassal_tax_contribution = {
     icon = prowess_positive
-    happy_powerful_vassal_tax_contribution_add = 1
+    happy_powerful_vassal_tax_contribution_add = 0.2
     stacking = yes
 }
 happy_powerful_vassal_tax_contribution_neg = {
     icon = prowess_negative
-    happy_powerful_vassal_tax_contribution_add = -1
+    happy_powerful_vassal_tax_contribution_add = -0.2
     stacking = yes
 }
 happy_powerful_vassal_tax_contribution_mult = {
     icon = prowess_positive
-    happy_powerful_vassal_tax_contribution_mult = 0.5
+    happy_powerful_vassal_tax_contribution_mult = 0.2
     stacking = yes
 }
 happy_powerful_vassal_tax_contribution_mult_neg = {
     icon = prowess_negative
-    happy_powerful_vassal_tax_contribution_mult = -0.5
+    happy_powerful_vassal_tax_contribution_mult = -0.2
     stacking = yes
 }
 happy_powerful_vassal_levy_contribution = {
@@ -1890,12 +1890,12 @@ enemy_terrain_advantage_neg = {
 }
 tolerance_advantage = {
     icon = martial_positive
-    tolerance_advantage_mod = 0.5
+    tolerance_advantage_mod = 5
     stacking = yes
 }
 tolerance_advantage_neg = {
     icon = martial_negative
-    tolerance_advantage_mod = -0.5
+    tolerance_advantage_mod = -5
     stacking = yes
 }
 advantage_against_coreligionists = {
@@ -1950,7 +1950,7 @@ supply_duration_neg = {
 }
 supply_limit_mult = {
     icon = martial_positive
-    supply_limit_mult = 0.5
+    supply_limit_mult = 1
     stacking = yes
 }
 supply_limit_mult_neg = {
@@ -1960,12 +1960,12 @@ supply_limit_mult_neg = {
 }
 supply_limit = {
     icon = martial_positive
-    supply_limit = 5
+    supply_limit = 1000
     stacking = yes
 }
 supply_limit_neg = {
     icon = martial_negative
-    supply_limit = -5
+    supply_limit = -1000
     stacking = yes
 }
 fort_level = {
@@ -1980,12 +1980,12 @@ fort_level_neg = {
 }
 supply_capacity = {
     icon = martial_positive
-    supply_capacity_add = 5
+    supply_capacity_add = 1000
     stacking = yes
 }
 supply_capacity_neg = {
     icon = martial_negative
-    supply_capacity_add = -5
+    supply_capacity_add = -1000
     stacking = yes
 }
 supply_capacity_mult = {
@@ -4054,7 +4054,8 @@ DI_true_rulers = {
 # For jgrambo
 DI_plague_doctor = {
     icon = health_positive
-    epidemic_resistance = 100
+    epidemic_resistance = 30
+    stacking = no
 }
 
 # For treezybaby
@@ -4093,8 +4094,8 @@ DI_travel_safety = {
 # For hjk234
 DI_legend_spread = {
     icon = letter_positive
-    owned_legend_spread_add = 10
-    stacking = yes
+    owned_legend_spread_add = 1
+    stacking = no
 }
 # For Fibre
 DI_prestige_printer = {
@@ -4161,4 +4162,237 @@ no_legitimacy_change = {
     icon = social_positive
     legitimacy_gain_mult = -10
     legitimacy_loss_mult = -10
+}
+
+republic_government_tax_contribution_mult = {
+    icon = economy_positive
+    republic_government_tax_contribution_mult = 0.2
+    stacking = yes
+}
+republic_government_tax_contribution_mult_neg = {
+    icon = economy_negative
+    republic_government_tax_contribution_mult = -0.2
+    stacking = yes
+}
+republic_government_tax_contribution_add = {
+    icon = economy_positive
+    republic_government_tax_contribution_add = 0.2
+    stacking = yes
+}
+republic_government_tax_contribution_add_neg = {
+    icon = economy_negative
+    republic_government_tax_contribution_add = -0.2
+    stacking = yes
+}
+republic_government_levy_contribution_add = {
+    icon = prowess_positive
+    republic_government_levy_contribution_add = 0.2
+    stacking = yes
+}
+republic_government_levy_contribution_add_neg = {
+    icon = prowess_negative
+    republic_government_levy_contribution_add = -0.2
+    stacking = yes
+}
+republic_government_levy_contribution_mult = {
+    icon = prowess_positive
+    republic_government_levy_contribution_mult = 0.2
+    stacking = yes
+}
+republic_government_levy_contribution_mult_neg = {
+    icon = prowess_negative
+    republic_government_levy_contribution_mult = -0.2
+    stacking = yes
+}
+
+theocracy_government_tax_contribution_mult = {
+    icon = economy_positive
+    theocracy_government_tax_contribution_mult = 0.2
+    stacking = yes
+}
+theocracy_government_tax_contribution_mult_neg = {
+    icon = economy_negative
+    theocracy_government_tax_contribution_mult = -0.2
+    stacking = yes
+}
+theocracy_government_tax_contribution_add = {
+    icon = economy_positive
+    theocracy_government_tax_contribution_add = 0.2
+    stacking = yes
+}
+theocracy_government_tax_contribution_add_neg = {
+    icon = economy_negative
+    theocracy_government_tax_contribution_add = -0.2
+    stacking = yes
+}
+theocracy_government_levy_contribution_add = {
+    icon = prowess_positive
+    theocracy_government_levy_contribution_add = 0.2
+    stacking = yes
+}
+theocracy_government_levy_contribution_add_neg = {
+    icon = prowess_negative
+    theocracy_government_levy_contribution_add = -0.2
+    stacking = yes
+}
+theocracy_government_levy_contribution_mult = {
+    icon = prowess_positive
+    theocracy_government_levy_contribution_mult = 0.2
+    stacking = yes
+}
+theocracy_government_levy_contribution_mult_neg = {
+    icon = prowess_negative
+    theocracy_government_levy_contribution_mult = -0.2
+    stacking = yes
+}
+
+player_starter_pack = {
+    icon = legitimacy_positive
+    stacking = no
+    
+    ## Domain and Development Growth
+    domain_limit = 10
+    character_capital_county_monthly_development_growth_add = 1
+    development_growth = 1
+    development_growth_factor = 0.05
+    epidemic_resistance = 100
+
+    ## Cultural Fascination
+    cultural_head_fascination_add = 25
+    cultural_head_fascination_mult = 0.5
+
+    ## Military Casualties
+    retreat_losses = -1
+    hard_casualty_modifier = -1
+    enemy_hard_casualty_modifier = 1
+    advantage = 20
+
+    ## Knights
+    knight_limit = 10
+    knight_effectiveness_mult = 5
+
+    ## Levies and Army
+    levy_size = 1
+    levy_pursuit = 10
+    levy_screen = 10
+    levy_siege = 1
+    army_damage_mult = 1
+    army_screen_mult = 1
+    army_siege_value_mult = 1
+    army_toughness_mult = 1
+    supply_duration = 5
+    supply_capacity_add = 500
+    supply_capacity_mult = 1
+    min_combat_roll = 2
+    max_combat_roll = 2
+
+    ## Men at Arms
+    men_at_arms_limit = 10
+    men_at_arms_cap = 10
+    maa_siege_value_add = 1
+    maa_siege_value_mult = 0.5
+    maa_damage_add = 50
+    maa_damage_mult = 0.5
+    maa_toughness_add = 50
+    maa_toughness_mult = 0.5
+    maa_pursuit_add = 20
+    maa_pursuit_mult = 0.5
+    maa_screen_add = 20
+    maa_screen_mult = 0.5
+
+    ## Income: Gold, Prestige, Renown
+    monthly_income = 20
+    monthly_income_mult = 0.5
+    monthly_piety = 10
+    monthly_piety_gain_mult = 0.5
+    monthly_prestige = 10
+    monthly_prestige_gain_mult = 0.5
+    monthly_dynasty_prestige = 10
+    monthly_dynasty_prestige_mult = 0.5
+
+    ## Dread
+    dread_baseline_add = 50
+    dread_loss_mult = -1
+
+    ## Schemes
+    max_hostile_schemes_add = 10
+    max_personal_schemes_add = 10
+
+    ## Taxes
+    vassal_tax_mult = 0.5
+    tax_mult = 0.5
+    domain_tax_mult = 0.5
+    feudal_government_levy_contribution_mult = 1
+    feudal_government_tax_contribution_mult = 3
+    theocracy_government_levy_contribution_mult = 1
+    theocracy_government_tax_contribution_mult = 1
+    republic_government_levy_contribution_mult = 1
+    republic_government_tax_contribution_mult = 1
+
+    ## Opinion
+    dynasty_opinion = 50
+}
+
+dynasty_starter_pack = {
+    icon = legitimacy_positive
+    stacking = no
+
+    ## Health
+    positive_inactive_inheritance_chance = 1.5
+    negative_inactive_inheritance_chance = -1.5
+    inbreeding_chance = -1.5
+    genetic_trait_strengthen_chance = 1.5
+    positive_random_genetic_chance = 1.5
+    negative_random_genetic_chance = -1.5
+
+    ## Opinion
+    county_opinion_add = 100
+    different_faith_county_opinion_mult = -1
+
+    general_opinion = 50
+
+    ## Intrigue
+    intrigue = 5
+
+    ## Epidemics
+    epidemic_resistance = 50
+}
+
+vassal_starter_pack = {
+    icon = letter_positive
+    stacking = no
+
+    ## Opinion
+    different_culture_opinion = 50
+    fellow_vassal_opinion = 50
+
+    ## Income
+    monthly_income = 5
+
+    ## Taxes
+    tax_mult = 0.1
+    domain_tax_mult = 0.1
+
+    development_growth = 0.5
+    development_growth_factor = 0.05
+
+    ## Epidemics
+    epidemic_resistance = 30
+}
+
+commander_booster_pack = {
+    icon = prowess_positive
+    stacking = no
+
+    ## Combat Modifiers
+    supply_duration = 5
+    supply_capacity_add = 5000
+    supply_capacity_mult = 1
+
+    ## Casualties
+    retreat_losses = -1
+    hard_casualty_modifier = -1
+    enemy_hard_casualty_modifier = 1
+    hostile_county_attrition = -1
+    advantage = 20
 }

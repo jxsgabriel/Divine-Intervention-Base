@@ -87,6 +87,10 @@ DI_pin_character_interaction = {
         localization = DI_pin_vassals
     }
     send_option = {
+        flag = barony_holders
+        localization = DI_pin_barony_holders
+    }
+    send_option = {
         flag = courtiers
         localization = DI_pin_courtiers
     }
@@ -105,6 +109,14 @@ DI_pin_character_interaction = {
     send_option = {
         flag = lovers
         localization = DI_pin_lovers
+    }
+    send_option = {
+        flag = knights
+        localization = DI_pin_knights
+    }
+    send_option = {
+        flag = commanders
+        localization = DI_pin_commanders
     }
 
     on_accept = {
@@ -125,6 +137,28 @@ DI_pin_character_interaction = {
                     add_character_flag = pinned_for_edit
                     scope:actor = {
                         add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+            }
+
+            if = {
+                limit = {scope:barony_holders = yes}
+
+                every_sub_realm_barony = {
+                    holder = {
+                        add_character_flag = pinned_for_edit
+                        scope:actor = {
+                            add_to_variable_list = { name = pinned_characters target = prev }
+                        }
+                    }
+	                if = {
+	                    limit = { exists = lessee }
+                        lessee = {
+                            add_character_flag = pinned_for_edit
+                            scope:actor = {
+                                add_to_variable_list = { name = pinned_characters target = prev }
+                            }
+                        }
                     }
                 }
             }
@@ -190,6 +224,46 @@ DI_pin_character_interaction = {
 
                 every_relation = {
                     type = soulmate
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+            }
+
+            if = {
+                limit = {scope:knights = yes}
+                
+                every_courtier = {
+                    limit = { is_knight = yes }
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+
+                every_vassal = {
+                    limit = { is_knight = yes }
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+            }
+
+            if = {
+                limit = {scope:commanders = yes}
+
+                every_courtier = {
+                    limit = { is_commanding_army = yes }
+                    add_character_flag = pinned_for_edit
+                    scope:actor = {
+                        add_to_variable_list = { name = pinned_characters target = prev }
+                    }
+                }
+
+                every_vassal = {
+                    limit = { is_commanding_army = yes }
                     add_character_flag = pinned_for_edit
                     scope:actor = {
                         add_to_variable_list = { name = pinned_characters target = prev }
@@ -1729,7 +1803,6 @@ DI_murder_interaction = {
     icon = icon_dead
 
     is_shown = {
-        NOT = { scope:recipient = scope:actor }
         scope:actor = {
             is_ai = no
             any_owned_story = {
@@ -1892,6 +1965,14 @@ DI_add_secrets_interaction = {
         flag = homosexual
         localization = secret_homosexual
     }
+    send_option = {
+        is_valid = {
+            NOT = { scope:recipient = { any_secret = { secret_type = secret_witch } } }
+        }
+
+        flag = witch
+        localization = secret_witch
+    }
 
     on_accept = {
         scope:actor = {
@@ -1913,6 +1994,7 @@ DI_add_secrets_interaction = {
                         give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_cannibal }
                         give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_non_believer }
                         give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_homosexual }
+                        give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_witch }
                     }
                 }
                 scope:incest = {
@@ -1938,6 +2020,11 @@ DI_add_secrets_interaction = {
                 scope:homosexual = {
                     scope:recipient = {
                         give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_homosexual }
+                    }
+                }
+                scope:witch = {
+                    scope:recipient = {
+                        give_secret_and_save_as_secret_effect = { SECRET_TYPE = secret_witch }
                     }
                 }
 
@@ -5139,3 +5226,35 @@ DI_toggle_menu_button_interaction = {
     }
 }
 
+### Murder Old Knights ###
+DI_murder_old_knights_interaction = {
+    category = interaction_category_cheat_menu
+    use_diplomatic_range = no
+    ignores_pending_interaction_block = yes
+    common_interaction = no
+    icon = icon_dead
+
+    is_shown = {
+        scope:actor = {
+            is_ai = no
+            any_owned_story = {
+                story_type = DI_misc_variables_story
+                has_variable = DI_cheat_menu
+            }
+        }
+    }
+
+    on_accept = {
+        scope:recipient = {
+            every_courtier = {
+                limit = { 
+                    is_knight = yes
+                    is_acclaimed = no
+                    age > 50
+                }
+                death = { death_reason = death_natural_causes }
+            }
+        }
+    }
+    auto_accept = yes
+}

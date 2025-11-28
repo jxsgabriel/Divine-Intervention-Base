@@ -1,83 +1,87 @@
 ﻿personality_trait_randomizer_effect = {
     random_list = {
-        10 = { add_trait = lustful }
-        10 = { add_trait = chaste }
-        10 = { add_trait = gluttonous }
         10 = { add_trait = temperate }
-        10 = { add_trait = greedy }
-        10 = { add_trait = generous }
-        10 = { add_trait = lazy }
         10 = { add_trait = diligent }
-        10 = { add_trait = wrathful }
+        10 = { add_trait = just }
+        10 = { add_trait = stubborn }
+    }
+    random_list = {
         10 = { add_trait = calm }
         10 = { add_trait = patient }
-        10 = { add_trait = impatient }
-    }
-    random_list = {
-        10 = { add_trait = arrogant }
-        10 = { add_trait = humble }
-        10 = { add_trait = deceitful }
-        10 = { add_trait = honest }
-        10 = { add_trait = craven }
-        10 = { add_trait = brave }
-        10 = { add_trait = shy }
-        10 = { add_trait = gregarious }
-        10 = { add_trait = ambitious }
-        10 = { add_trait = content }
-        10 = { add_trait = arbitrary }
-    }
-    random_list = {
-        10 = { add_trait = just }
         10 = { add_trait = cynical }
-        10 = { add_trait = zealous }
         10 = { add_trait = paranoid }
+        10 = { add_trait = brave }
+        10 = { add_trait = gregarious }
+        10 = { add_trait = content }
+    }
+    random_list = {
+        10 = { add_trait = generous }
+        10 = { add_trait = humble }
+        10 = { add_trait = honest }
         10 = { add_trait = trusting }
         10 = { add_trait = compassionate }
-        10 = { add_trait = callous }
-        10 = { add_trait = sadistic }
-        10 = { add_trait = stubborn }
-        10 = { add_trait = fickle }
-        10 = { add_trait = vengeful }
         10 = { add_trait = forgiving }
     }
+    if = {
+        limit = {
+            NOT = {any_character_trait = { has_trait_category = education }}
+        }
+        random_list = {
+            10 = { add_trait = education_diplomacy_3 }
+            10 = { add_trait = education_martial_3 }
+            10 = { add_trait = education_stewardship_3 }
+            10 = { add_trait = education_intrigue_3 }
+            10 = { add_trait = education_learning_3 }
+        }
+    }
+    
 }
 
 clear_personality_traits_effect = {
-    if = { limit = { has_trait = lustful } remove_trait = lustful }
-    if = { limit = { has_trait = chaste } remove_trait = chaste }
-    if = { limit = { has_trait = gluttonous } remove_trait = gluttonous }
-    if = { limit = { has_trait = temperate } remove_trait = temperate }
-    if = { limit = { has_trait = greedy } remove_trait = greedy }
-    if = { limit = { has_trait = generous } remove_trait = generous }
-    if = { limit = { has_trait = lazy } remove_trait = lazy }
-    if = { limit = { has_trait = diligent } remove_trait = diligent }
-    if = { limit = { has_trait = wrathful } remove_trait = wrathful }
-    if = { limit = { has_trait = calm } remove_trait = calm }
-    if = { limit = { has_trait = patient } remove_trait = patient }
-    if = { limit = { has_trait = impatient } remove_trait = impatient }
-    if = { limit = { has_trait = arrogant } remove_trait = arrogant }
-    if = { limit = { has_trait = humble } remove_trait = humble }
-    if = { limit = { has_trait = deceitful } remove_trait = deceitful }
-    if = { limit = { has_trait = honest } remove_trait = honest }
-    if = { limit = { has_trait = craven } remove_trait = craven }
-    if = { limit = { has_trait = brave } remove_trait = brave }
-    if = { limit = { has_trait = shy } remove_trait = shy }
-    if = { limit = { has_trait = gregarious } remove_trait = gregarious }
-    if = { limit = { has_trait = ambitious } remove_trait = ambitious }
-    if = { limit = { has_trait = content } remove_trait = content }
-    if = { limit = { has_trait = arbitrary } remove_trait = arbitrary }
-    if = { limit = { has_trait = just } remove_trait = just }
-    if = { limit = { has_trait = cynical } remove_trait = cynical }
-    if = { limit = { has_trait = zealous } remove_trait = zealous }
-    if = { limit = { has_trait = paranoid } remove_trait = paranoid }
-    if = { limit = { has_trait = trusting } remove_trait = trusting }
-    if = { limit = { has_trait = compassionate } remove_trait = compassionate }
-    if = { limit = { has_trait = callous } remove_trait = callous }
-    if = { limit = { has_trait = sadistic } remove_trait = sadistic }
-    if = { limit = { has_trait = stubborn } remove_trait = stubborn }
-    if = { limit = { has_trait = fickle } remove_trait = fickle }
-    if = { limit = { has_trait = vengeful } remove_trait = vengeful }
-    if = { limit = { has_trait = forgiving } remove_trait = forgiving }
+    remove_trait = lustful
+    remove_trait = chaste 
+    remove_trait = gluttonous 
+    remove_trait = temperate 
+    remove_trait = greedy 
+    remove_trait = generous 
+    remove_trait = lazy 
+    remove_trait = diligent 
+    remove_trait = wrathful 
+    remove_trait = calm 
+    remove_trait = patient 
+    remove_trait = impatient 
+    remove_trait = arrogant 
+    remove_trait = humble 
+    remove_trait = deceitful 
+    remove_trait = honest 
+    remove_trait = craven 
+    remove_trait = brave 
+    remove_trait = shy 
+    remove_trait = gregarious 
+    remove_trait = ambitious 
+    remove_trait = content 
+    remove_trait = arbitrary 
+    remove_trait = just 
+    remove_trait = cynical 
+    remove_trait = zealous 
+    remove_trait = paranoid 
+    remove_trait = trusting 
+    remove_trait = compassionate 
+    remove_trait = callous 
+    remove_trait = sadistic 
+    remove_trait = stubborn 
+    remove_trait = fickle 
+    remove_trait = vengeful 
+    remove_trait = forgiving 
+
+}
+
+clear_education_traits = {
+    remove_trait = education_diplomacy_3
+    remove_trait = education_martial_3
+    remove_trait = education_stewardship_3
+    remove_trait = education_intrigue_3
+    remove_trait = education_learning_3
 }
 
 set_weight_0 = {
@@ -105,22 +109,53 @@ add_commander_traits_effect = {
 }
 
 remove_commander_traits_effect = {
-    if = { limit = { has_trait = logistician } remove_trait = logistician }
-    if = { limit = { has_trait = military_engineer } remove_trait = military_engineer }
-    if = { limit = { has_trait = aggressive_attacker } remove_trait = aggressive_attacker }
-    if = { limit = { has_trait = unyielding_defender } remove_trait = unyielding_defender }
-    if = { limit = { has_trait = forder } remove_trait = forder }
-    if = { limit = { has_trait = flexible_leader } remove_trait = flexible_leader }
-    if = { limit = { has_trait = desert_warrior } remove_trait = desert_warrior }
-    if = { limit = { has_trait = jungle_stalker } remove_trait = jungle_stalker }
-    if = { limit = { has_trait = reaver } remove_trait = reaver }
-    if = { limit = { has_trait = reckless } remove_trait = reckless }
-    if = { limit = { has_trait = holy_warrior } remove_trait = holy_warrior }
-    if = { limit = { has_trait = open_terrain_expert } remove_trait = open_terrain_expert }
-    if = { limit = { has_trait = rough_terrain_expert } remove_trait = rough_terrain_expert }
-    if = { limit = { has_trait = forest_fighter } remove_trait = forest_fighter }
-    if = { limit = { has_trait = cautious_leader } remove_trait = cautious_leader }
-    if = { limit = { has_trait = organizer } remove_trait = organizer }
+    remove_trait = logistician
+    remove_trait = military_engineer
+    remove_trait = aggressive_attacker
+    remove_trait = unyielding_defender
+    remove_trait = forder
+    remove_trait = flexible_leader
+    remove_trait = desert_warrior
+    remove_trait = jungle_stalker
+    remove_trait = reaver
+    remove_trait = reckless
+    remove_trait = holy_warrior
+    remove_trait = open_terrain_expert
+    remove_trait = rough_terrain_expert
+    remove_trait = forest_fighter
+    remove_trait = cautious_leader
+    remove_trait = organizer
+}
+
+add_knight_traits_effect = {
+    add_trait = brave
+    add_trait = honest
+    add_trait = chaste
+    
+    ## Physical
+
+    ## Education
+    add_trait = education_martial_4
+
+    ## Lifestyle
+    add_trait = gallant
+    add_trait = loyal
+    add_trait = lifestyle_blademaster
+    add_trait_xp = { trait = lifestyle_blademaster value = 100 }
+
+    add_commander_traits_effect = yes
+}
+
+remove_knight_traits_effect = {
+    remove_trait = brave
+    remove_trait = honest
+    remove_trait = chaste
+    remove_trait = education_martial_4
+    remove_trait = gallant
+    remove_trait = loyal
+    remove_trait = lifestyle_blademaster
+
+    remove_commander_traits_effect = yes
 }
 
 lifestyle_martial_present_effect = {
@@ -533,54 +568,57 @@ lifestyle_wandering_present_no_effect = {
 }
 
 eliminated_health_problem_effect = {
-    if = { limit = { has_trait = drunkard } remove_trait = drunkard }
-    if = { limit = { has_trait = depressed_1 } remove_trait = depressed_1 }
-    if = { limit = { has_trait = depressed_genetic } remove_trait = depressed_genetic }
-    if = { limit = { has_trait = lunatic_1 } remove_trait = lunatic_1 }
-    if = { limit = { has_trait = lunatic_genetic } remove_trait = lunatic_genetic }
-    if = { limit = { has_trait = possessed_1 } remove_trait = possessed_1 }
-    if = { limit = { has_trait = possessed_genetic } remove_trait = possessed_genetic }
-    if = { limit = { has_trait = ill } remove_trait = ill }
-    if = { limit = { has_trait = pneumonic } remove_trait = pneumonic }
-    if = { limit = { has_trait = great_pox } remove_trait = great_pox }
-    if = { limit = { has_trait = early_great_pox } remove_trait = early_great_pox }
-    if = { limit = { has_trait = lovers_pox } remove_trait = lovers_pox }
-    if = { limit = { has_trait = leper } remove_trait = leper }
-    if = { limit = { has_trait = wounded_1 } remove_trait = wounded_1 }
-    if = { limit = { has_trait = wounded_2 } remove_trait = wounded_2 }
-    if = { limit = { has_trait = wounded_3 } remove_trait = wounded_3 }
-    if = { limit = { has_trait = maimed } remove_trait = maimed }
-    if = { limit = { has_trait = one_eyed } remove_trait = one_eyed }
-    if = { limit = { has_trait = one_legged } remove_trait = one_legged }
-    if = { limit = { has_trait = disfigured } remove_trait = disfigured }
-    if = { limit = { has_trait = infirm } remove_trait = infirm }
-    if = { limit = { has_trait = incapable } remove_trait = incapable }
-    if = { limit = { has_trait = gout_ridden } remove_trait = gout_ridden }
-    if = { limit = { has_trait = consumption } remove_trait = consumption }
-    if = { limit = { has_trait = cancer } remove_trait = cancer }
-    if = { limit = { has_trait = typhus } remove_trait = typhus }
-    if = { limit = { has_trait = bubonic_plague } remove_trait = bubonic_plague }
-    if = { limit = { has_trait = smallpox } remove_trait = smallpox }
-    if = { limit = { has_trait = sickly } remove_trait = sickly }
-    if = { limit = { has_trait = scarred } remove_trait = scarred }
-    if = { limit = { has_trait = eunuch_1 } remove_trait = eunuch_1 }
-    if = { limit = { has_trait = beardless_eunuch } remove_trait = beardless_eunuch }
-    if = { limit = { has_trait = blind } remove_trait = blind }
-    if = { limit = { has_trait = clubfooted } remove_trait = clubfooted }
-    if = { limit = { has_trait = hunchbacked } remove_trait = hunchbacked }
-    if = { limit = { has_trait = lisping } remove_trait = lisping }
-    if = { limit = { has_trait = stuttering } remove_trait = stuttering }
-    if = { limit = { has_trait = dwarf } remove_trait = dwarf }
-    if = { limit = { has_trait = giant } remove_trait = giant }
-    if = { limit = { has_trait = inbred } remove_trait = inbred }
-    if = { limit = { has_trait = weak } remove_trait = weak }
-    if = { limit = { has_trait = dull } remove_trait = dull }
-    if = { limit = { has_trait = impotent } remove_trait = impotent }
-    if = { limit = { has_trait = spindly } remove_trait = spindly }
-    if = { limit = { has_trait = scaly } remove_trait = scaly }
-    if = { limit = { has_trait = wheezing } remove_trait = wheezing }
-    if = { limit = { has_trait = bleeder } remove_trait = bleeder }
-    if = { limit = { has_trait = infertile } remove_trait = infertile }
+    remove_trait = bleeder
+    remove_trait = blind
+    remove_trait = beardless_eunuch
+    remove_trait = bubonic_plague
+    remove_trait = cancer
+    remove_trait = clubfooted
+    remove_trait = consumption
+    remove_trait = depressed_1
+    remove_trait = depressed_genetic
+    remove_trait = disfigured
+    remove_trait = drunkard
+    remove_trait = dull
+    remove_trait = dwarf
+    remove_trait = dysentery
+    remove_trait = early_great_pox
+    remove_trait = ergotism
+    remove_trait = eunuch_1
+    remove_trait = giant
+    remove_trait = gout_ridden
+    remove_trait = great_pox
+    remove_trait = hunchbacked
+    remove_trait = ill
+    remove_trait = impotent
+    remove_trait = inbred
+    remove_trait = incapable
+    remove_trait = infertile
+    remove_trait = infirm
+    remove_trait = leper
+    remove_trait = lisping
+    remove_trait = lovers_pox
+    remove_trait = lunatic_1
+    remove_trait = lunatic_genetic
+    remove_trait = maimed
+    remove_trait = measles
+    remove_trait = one_eyed
+    remove_trait = one_legged
+    remove_trait = pneumonic
+    remove_trait = possessed_1
+    remove_trait = possessed_genetic
+    remove_trait = scaly
+    remove_trait = scarred
+    remove_trait = sickly
+    remove_trait = smallpox
+    remove_trait = spindly
+    remove_trait = stuttering
+    remove_trait = typhus
+    remove_trait = weak
+    remove_trait = wheezing
+    remove_trait = wounded_1
+    remove_trait = wounded_2
+    remove_trait = wounded_3
 
     hidden_effect = {
         if = {
@@ -929,73 +967,73 @@ innovation_remove_all_effect = {
 }
 
 remove_health_conflict_effect = {
-    if = { limit = { has_trait = beauty_bad_1 } remove_trait = beauty_bad_1 }
-    if = { limit = { has_trait = beauty_bad_2 } remove_trait = beauty_bad_2 }
-    if = { limit = { has_trait = beauty_bad_3 } remove_trait = beauty_bad_3 }
-    if = { limit = { has_trait = beauty_good_1 } remove_trait = beauty_good_1 }
-    if = { limit = { has_trait = beauty_good_2 } remove_trait = beauty_good_2 }
-    if = { limit = { has_trait = intellect_bad_1 } remove_trait = intellect_bad_1 }
-    if = { limit = { has_trait = intellect_bad_2 } remove_trait = intellect_bad_2 }
-    if = { limit = { has_trait = intellect_bad_3 } remove_trait = intellect_bad_3 }
-    if = { limit = { has_trait = intellect_good_1 } remove_trait = intellect_good_1 }
-    if = { limit = { has_trait = intellect_good_2 } remove_trait = intellect_good_2 }
-    if = { limit = { has_trait = physique_bad_1 } remove_trait = physique_bad_1 }
-    if = { limit = { has_trait = physique_bad_2 } remove_trait = physique_bad_2 }
-    if = { limit = { has_trait = physique_bad_3 } remove_trait = physique_bad_3 }
-    if = { limit = { has_trait = physique_good_1 } remove_trait = physique_good_1 }
-    if = { limit = { has_trait = physique_good_2 } remove_trait = physique_good_2 }
-    if = { limit = { has_trait = clubfooted } remove_trait = clubfooted }
-    if = { limit = { has_trait = hunchbacked } remove_trait = hunchbacked }
-    if = { limit = { has_trait = lisping } remove_trait = lisping }
-    if = { limit = { has_trait = stuttering } remove_trait = stuttering }
-    if = { limit = { has_trait = dwarf } remove_trait = dwarf }
-    if = { limit = { has_trait = giant } remove_trait = giant }
-    if = { limit = { has_trait = inbred } remove_trait = inbred }
-    if = { limit = { has_trait = weak } remove_trait = weak }
-    if = { limit = { has_trait = dull } remove_trait = dull }
-    if = { limit = { has_trait = impotent } remove_trait = impotent }
-    if = { limit = { has_trait = spindly } remove_trait = spindly }
-    if = { limit = { has_trait = scaly } remove_trait = scaly }
-    if = { limit = { has_trait = wheezing } remove_trait = wheezing }
-    if = { limit = { has_trait = bleeder } remove_trait = bleeder }
-    if = { limit = { has_trait = infertile } remove_trait = infertile }
+    remove_trait = beauty_bad_1
+    remove_trait = beauty_bad_2
+    remove_trait = beauty_bad_3
+    remove_trait = beauty_good_1
+    remove_trait = beauty_good_2
+    remove_trait = intellect_bad_1
+    remove_trait = intellect_bad_2
+    remove_trait = intellect_bad_3
+    remove_trait = intellect_good_1
+    remove_trait = intellect_good_2
+    remove_trait = physique_bad_1
+    remove_trait = physique_bad_2
+    remove_trait = physique_bad_3
+    remove_trait = physique_good_1
+    remove_trait = physique_good_2
+    remove_trait = clubfooted
+    remove_trait = hunchbacked
+    remove_trait = lisping
+    remove_trait = stuttering
+    remove_trait = dwarf
+    remove_trait = giant
+    remove_trait = inbred
+    remove_trait = weak
+    remove_trait = dull
+    remove_trait = impotent
+    remove_trait = spindly
+    remove_trait = scaly
+    remove_trait = wheezing
+    remove_trait = bleeder
+    remove_trait = infertile
 }
 
 #remove health conflicts other than worst traits (for bad genes present only)
 remove_health_conflict_forbadgene_effect = {
-    if = { limit = { has_trait = beauty_bad_1 } remove_trait = beauty_bad_1 }
-    if = { limit = { has_trait = beauty_bad_2 } remove_trait = beauty_bad_2 }
-    if = { limit = { has_trait = beauty_good_1 } remove_trait = beauty_good_1 }
-    if = { limit = { has_trait = beauty_good_2 } remove_trait = beauty_good_2 }
-    if = { limit = { has_trait = intellect_bad_1 } remove_trait = intellect_bad_1 }
-    if = { limit = { has_trait = intellect_bad_2 } remove_trait = intellect_bad_2 }
-    if = { limit = { has_trait = intellect_good_1 } remove_trait = intellect_good_1 }
-    if = { limit = { has_trait = intellect_good_2 } remove_trait = intellect_good_2 }
-    if = { limit = { has_trait = physique_bad_1 } remove_trait = physique_bad_1 }
-    if = { limit = { has_trait = physique_bad_2 } remove_trait = physique_bad_2 }
-    if = { limit = { has_trait = physique_good_1 } remove_trait = physique_good_1 }
-    if = { limit = { has_trait = physique_good_2 } remove_trait = physique_good_2 }
+    remove_trait = beauty_bad_1
+    remove_trait = beauty_bad_2
+    remove_trait = beauty_good_1
+    remove_trait = beauty_good_2
+    remove_trait = intellect_bad_1
+    remove_trait = intellect_bad_2
+    remove_trait = intellect_good_1
+    remove_trait = intellect_good_2
+    remove_trait = physique_bad_1
+    remove_trait = physique_bad_2
+    remove_trait = physique_good_1
+    remove_trait = physique_good_2
 }
 
 remove_education_traits_effect = {
-    if = { limit = { has_trait = education_learning_1 } remove_trait = education_learning_1 }
-    if = { limit = { has_trait = education_learning_2 } remove_trait = education_learning_2 }
-    if = { limit = { has_trait = education_learning_3 } remove_trait = education_learning_3 }
-    if = { limit = { has_trait = education_learning_4 } remove_trait = education_learning_4 }
-    if = { limit = { has_trait = education_intrigue_1 } remove_trait = education_intrigue_1 }
-    if = { limit = { has_trait = education_intrigue_2 } remove_trait = education_intrigue_2 }
-    if = { limit = { has_trait = education_intrigue_3 } remove_trait = education_intrigue_3 }
-    if = { limit = { has_trait = education_intrigue_4 } remove_trait = education_intrigue_4 }
-    if = { limit = { has_trait = education_diplomacy_1 } remove_trait = education_diplomacy_1 }
-    if = { limit = { has_trait = education_diplomacy_2 } remove_trait = education_diplomacy_2 }
-    if = { limit = { has_trait = education_diplomacy_3 } remove_trait = education_diplomacy_3 }
-    if = { limit = { has_trait = education_diplomacy_4 } remove_trait = education_diplomacy_4 }
-    if = { limit = { has_trait = education_stewardship_1 } remove_trait = education_stewardship_1 }
-    if = { limit = { has_trait = education_stewardship_2 } remove_trait = education_stewardship_2 }
-    if = { limit = { has_trait = education_stewardship_3 } remove_trait = education_stewardship_3 }
-    if = { limit = { has_trait = education_stewardship_4 } remove_trait = education_stewardship_4 }
-    if = { limit = { has_trait = education_martial_1 } remove_trait = education_martial_1 }
-    if = { limit = { has_trait = education_martial_2 } remove_trait = education_martial_2 }
-    if = { limit = { has_trait = education_martial_3 } remove_trait = education_martial_3 }
-    if = { limit = { has_trait = education_martial_4 } remove_trait = education_martial_4 }
+    remove_trait = education_learning_1
+    remove_trait = education_learning_2
+    remove_trait = education_learning_3
+    remove_trait = education_learning_4
+    remove_trait = education_intrigue_1
+    remove_trait = education_intrigue_2
+    remove_trait = education_intrigue_3
+    remove_trait = education_intrigue_4
+    remove_trait = education_diplomacy_1
+    remove_trait = education_diplomacy_2
+    remove_trait = education_diplomacy_3
+    remove_trait = education_diplomacy_4
+    remove_trait = education_stewardship_1
+    remove_trait = education_stewardship_2
+    remove_trait = education_stewardship_3
+    remove_trait = education_stewardship_4
+    remove_trait = education_martial_1
+    remove_trait = education_martial_2
+    remove_trait = education_martial_3
+    remove_trait = education_martial_4
 }

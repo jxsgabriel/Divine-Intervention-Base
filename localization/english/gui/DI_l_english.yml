@@ -125,6 +125,10 @@
  DI_ce_special_traits_button_tt: "#Bold Left-Click#! to add all special traits added by this mod.\n#Bold Right-Click#! to remove all special traits added by this mod."
  DI_ce_commander_traits_button: "Commander Traits" # button label
  DI_ce_commander_traits_button_tt: "#Bold Left-Click#! to add all commander traits.\n#Bold Right-Click#! to remove all commander traits."
+ DI_ce_knight_traits_button: "Knight Traits" # button label
+ DI_ce_knight_traits_button_tt: "#Bold Left-Click#! to add all knight traits.\n#Bold Right-Click#! to remove all knight traits."
+ DI_ce_vassal_traits_button: "Vassal Traits" # button label
+ DI_ce_vassal_traits_button_tt: "#Bold Left-Click#! to add all vassal traits.\n#Bold Right-Click#! to remove all vassal traits."
  DI_ce_aggressive_traits_button: "Aggressive Personality" # button label
  DI_ce_aggressive_traits_button_tt: "#Bold Left-Click#! to give aggressive personality traits.\n#Bold Right-Click#! to remove aggressive personality traits."
  DI_ce_timid_traits_button: "Timid Personality" # button label
@@ -516,6 +520,8 @@
  DI_commander_tt: ""
  DI_knight: "Knight" # button label
  DI_knight_tt: ""
+ DI_knight_poached: "Knight (Poached)" # button label
+ DI_knight_poached_tt: ""
  DI_normal_courtier: "Courtier" # button label
  DI_normal_courtier_tt: "A courtier, with a generated house."
  DI_low_normal_courtier: "Low Courtier" # button label
@@ -756,6 +762,9 @@
  DI_pin_vassal_titles: "Pin All Vassal Titles"
  DI_pin_sub_realm_titles: "Pin All Sub-Realm Titles"
  DI_pin_realm_titles: "Pin All Realm Titles"
+ DI_pin_knights: "Pin All [GetPlayer.Custom( 'KnightCulturePlural' )]"
+ DI_pin_commanders: "Pin All [commanders|E]"
+ DI_pin_barony_holders: "Pin All [barony|U] [holders|U]"
  DI_change_character_interaction: "#color_yellow #bold (DI)#!#! Switch Character"
  DI_change_character_desc: "Switch to playing this character."
  DI_change_character_name_interaction: "#color_yellow #bold (DI)#!#! Change Name"
@@ -908,6 +917,7 @@
  DI_abdicate: "#color_yellow #bold (DI)#!#! Abdicate"
  DI_reset_story_variables: "#color_yellow #bold (DI)#!#! Reset Story Variables"
  DI_reset_story_variables_desc: "Resets all the various menu variables,\n use this if you are having issues with any menu options not working,\n but also maybe send me your save game, and a picture of what's wrong."
+ DI_murder_old_knights_interaction: "Murder Old Knights"
  DI_permanent_health: "#color_yellow #bold (DI)#!#! Permanent Health"
  DI_permanent_health_desc: "Applies a flag to the character that removes all bad health flags / modifiers / traits once a year. It's the same effect as the character editor present option, Eliminate Health Issues, but it is automatically applied once a year."
  no_lifestyle_diplomacy:0 "Diplomacy (stops notifs)"
@@ -965,3 +975,13 @@
  houseName: "Set House Name"
  DI_get_house_name: "[recipient.GetDynastyHouseNameNoTooltip]"
  CHEAT_ACTIONS: "Divine Intervention actions"
+ player_starter_pack: "Supreme Ruler"
+ dynasty_starter_pack: "Dynastia Ultima"
+ vassal_starter_pack: "Vassallus Iuratus"
+ commander_booster_pack: "Magister Militum"
+ republic_government_levy_contribution_add:1 "[republican|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ republic_government_levy_contribution_mult:1 "[republican|E] [vassal|E] [levy|E] [modifier_contribution|E]"
+ theocracy_government_levy_contribution_add:1 "[theocracy|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ theocracy_government_levy_contribution_mult:1 "[theocracy|E] [vassal|E] [levy|E] [modifier_contribution|E]"
+ feudal_government_levy_contribution_add:0 "[feudal|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ feudal_government_levy_contribution_mult:0 "[feudal|E] [vassal|E] [levy|E] [modifier_contribution|E]"
