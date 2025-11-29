@@ -1755,7 +1755,7 @@ DI_spawn_family_character_effect = {
 DI_set_poached_character_props = {
 	set_age = scope:DI_story.var:DI_char_spawner_age_increment_value
 	set_character_faith = scope:root_target.faith
-	eliminated_health_problem_effect = yes
+	DI_eliminated_health_problem_effect = yes
 
 	## Set up skills
 	add_diplomacy_skill = -100
@@ -1807,7 +1807,7 @@ DI_set_poached_character_props = {
 			
 			scope:new_courtier = {
 				remove_any_education_traits_effect = yes
-				clear_personality_traits_effect = yes
+				DI_clear_personality_traits_effect = yes
 			}
 
 			every_in_list = {

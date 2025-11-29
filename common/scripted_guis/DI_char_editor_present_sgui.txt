@@ -842,12 +842,10 @@ DI_ce_clear_personality = {
                     has_character_flag = pinned_for_edit
                 }
                 DI_clear_personality_traits_effect = yes
-                clear_education_traits = yes
             }
         }
         else = {
             DI_clear_personality_traits_effect = yes
-            clear_education_traits = yes
         }
     }
 
@@ -1069,14 +1067,14 @@ DI_ce_add_vassal_traits = {
                 limit = {
                     has_character_flag = pinned_for_edit
                 }
-                clear_personality_traits_effect = yes
+                DI_clear_personality_traits_effect = yes
                 add_trait = honest
                 add_trait = craven
                 add_trait = forgiving
             }
         }
         else = {
-            clear_personality_traits_effect = yes
+            DI_clear_personality_traits_effect = yes
             add_trait = honest
             add_trait = craven
             add_trait = forgiving
@@ -1138,14 +1136,14 @@ DI_ce_add_aggressive_traits = {
                 limit = {
                     has_character_flag = pinned_for_edit
                 }
-                clear_personality_traits_effect = yes
+                DI_clear_personality_traits_effect = yes
                 add_trait = wrathful
                 add_trait = brave
                 add_trait = vengeful
             }
         }
         else = {
-            clear_personality_traits_effect = yes
+            DI_clear_personality_traits_effect = yes
             add_trait = wrathful
             add_trait = brave
             add_trait = vengeful
@@ -1228,7 +1226,7 @@ DI_ce_remove_education_traits = {
             }
             save_scope_as = DI_story
         }
-        
+
         if = {
             limit = {
                 scope:DI_story = { has_variable = DI_pinned_char_var }
@@ -1237,20 +1235,15 @@ DI_ce_remove_education_traits = {
                 limit = {
                     has_character_flag = pinned_for_edit
                 }
-                clear_personality_traits_effect = yes
-                add_trait = shy
-                add_trait = craven
-                add_trait = forgiving
+                DI_remove_education_traits_effect = yes
             }
         }
         else = {
-            clear_personality_traits_effect = yes
-            add_trait = shy
-            add_trait = craven
-            add_trait = forgiving
+            DI_remove_education_traits_effect = yes
         }
     }
 }
+
 
 ### Boost Education Traits
 DI_ce_boost_education = {
@@ -1263,7 +1256,7 @@ DI_ce_boost_education = {
             }
             save_scope_as = DI_story
         }
-        
+
         if = {
             limit = {
                 scope:DI_story = { has_variable = DI_pinned_char_var }
@@ -1272,15 +1265,11 @@ DI_ce_boost_education = {
                 limit = {
                     has_character_flag = pinned_for_edit
                 }
-                remove_trait = shy
-                remove_trait = craven
-                remove_trait = forgiving
+                DI_boost_education_traits_effect = yes
             }
         }
         else = {
-            remove_trait = shy
-            remove_trait = craven
-            remove_trait = forgiving
+            DI_boost_education_traits_effect = yes
         }
     }
 }
@@ -1313,7 +1302,6 @@ DI_ce_boost_education_extra_perks = {
         }
     }
 }
-
 
 ### Aggressive Traits
 DI_ce_add_aggressive_traits = {
