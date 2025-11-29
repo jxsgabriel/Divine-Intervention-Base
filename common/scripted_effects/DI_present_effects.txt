@@ -976,39 +976,6 @@ innovation_remove_all_effect = {
     if = { limit = { has_innovation = innovation_rectilinear_schiltron } remove_innovation = innovation_rectilinear_schiltron }
 }
 
-remove_health_conflict_effect = {
-    remove_trait = beauty_bad_1
-    remove_trait = beauty_bad_2
-    remove_trait = beauty_bad_3
-    remove_trait = beauty_good_1
-    remove_trait = beauty_good_2
-    remove_trait = intellect_bad_1
-    remove_trait = intellect_bad_2
-    remove_trait = intellect_bad_3
-    remove_trait = intellect_good_1
-    remove_trait = intellect_good_2
-    remove_trait = physique_bad_1
-    remove_trait = physique_bad_2
-    remove_trait = physique_bad_3
-    remove_trait = physique_good_1
-    remove_trait = physique_good_2
-    remove_trait = clubfooted
-    remove_trait = hunchbacked
-    remove_trait = lisping
-    remove_trait = stuttering
-    remove_trait = dwarf
-    remove_trait = giant
-    remove_trait = inbred
-    remove_trait = weak
-    remove_trait = dull
-    remove_trait = impotent
-    remove_trait = spindly
-    remove_trait = scaly
-    remove_trait = wheezing
-    remove_trait = bleeder
-    remove_trait = infertile
-}
-
 DI_remove_health_conflict_effect = {
     if = { limit = { has_trait = beauty_bad_1 } remove_trait = beauty_bad_1 }
     if = { limit = { has_trait = beauty_bad_2 } remove_trait = beauty_bad_2 }
@@ -1025,21 +992,22 @@ DI_remove_health_conflict_effect = {
     if = { limit = { has_trait = physique_bad_3 } remove_trait = physique_bad_3 }
     if = { limit = { has_trait = physique_good_1 } remove_trait = physique_good_1 }
     if = { limit = { has_trait = physique_good_2 } remove_trait = physique_good_2 }
+
+    if = { limit = { has_trait = bleeder } remove_trait = bleeder }
     if = { limit = { has_trait = clubfooted } remove_trait = clubfooted }
-    if = { limit = { has_trait = hunchbacked } remove_trait = hunchbacked }
-    if = { limit = { has_trait = lisping } remove_trait = lisping }
-    if = { limit = { has_trait = stuttering } remove_trait = stuttering }
+    if = { limit = { has_trait = dull } remove_trait = dull }
     if = { limit = { has_trait = dwarf } remove_trait = dwarf }
     if = { limit = { has_trait = giant } remove_trait = giant }
-    if = { limit = { has_trait = inbred } remove_trait = inbred }
-    if = { limit = { has_trait = weak } remove_trait = weak }
-    if = { limit = { has_trait = dull } remove_trait = dull }
+    if = { limit = { has_trait = hunchbacked } remove_trait = hunchbacked }
     if = { limit = { has_trait = impotent } remove_trait = impotent }
-    if = { limit = { has_trait = spindly } remove_trait = spindly }
-    if = { limit = { has_trait = scaly } remove_trait = scaly }
-    if = { limit = { has_trait = wheezing } remove_trait = wheezing }
-    if = { limit = { has_trait = bleeder } remove_trait = bleeder }
+    if = { limit = { has_trait = inbred } remove_trait = inbred }
     if = { limit = { has_trait = infertile } remove_trait = infertile }
+    if = { limit = { has_trait = lisping } remove_trait = lisping }
+    if = { limit = { has_trait = scaly } remove_trait = scaly }
+    if = { limit = { has_trait = spindly } remove_trait = spindly }
+    if = { limit = { has_trait = stuttering } remove_trait = stuttering }
+    if = { limit = { has_trait = weak } remove_trait = weak }
+    if = { limit = { has_trait = wheezing } remove_trait = wheezing }
 }
 
 #remove health conflicts other than worst traits (for bad genes present only)
