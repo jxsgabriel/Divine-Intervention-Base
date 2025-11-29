@@ -996,6 +996,7 @@
  CHEAT_ACTIONS: "Divine Intervention actions"
  player_starter_pack: "Supreme Ruler"
  dynasty_starter_pack: "Dynastia Ultima"
+ dynasty_booster_pack: "Dynastia Minor"
  vassal_starter_pack: "Vassallus Iuratus"
  commander_booster_pack: "Magister Militum"
  republic_government_levy_contribution_add:1 "[republican|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"

@@ -4441,7 +4441,11 @@ apply_modifier_effect = {
 }
 
 apply_character_modifier_effect = {
-   if = {
+     random_owned_story = {
+          limit = { story_type = DI_misc_variables_story }
+          save_scope_as = DI_story
+     }
+     if = {
         limit = { scope:DI_story = { has_variable = DI_pinned_char_var } }
         every_living_character = {
                limit = { has_character_flag = pinned_for_edit }
@@ -4460,6 +4464,10 @@ apply_character_modifier_effect = {
 
 apply_dynasty_or_house_modifier_effect = {
      ## Create list of dynasties to modify
+     random_owned_story = {
+          limit = { story_type = DI_misc_variables_story }
+          save_scope_as = DI_story
+     }
      if = {
           limit = { scope:DI_story = { has_variable = DI_pinned_char_var } }
           save_scope_as = root_target

@@ -4303,14 +4303,15 @@ player_starter_pack = {
     
     ## Domain and Development Growth
     domain_limit = 10
-    character_capital_county_monthly_development_growth_add = 1
-    development_growth = 1
+    vassal_limit = 10
+    character_capital_county_monthly_development_growth_add = 0.1
+    development_growth = 0.5
     development_growth_factor = 0.05
     epidemic_resistance = 100
 
     ## Cultural Fascination
     cultural_head_fascination_add = 25
-    cultural_head_fascination_mult = 0.5
+    cultural_head_fascination_mult = 5
 
     ## Military Casualties
     retreat_losses = -1
@@ -4424,11 +4425,11 @@ vassal_starter_pack = {
     tax_mult = 0.1
     domain_tax_mult = 0.1
 
-    development_growth = 0.5
-    development_growth_factor = 0.05
+    development_growth = 0.15
+    development_growth_factor = 0.01
 
     ## Epidemics
-    epidemic_resistance = 30
+    epidemic_resistance = 100
 }
 
 commander_booster_pack = {
@@ -4446,4 +4447,20 @@ commander_booster_pack = {
     enemy_hard_casualty_modifier = 1
     hostile_county_attrition = -1
     advantage = 20
+}
+
+dynasty_booster_pack = {
+    icon = legitimacy_positive
+    stacking = no
+
+    ## Health
+    positive_inactive_inheritance_chance = 0.15
+    negative_inactive_inheritance_chance = -0.15
+    inbreeding_chance = -0.15
+    genetic_trait_strengthen_chance = 0.15
+    positive_random_genetic_chance = 0.15
+    negative_random_genetic_chance = -0.15
+
+    ## Epidemics
+    epidemic_resistance = 100
 }

@@ -268,13 +268,7 @@ template DI_CE_Modifiers_Custom
 				onrightclick = "[GetScriptedGui('DI_remove_player_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
             }
 
-            # Dynasyty starter pack (Row 2)(Collumn 9)
-            DI_Modifier_Button = {
-                datacontext = "[GetModifier('dynasty_starter_pack')]"
-
-                onclick = "[GetScriptedGui('DI_add_dynasty_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                onrightclick = "[GetScriptedGui('DI_remove_dynasty_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-            }
+            
 
             # Vassal starter pack (Row 2)(Collumn 10)
             DI_Modifier_Button = {
@@ -316,6 +310,22 @@ template DI_CE_Modifiers_Custom
                 onclick = "[GetScriptedGui('DI_add_modifier_legacy_of_piracy').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                 onrightclick = "[GetScriptedGui('DI_remove_modifier_legacy_of_piracy').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                 visible = "[HasDlcFeature( 'the_northern_lords' )]"
+            }
+
+            # Dynasyty starter pack (Row 4)(Collumn 1)
+            DI_Modifier_Button = {
+                datacontext = "[GetModifier('dynasty_starter_pack')]"
+
+                onclick = "[GetScriptedGui('DI_add_dynasty_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                onrightclick = "[GetScriptedGui('DI_remove_dynasty_starter_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            }
+
+            # Dynasty booster pack (Row 4)(Collumn 2)
+            DI_Modifier_Button = {
+                datacontext = "[GetModifier('dynasty_booster_pack')]"
+
+                onclick = "[GetScriptedGui('DI_add_dynasty_booster_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                onrightclick = "[GetScriptedGui('DI_remove_dynasty_booster_pack').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
             }
         }
     }
