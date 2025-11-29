@@ -18829,6 +18829,7 @@ DI_remove_dynasty_starter_pack = {
             MODIFIER_NAME = dynasty_starter_pack
             MODIFIER_TARGET = dynasty 
         }
+    }
 }
 
 DI_add_dynasty_booster_pack = {
@@ -18841,9 +18842,7 @@ DI_add_dynasty_booster_pack = {
             MODIFIER_NAME = dynasty_booster_pack
             MODIFIER_TARGET = dynasty 
         }
-    }
-
-    
+    }   
 }
 
 DI_remove_dynasty_booster_pack = {
@@ -18856,6 +18855,7 @@ DI_remove_dynasty_booster_pack = {
             MODIFIER_NAME = dynasty_booster_pack
             MODIFIER_TARGET = dynasty 
         }
+    }
 }
 
 ### Clear all Modifiers ###
