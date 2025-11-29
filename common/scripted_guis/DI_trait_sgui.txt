@@ -16,9 +16,6 @@ DI_clear_all_traits_sgui = {
             }
             every_living_character = {
                 limit = { has_character_flag = pinned_for_edit }
-
-
-
                 clear_traits = yes
             }
         }

@@ -22,7 +22,7 @@ DI_martial_councillor = {
 
                 save_scope_as = target
 
-                DI_spawn_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 if = {
                     limit = {
@@ -39,7 +39,7 @@ DI_martial_councillor = {
         else = {
             save_scope_as = target
 
-            DI_spawn_court_character_effect = yes
+            DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
             if = {
                 limit = {
@@ -91,7 +91,7 @@ DI_diplomacy_councillor = {
 
                 save_scope_as = target
 
-                DI_spawn_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 if = {
                     limit = {
@@ -108,7 +108,7 @@ DI_diplomacy_councillor = {
         else = {
             save_scope_as = target
 
-            DI_spawn_court_character_effect = yes
+            DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
             if = {
                 limit = {
@@ -160,7 +160,7 @@ DI_stewardship_councillor = {
 
                 save_scope_as = target
 
-                DI_spawn_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 if = {
                     limit = {
@@ -177,7 +177,7 @@ DI_stewardship_councillor = {
         else = {
             save_scope_as = target
 
-            DI_spawn_court_character_effect = yes
+            DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
             if = {
                 limit = {
@@ -229,7 +229,7 @@ DI_intrigue_councillor = {
 
                 save_scope_as = target
 
-                DI_spawn_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 if = {
                     limit = {
@@ -246,7 +246,7 @@ DI_intrigue_councillor = {
         else = {
             save_scope_as = target
 
-            DI_spawn_court_character_effect = yes
+            DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
             if = {
                 limit = {
@@ -307,7 +307,7 @@ DI_learning_councillor = {
                             }
                         }
                     }
-                    DI_spawn_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     if = {
                         limit = {
@@ -362,7 +362,7 @@ DI_learning_councillor = {
                         }
                     }
                 }
-                DI_spawn_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 if = {
                     limit = {
@@ -452,11 +452,10 @@ DI_knight = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {
-                        add_trait_xp = { trait = lifestyle_blademaster value = 100 }
-                        add_perk = stalwart_leader_perk
+                        add_knight_traits_effect = yes
                     }
                 }
             }
@@ -466,11 +465,10 @@ DI_knight = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_court_character_effect = yes
-
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
+                
                 scope:new_courtier = {
-                    add_trait_xp = { trait = lifestyle_blademaster value = 100 }
-                    add_perk = stalwart_leader_perk
+                    add_knight_traits_effect = yes
                 }
             }
         }
@@ -486,6 +484,61 @@ DI_knight = {
                 scope:root_target.var:DI_cs_random_traits ?= yes
             }
             DI_random_traits_effect = yes
+        }
+    }
+}
+
+DI_knight_poached = {
+    scope = character
+
+    effect = {
+        save_scope_as = root_target
+        random_owned_story = {
+            limit = {
+                story_type = DI_misc_variables_story
+            }
+            save_scope_as = DI_story
+        }
+
+        scope:DI_story = {
+            save_scope_value_as = {
+                name = DI_char_spawner_count_increment_value
+                value = var:DI_char_spawner_count_increment_value
+            }
+        }
+
+        if = {
+            limit = {
+                scope:DI_story = { has_variable = DI_pinned_char_var }
+            }
+            every_in_list = {
+                variable = pinned_characters
+
+                save_scope_as = target
+
+                while = {
+                    count = scope:DI_char_spawner_count_increment_value
+                    DI_poach_knight_character_effect = yes
+
+                    scope:new_courtier = {
+                        add_trait_xp = { trait = lifestyle_blademaster value = 100 }
+                        add_perk = stalwart_leader_perk
+                    }
+                }
+            }
+        }
+        else = {
+            save_scope_as = target
+
+            while = {
+                count = scope:DI_char_spawner_count_increment_value
+                DI_poach_knight_character_effect = yes
+
+                scope:new_courtier = {
+                    add_trait_xp = { trait = lifestyle_blademaster value = 100 }
+                    add_perk = stalwart_leader_perk
+                }
+            }
         }
     }
 }
@@ -521,7 +574,7 @@ DI_commander = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_court_character_effect = yes
+                    DI_spawn_court_character_effect  = yes
 
                     scope:new_courtier = {
                         add_trait_xp = { trait = lifestyle_blademaster value = 100 }
@@ -536,7 +589,7 @@ DI_commander = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_court_character_effect = yes
+                DI_spawn_court_character_effect  = yes
 
                 scope:new_courtier = {
                     add_trait_xp = { trait = lifestyle_blademaster value = 100 }
@@ -921,6 +974,8 @@ DI_normal_courtier = {
             }
         }
 
+        DI_good_courtier_traits_effect = yes
+
         if = {
             limit = {
                 scope:DI_story = { has_variable = DI_pinned_char_var }
@@ -929,10 +984,11 @@ DI_normal_courtier = {
                 variable = pinned_characters
 
                 save_scope_as = target
-
+                
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_court_character_effect = yes
+                    DI_poach_high_noble_court_charcter_effect = yes
+                    # DI_spawn_court_character_effect  = yes
                 }
             }
         }
@@ -941,8 +997,9 @@ DI_normal_courtier = {
 
             while =
             {
-                count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_court_character_effect = yes
+                count = scope:DI_char_spawner_count_increment_value    
+                DI_poach_high_noble_court_charcter_effect = yes
+                # DI_spawn_court_character_effect  = yes
             }
         }
     }
@@ -978,7 +1035,7 @@ DI_low_normal_courtier = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_spawn_low_court_character_effect =  yes
                 }
             }
         }
@@ -987,7 +1044,7 @@ DI_low_normal_courtier = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_spawn_low_court_character_effect =  yes
             }
         }
     }
@@ -1024,7 +1081,7 @@ DI_court_physician = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {
                         add_trait_xp = { trait = lifestyle_physician value = 100 }
@@ -1057,7 +1114,7 @@ DI_court_physician = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {
                     add_trait_xp = { trait = lifestyle_physician value = 100 }
@@ -1131,7 +1188,7 @@ DI_court_antiquarian = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {
                         create_inspiration = book_inspiration
@@ -1163,7 +1220,7 @@ DI_court_antiquarian = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {
                     create_inspiration = book_inspiration
@@ -1236,7 +1293,7 @@ DI_travel_leader = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {
                         DI_add_commander_traits_effect = yes
@@ -1282,7 +1339,7 @@ DI_travel_leader = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {
                     DI_add_commander_traits_effect = yes
@@ -1369,7 +1426,7 @@ DI_wet_nurse = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {}
 
@@ -1399,7 +1456,7 @@ DI_wet_nurse = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {}
 
@@ -1470,9 +1527,14 @@ DI_court_tutor = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
-                    scope:new_courtier = {}
+                    scope:new_courtier = {
+                        learn_language = language_arabic
+                        learn_language = language_greek
+                        learn_language = language_latin
+                        learn_language = language_norse
+                    }
 
                     if = {
                         limit = {
@@ -1500,9 +1562,14 @@ DI_court_tutor = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
-                scope:new_courtier = {}
+                scope:new_courtier = {
+                    learn_language = language_arabic
+                    learn_language = language_greek
+                    learn_language = language_latin
+                    learn_language = language_norse
+                }
 
                 if = {
                     limit = {
@@ -1571,7 +1638,7 @@ DI_master_of_hunt = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {
                         add_trait_xp = {
@@ -1607,7 +1674,7 @@ DI_master_of_hunt = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {
                     add_trait_xp = {
@@ -1684,7 +1751,7 @@ DI_seneschal = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {}
 
@@ -1714,7 +1781,7 @@ DI_seneschal = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {}
 
@@ -1785,7 +1852,7 @@ DI_court_jester = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {}
 
@@ -1815,7 +1882,7 @@ DI_court_jester = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {}
 
@@ -1886,7 +1953,7 @@ DI_bodyguard = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {
                         add_trait_xp = {
@@ -1921,7 +1988,7 @@ DI_bodyguard = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {
                     add_trait_xp = {
@@ -1997,7 +2064,7 @@ DI_champion = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {
                         add_trait_xp = {
@@ -2032,7 +2099,7 @@ DI_champion = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {
                     add_trait_xp = {
@@ -2108,7 +2175,7 @@ DI_food_taster = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {}
 
@@ -2138,7 +2205,7 @@ DI_food_taster = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {}
 
@@ -2209,7 +2276,7 @@ DI_master_of_horse = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {}
 
@@ -2239,7 +2306,7 @@ DI_master_of_horse = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {}
 
@@ -2310,7 +2377,7 @@ DI_royal_architect = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {}
 
@@ -2340,7 +2407,7 @@ DI_royal_architect = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {}
 
@@ -2411,7 +2478,7 @@ DI_high_almoner = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {}
 
@@ -2441,7 +2508,7 @@ DI_high_almoner = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {}
 
@@ -2512,7 +2579,7 @@ DI_cupbearer = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {}
 
@@ -2542,7 +2609,7 @@ DI_cupbearer = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {}
 
@@ -2613,7 +2680,7 @@ DI_court_poet = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {}
 
@@ -2643,7 +2710,7 @@ DI_court_poet = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {}
 
@@ -2714,7 +2781,7 @@ DI_court_musician = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {}
 
@@ -2744,7 +2811,7 @@ DI_court_musician = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {}
 
@@ -2815,7 +2882,7 @@ DI_court_artificer = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {
                         create_inspiration = { type = weapon_inspiration gold = 0 }
@@ -2847,7 +2914,7 @@ DI_court_artificer = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {
                     create_inspiration = { type = weapon_inspiration gold = 0 }
@@ -2920,7 +2987,7 @@ DI_lady_in_waiting = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {}
 
@@ -2950,7 +3017,7 @@ DI_lady_in_waiting = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {}
 
@@ -3021,7 +3088,7 @@ DI_chief_eunuch = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {}
 
@@ -3051,7 +3118,7 @@ DI_chief_eunuch = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {}
 
@@ -3122,7 +3189,7 @@ DI_executioner = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                     scope:new_courtier = {}
 
@@ -3152,7 +3219,7 @@ DI_executioner = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = yes }
 
                 scope:new_courtier = {}
 
@@ -3223,7 +3290,7 @@ DI_cultural_emissary = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {
                         learn_language = language_arabic
@@ -3258,7 +3325,7 @@ DI_cultural_emissary = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {
                     learn_language = language_arabic
@@ -3334,7 +3401,7 @@ DI_keeper_of_swans = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {
                         add_trait_xp = {
@@ -3370,7 +3437,7 @@ DI_keeper_of_swans = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {
                     add_trait_xp = {
@@ -3447,7 +3514,7 @@ DI_chief_qadi = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {}
 
@@ -3477,7 +3544,7 @@ DI_chief_qadi = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {}
 
@@ -3548,7 +3615,7 @@ DI_garuda = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {
                         add_trait_xp = { trait = lifestyle_blademaster value = 100 }
@@ -3580,7 +3647,7 @@ DI_garuda = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {
                     add_trait_xp = { trait = lifestyle_blademaster value = 100 }
@@ -3653,7 +3720,7 @@ DI_court_gardener = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {}
 
@@ -3683,7 +3750,7 @@ DI_court_gardener = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {}
 
@@ -3754,7 +3821,7 @@ DI_cave_hermit = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {
                         add_trait_xp = { trait = lifestyle_mystic value = 50 }
@@ -3786,7 +3853,7 @@ DI_cave_hermit = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {
                     add_trait_xp = { trait = lifestyle_mystic value = 50 }
@@ -3859,7 +3926,7 @@ DI_master_assassin = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {
                         add_trait_xp = { trait = lifestyle_blademaster value = 100 }
@@ -3891,7 +3958,7 @@ DI_master_assassin = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {
                     add_trait_xp = { trait = lifestyle_blademaster value = 100 }
@@ -3964,7 +4031,7 @@ DI_court_scholar = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {
                         add_trait_xp = { trait = lifestyle_physician value = 100 }
@@ -3996,7 +4063,7 @@ DI_court_scholar = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {
                     add_trait_xp = { trait = lifestyle_physician value = 100 }
@@ -4069,7 +4136,7 @@ DI_chronicler = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {}
 
@@ -4099,7 +4166,7 @@ DI_chronicler = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {}
 
@@ -4170,7 +4237,7 @@ DI_charioteer = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {
                         if = {
@@ -4225,7 +4292,7 @@ DI_charioteer = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {
                     if = {
@@ -4321,7 +4388,7 @@ DI_bookmaker = {
 
                 while = {
                     count = scope:DI_char_spawner_count_increment_value
-                    DI_spawn_low_court_character_effect = yes
+                    DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                     scope:new_courtier = {}
 
@@ -4351,7 +4418,7 @@ DI_bookmaker = {
 
             while = {
                 count = scope:DI_char_spawner_count_increment_value
-                DI_spawn_low_court_character_effect = yes
+                DI_poach_court_charcter_effect = { IS_LOWBORN = no }
 
                 scope:new_courtier = {}
 

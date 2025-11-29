@@ -783,6 +783,45 @@
 
                                 # tooltip = ""
                             }
+
+                            knight (poached) councillor button standard clean
+                            button_standard_clean = {
+                                name = "DI_knight_poached"
+                                layoutpolicy_horizontal = expanding
+                                size = { 0 60 }
+                                onclick = "[GetScriptedGui('DI_knight_poached').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+
+                                background = {
+                                    using = Background_Area_Dark
+
+                                    modify_texture = {
+                                        texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+                                        blend_mode = alphamultiply
+                                        alpha = 0.3
+                                        rotate_uv = 90
+                                        mirror = vertical
+                                    }
+                                }
+
+                                hbox = {
+                                    margin = { 5 0 }
+                                    margin_right = 10
+                                    spacing = 10
+
+                                    icon = {
+                                        size = { 50 50 }
+                                        texture = "gfx/interface/icons/DI_Knight.dds"
+                                    }
+
+                                    text_single = {
+                                        layoutpolicy_horizontal = expanding
+                                        text = DI_knight_poached
+                                        default_format = "#bold"
+                                    }
+                                }
+
+                                # tooltip = ""
+                            }
                         }
                     }
                 }

@@ -125,6 +125,10 @@
  DI_ce_commander_traits_button: "Kommandanteneigenschaften" # button label
  DI_ce_commander_traits_button_tt: "#Fett Linksklick#! um alle Kommandanteneigenschaften hinzuzufügen.\n#Fett Rechtsklick#! um alle Kommandanteneigenschaften zu entfernen."
  # education traits
+ DI_ce_knight_traits_button: "Knight Traits" # button label
+ DI_ce_knight_traits_button_tt: "#Bold Left-Click#! to add all knight traits.\n#Bold Right-Click#! to remove all knight traits."
+ DI_ce_vassal_traits_button: "Vassal Traits" # button label
+ DI_ce_vassal_traits_button_tt: "#Bold Left-Click#! to add all vassal traits.\n#Bold Right-Click#! to remove all vassal traits."
  DI_ce_education_traits_button: "All Education Traits" # button label
  DI_ce_education_traits_button_tt: "#Bold Left-Click#! to give all education traits.\n#Bold Right-Click#! to remove all education traits."
  DI_ce_boost_education_button: "Boost Education Traits" # button label
@@ -760,6 +764,9 @@
  DI_pin_vassal_titles: "Alle Vasallentitel anheften"
  DI_pin_sub_realm_titles: "Alle Teilreich-Titel anheften"
  DI_pin_realm_titles: "Alle Reichstitel anheften"
+ DI_pin_knights: "Pin All [GetPlayer.Custom( 'KnightCulturePlural' )]"
+ DI_pin_commanders: "Pin All [commanders|E]"
+ DI_pin_barony_holders: "Pin All [barony|U] [holders|U]"
  DI_change_character_interaction: "Charakter wechseln"
  DI_change_character_desc: "Wechsle zu diesem Charakter."
  DI_change_character_name_interaction: "Name ändern"
@@ -1008,3 +1015,14 @@
  clear_pinned_loc: "Clear All Pinned Titles"
  DI_title_manager_fiter_loc: "Filter Titles"
  DI_province_manager_filter_loc: "Filter Provinces"
+ player_starter_pack: "Supreme Ruler"
+ dynasty_starter_pack: "Dynastia Ultima"
+ dynasty_booster_pack: "Dynastia Minor"
+ vassal_starter_pack: "Vassallus Iuratus"
+ commander_booster_pack: "Magister Militum"
+ republic_government_levy_contribution_add:1 "[republican|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ republic_government_levy_contribution_mult:1 "[republican|E] [vassal|E] [levy|E] [modifier_contribution|E]"
+ theocracy_government_levy_contribution_add:1 "[theocracy|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ theocracy_government_levy_contribution_mult:1 "[theocracy|E] [vassal|E] [levy|E] [modifier_contribution|E]"
+ feudal_government_levy_contribution_add:0 "[feudal|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ feudal_government_levy_contribution_mult:0 "[feudal|E] [vassal|E] [levy|E] [modifier_contribution|E]"

@@ -15,3 +15,60 @@
         scope:track = flag:Marauder
     }
 }
+
+DI_char_spawner_gender_check = {
+    OR = {
+        AND = {
+            is_female = yes
+            scope:DI_story = { has_variable = DI_char_spawner_female }
+        }
+        AND = {
+            is_female = no
+            NOT = {scope:DI_story = { has_variable = DI_char_spawner_female }}
+        }
+    }
+}
+
+DI_char_has_parent_ruler = {
+    OR = {
+        trigger_if = { ## Has father
+            limit = {
+                has_father = yes
+            }
+            father = { is_ruler = yes }
+        }
+        trigger_if = { ## Has mother
+            limit = {
+                has_mother = yes
+            }
+            mother = { is_ruler = yes }
+        }
+    }
+}
+
+DI_char_spawner_poachable = {
+    NOT = { is_courtier_of = scope:target }
+    is_married = no
+    is_betrothed = no
+    is_ruler = no
+    is_claimant = no
+    DI_char_spawner_gender_check = yes
+    DI_char_has_parent_ruler = no
+    age >= scope:DI_story.var:DI_char_spawner_age_increment_value
+    age < 30
+    is_travelling = no
+    is_foreign_court_or_pool_guest = no
+    is_imprisoned = no
+}
+
+## Get a random non-landed:
+## non-landed, non-claimant, non-ruler, unmarried
+DI_char_spawner_poach_check = {
+    DI_char_spawner_poachable = yes
+    is_lowborn = $IS_LOWBORN$   
+}
+
+DI_char_spawner_poach_high_noble = {
+    DI_char_spawner_poach_check = { IS_LOWBORN = no }
+    dynasty.dynasty_prestige_level >= 2
+}

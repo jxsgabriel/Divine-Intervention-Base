@@ -125,6 +125,10 @@
  DI_ce_commander_traits_button: "将领特质"
  DI_ce_commander_traits_button_tt: "#Bold 左键单击#!添加所有将领特质\n#Bold 右键单击#!清除所有将领特质"
  # education traits
+ DI_ce_knight_traits_button: "Knight Traits" # button label
+ DI_ce_knight_traits_button_tt: "#Bold Left-Click#! to add all knight traits.\n#Bold Right-Click#! to remove all knight traits."
+ DI_ce_vassal_traits_button: "Vassal Traits" # button label
+ DI_ce_vassal_traits_button_tt: "#Bold Left-Click#! to add all vassal traits.\n#Bold Right-Click#! to remove all vassal traits."
  DI_ce_education_traits_button: "All Education Traits" # button label
  DI_ce_education_traits_button_tt: "#Bold Left-Click#! to give all education traits.\n#Bold Right-Click#! to remove all education traits."
  DI_ce_boost_education_button: "Boost Education Traits" # button label
@@ -760,6 +764,9 @@
  DI_pin_vassal_titles: "钉选所有封臣头衔"
  DI_pin_sub_realm_titles: "钉选所有次级领地头衔"
  DI_pin_realm_titles: "钉选所有领地头衔"
+ DI_pin_knights: "钉选所有[GetPlayer.Custom( 'KnightCulturePlural' )]"
+ DI_pin_commanders: "钉选所有[commanders|E]"
+ DI_pin_barony_holders: "钉选所有[barony|U][holders|U]"
  DI_change_character_interaction: "切换角色"
  DI_change_character_desc: "切换为扮演此角色"
  DI_change_character_name_interaction: "改名"
@@ -912,6 +919,7 @@
  DI_abdicate: "逊位"
  DI_reset_story_variables: "重置故事变量"
  DI_reset_story_variables_desc: "重置所有菜单变量\n如果遇到菜单选项失效的问题，请使用此功能\n也可以汇报给作者（确保你没开其他mod）"
+ DI_murder_old_knights_interaction: "Murder Old Knights"
  DI_permanent_health: "永远健康"
  DI_permanent_health_desc: "为角色上一个标记，每年一次消除所有非正面健康/BUFF/特质/。其效果与角色编辑器中的“清除健康问题”选项相同，但每年自动使用一次。"
  no_lifestyle_diplomacy:0 "外交（停止通知）"
@@ -986,6 +994,17 @@
  houseName: "设定家族名"
  DI_get_house_name: "[recipient.GetDynastyHouseNameNoTooltip]"
  CHEAT_ACTIONS: "神圣干预"
+ player_starter_pack: "Supreme Ruler"
+ dynasty_starter_pack: "Dynastia Ultima"
+ dynasty_booster_pack: "Dynastia Minor"
+ vassal_starter_pack: "Vassallus Iuratus"
+ commander_booster_pack: "Magister Militum"
+ republic_government_levy_contribution_add:1 "[republican|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ republic_government_levy_contribution_mult:1 "[republican|E] [vassal|E] [levy|E] [modifier_contribution|E]"
+ theocracy_government_levy_contribution_add:1 "[theocracy|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ theocracy_government_levy_contribution_mult:1 "[theocracy|E] [vassal|E] [levy|E] [modifier_contribution|E]"
+ feudal_government_levy_contribution_add:0 "[feudal|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
+ feudal_government_levy_contribution_mult:0 "[feudal|E] [vassal|E] [levy|E] [modifier_contribution|E]"
  all_loc: "Toggle All"
  hide_loc: "Toggle Hide"
  capital_loc: "Check Capitals"
